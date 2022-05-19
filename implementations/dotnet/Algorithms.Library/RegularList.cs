@@ -13,7 +13,7 @@ namespace Algorithms.Library
         public RegularListEnumerator(RegularList<T> _internalList)
         {
             this.InternalList = _internalList;
-            this.index = -1;
+            Reset();
         }
 
         public T Current => this.InternalList[index];
@@ -32,7 +32,7 @@ namespace Algorithms.Library
 
         public void Reset()
         {
-            this.index = 0;
+            this.index = -1;
         }
     }
 

@@ -6,9 +6,9 @@ namespace Algorithms.Executer
 {
     class Program
     {
-        public static void PrintVector<T>(IEnumerable<T> elements)
+        public static void PrintVector<T>(IEnumerable<T> elements,string message ="")
         {
-            System.Console.WriteLine("---------");
+            System.Console.WriteLine($"----{message}-----");
 
             foreach (var item in elements)
             {
@@ -19,6 +19,8 @@ namespace Algorithms.Executer
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            #region RegularList
 
             RegularList<int> myRegularList = new RegularList<int>() { 5, 7, 9, 10 };
             PrintVector(myRegularList);
@@ -31,13 +33,36 @@ namespace Algorithms.Executer
             PrintVector(myRegularList);
 
             myRegularList.Remove(7);
-            
+
             PrintVector(myRegularList);
 
             myRegularList.RemoveAt(3);
-            
-            PrintVector(myRegularList);
 
+            PrintVector(myRegularList);
+            #endregion
+
+            #region RegularLinkedList
+
+            RegularLinkedList<string> names = new RegularLinkedList<string>()
+            {
+                "juan","sasha","claudia"
+            };
+            PrintVector(names,message:"LinkedList add at ctor time");
+
+            names.Add("dimas");
+            PrintVector(names,message:"LinkedList, add function");
+
+            names.Add("pedro");
+            PrintVector(names,message:"LinkedList, add function");
+
+            names.Remove("claudia");
+            PrintVector(names,message:"LinkedList, remove function");
+
+            names.Add("jonathan");
+            PrintVector(names,message:"LinkedList, add function");
+
+
+            #endregion
             System.Console.WriteLine("Bye World");
 
         }
