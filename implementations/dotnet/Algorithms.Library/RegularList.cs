@@ -5,6 +5,37 @@ using System.Linq;
 
 namespace Algorithms.Library
 {
+    public class RegularListEnumerator<T> : IEnumerator<T>
+    {
+        private RegularList<T> InternalList;
+        int index;
+
+        public RegularListEnumerator(RegularList<T> _internalList)
+        {
+            this.InternalList = _internalList;
+            this.index = -1;
+        }
+
+        public T Current => this.InternalList[index];
+
+        object IEnumerator.Current => this.Current;
+
+        public void Dispose()
+        {
+
+        }
+
+        public bool MoveNext()
+        {
+            return ++index < this.InternalList.Count;
+        }
+
+        public void Reset()
+        {
+            this.index = 0;
+        }
+    }
+
     public class RegularList<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable, IList, ICollection, IReadOnlyList<T>, IReadOnlyCollection<T>
     {
         public T[] elements;
@@ -55,22 +86,10 @@ namespace Algorithms.Library
 
         public int Add(object value)
         {
-            this.Add((T)value);
+            this.Add(value);
             return 1;
         }
 
-        private KeyValuePair<int, bool> Find(T item)
-        {
-            int index = 0;
-            foreach (var element in this.elements)
-            {
-                if (element.Equals(item))
-                {
-                    return new KeyValuePair<int, bool>(index, true);
-                }
-            }
-            return new KeyValuePair<int, bool>(-1, false); ;
-        }
         public void Clear()
         {
             this.elements = new T[5];
@@ -98,10 +117,10 @@ namespace Algorithms.Library
 
         public IEnumerator<T> GetEnumerator()
         {
-            IEnumerator arrayEnumerator = elements.GetEnumerator();
-            while (arrayEnumerator.MoveNext())
+            IEnumerator<T> regularEnumerator = new RegularListEnumerator<T>(this);
+            while (regularEnumerator.MoveNext())
             {
-                yield return (T)arrayEnumerator.Current;
+                yield return (T)regularEnumerator.Current;
             }
         }
 
@@ -136,43 +155,78 @@ namespace Algorithms.Library
 
         public bool Remove(T item)
         {
-            throw new NotImplementedException();
+            var itemPosAndStatus = this.Find(item);
+            if (!itemPosAndStatus.Value)
+            {
+                //couldnt remove element, it is not present in the list
+                return false;
+            }
+            this.RemoveAt(itemPosAndStatus.Key);
+            return true;
         }
 
         public void Remove(object value)
         {
-            throw new NotImplementedException();
+            this.Remove(value);
         }
 
         public void RemoveAt(int index)
         {
-            throw new NotImplementedException();
+            if (currentIndex > 0)
+            {
+                ShiftToTheLeft(index);
+                currentIndex--;
+            }
         }
 
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return this.GetEnumerator();
         }
 
 
         /*Helper private functions*/
+        private KeyValuePair<int, bool> Find(T item)
+        {
+            int index = 0;
+            foreach (var element in this.elements)
+            {
+                if (element.Equals(item))
+                {
+                    return new KeyValuePair<int, bool>(index, true);
+                }
+                index++;
+            }
+            return new KeyValuePair<int, bool>(-1, false); ;
+        }
+
         private void ShiftAndInsert(int position, T value)
         {
             //shifts the array one position foward
-            this.ShiftArray(position);
+            this.ShiftToTheRight(position);
 
             elements[position] = value;
             currentIndex++;
         }
 
-        private void ShiftArray(int from)
+        private void ShiftToTheLeft(int from)
+        {
+            int times = from+1;
+            while (times < currentIndex)
+            {
+                elements[times - 1] = elements[times];
+                times++;
+            }
+        }
+        private void ShiftToTheRight(int from)
         {
             int times = currentIndex;
             while (times > from)
             {
-                elements[times] = elements[times - 1];
+                elements[times] = elements[times-1];
                 times--;
             }
+
         }
 
         private bool hasSpace()
