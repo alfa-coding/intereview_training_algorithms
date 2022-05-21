@@ -109,6 +109,10 @@ namespace Algorithms.Library
                 last.Next = tmp;
                 last = last.Next;
             }
+            this.IncreaseCounter();
+        }
+        private void IncreaseCounter()
+        {
             this.currentIndex++;
         }
 
@@ -140,7 +144,7 @@ namespace Algorithms.Library
             {
                 LinkedNode<T> tmp = this.root;
                 int index = 0;
-                while (index++ < posAndStatus.Item1-1)
+                while (index++ < posAndStatus.Item1 - 1)
                 {
                     tmp = tmp.Next;
                 }
@@ -178,6 +182,21 @@ namespace Algorithms.Library
         {
             throw new NotImplementedException();
         }
+
+        public void AddFirst(T item)
+        {
+            LinkedNode<T> newHead = new LinkedNode<T>()
+            {
+                Content = item,
+                Next = root
+            };
+            this.root = newHead;
+            
+            this.IncreaseCounter();
+        }
+
+        
+
 
         /*functionalities*/
         private Tuple<int, bool, LinkedNode<T>> FindNode(T item)

@@ -6,7 +6,7 @@ namespace Algorithms.Executer
 {
     class Program
     {
-        public static void PrintVector<T>(IEnumerable<T> elements,string message ="")
+        public static void PrintVector<T>(IEnumerable<T> elements, string message = "")
         {
             System.Console.WriteLine($"----{message}-----");
 
@@ -47,20 +47,24 @@ namespace Algorithms.Executer
             {
                 "juan","sasha","claudia"
             };
-            PrintVector(names,message:"LinkedList add at ctor time");
+            PrintVector(names, message: "LinkedList add at ctor time");
 
             names.Add("dimas");
-            PrintVector(names,message:"LinkedList, add function");
+            PrintVector(names, message: "LinkedList, add function");
 
             names.Add("pedro");
-            PrintVector(names,message:"LinkedList, add function");
+            PrintVector(names, message: "LinkedList, add function");
 
             names.Remove("claudia");
-            PrintVector(names,message:"LinkedList, remove function");
+            PrintVector(names, message: "LinkedList, remove function");
 
             names.Add("jonathan");
-            PrintVector(names,message:"LinkedList, add function");
+            PrintVector(names, message: "LinkedList, add function");
 
+            names.AddFirst("Shivam");
+            PrintVector(names, message: "LinkedList, addfirst function");
+
+            
 
             #endregion
             System.Console.WriteLine("Bye World");
