@@ -187,3 +187,46 @@ someFunction(Breakfast);
 var breakfast = Breakfast();
 print breakfast; // "Breakfast instance being printed".
 ```
+
+
+```
+//classes can have a constructors
+//which initialize fields
+class Breakfast {
+  init(meat, bread) {
+    this.meat = meat;
+    this.bread = bread;
+  }
+
+  //class functions can access fields, as well as their parameters  
+  serve(who) {
+    print "Enjoy your " + this.meat + " and " +
+        this.bread + ", " + who + ".";
+   }
+}
+
+
+
+var baconAndToast = Breakfast("bacon", "toast");
+baconAndToast.serve("Dear Reader");
+//
+```
+
+```
+//Inheritance
+
+class Brunch < Breakfast {
+
+  init(meat, bread, drink) {
+    super.init(meat, bread);
+    this.drink = drink;
+  }
+
+  drink() {
+    print "How about a Bloody Mary?";
+  }
+}
+
+var benedict = Brunch("ham", "English muffin");
+benedict.serve("Noble Reader");
+```
