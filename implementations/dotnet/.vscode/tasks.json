@@ -36,6 +36,7 @@
                 "${workspaceFolder}/Algorithms.Executer/Algorithms.Executer.csproj"
             ],
             "problemMatcher": "$msCompile"
+            
         }
     ]
 }
