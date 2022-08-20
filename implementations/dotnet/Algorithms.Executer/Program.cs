@@ -67,10 +67,19 @@ namespace Algorithms.Executer
 
             TRIETree trie = new TRIETree();
 
+            trie.AddWord("andy");
+            trie.AddWord("adriana");
+            trie.AddWord("and");
+
             trie.AddWord("dimas");
             trie.AddWord("diana");
 
-            
+            var wordsAlphabetically = trie.ListAlphabetically();
+
+            foreach (var item in wordsAlphabetically)
+            {
+                System.Console.WriteLine(item);
+            }
 
             #endregion
             System.Console.WriteLine("Bye World");
