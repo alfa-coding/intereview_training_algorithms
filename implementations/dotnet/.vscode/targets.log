@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Aug 18 20:22:34 2022
+# Make data base, printed on Sat Aug 20 11:45:51 2022
 
 # Variables
 
@@ -25,19 +23,13 @@ LC_NAME = en_US.UTF-8
 # environment
 LC_NUMERIC = en_US.UTF-8
 # environment
-VSCODE_CWD = /home/dimas/Documents/intereview_training_algorithms/implementations/dotnet
-# environment
-LESS_TERMCAP_me = [0m
+VSCODE_CWD = /home/dimas
 # environment
 LC_ADDRESS = en_US.UTF-8
 # environment
 GDM_LANG = en_US.UTF-8
 # default
 MAKE_COMMAND := make
-# environment
-VSCODE_INJECTION = 1
-# environment
-VSCODE_GIT_ASKPASS_EXTRA_ARGS = --ms-enable-electron-run-as-node
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
@@ -63,25 +55,19 @@ VSCODE_CODE_CACHE_PATH = /home/dimas/.config/Code/CachedData/da76f93349a72022ca4
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.IEE2Q1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.5UXJR1
 # default
 .LOADED := 
-# environment
-LESS_TERMCAP_md = [01;32m
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # makefile
 MAKEFLAGS = pqrR
-# environment
-LESS_TERMCAP_so = [01;47;34m
 # makefile
 CURDIR := /home/dimas/Documents/intereview_training_algorithms/implementations/dotnet
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
-# environment
-LESS_TERMCAP_ue = [0m
 # environment
 MFLAGS = -pqrR
 # environment
@@ -93,25 +79,19 @@ WAYLAND_DISPLAY = wayland-0
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
-P9K_SSH = 0
-# environment
-GIT_ASKPASS = /opt/visual-studio-code/resources/app/extensions/git/dist/askpass.sh
-# environment
-ZDOTDIR = /tmp/vscode-zsh
-# environment
 XDG_SESSION_DESKTOP = gnome
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 19484
+VSCODE_PID = 3054
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/boosting:@/tmp/.ICE-unix/1751,unix/boosting:/tmp/.ICE-unix/1751
+SESSION_MANAGER = local/boosting:@/tmp/.ICE-unix/1314,unix/boosting:/tmp/.ICE-unix/1314
 # automatic
 *F = $(notdir $*)
 # environment
@@ -121,15 +101,11 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
-P9K_TTY = old
-# environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # makefile
 SHELL = /bin/sh
-# environment
-LESS_TERMCAP_us = [01;36m
 # default
 MAKECMDGOALS := all
 # environment
@@ -139,21 +115,15 @@ DOTNET_BUNDLE_EXTRACT_BASE_DIR = /home/dimas/.cache/dotnet_bundle_extract
 # environment
 GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # environment
-SHLVL = 3
+SHLVL = 1
 # environment
 MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
 PATH = /home/dimas/.local/bin:/usr/local/bin:/usr/bin:/var/lib/snapd/snap/bin:/usr/local/sbin:/home/dimas/.dotnet/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
-# environment
-LESS_TERMCAP_se = [0m
 # default
 MAKEFILES := 
-# environment
-VSCODE_GIT_IPC_HANDLE = /run/user/1000/vscode-git-0c7265e937.sock
-# environment
-VSCODE_GIT_ASKPASS_NODE = /opt/visual-studio-code/code
 # environment
 LC_MONETARY = en_US.UTF-8
 # environment
@@ -163,15 +133,9 @@ MOTD_SHOWN = pam
 # environment
 LC_TIME = en_US.UTF-8
 # environment
-LESS_TERMCAP_mb = [01;32m
-# environment
-VSCODE_GIT_ASKPASS_MAIN = /opt/visual-studio-code/resources/app/extensions/git/dist/askpass-main.js
-# environment
-INVOCATION_ID = 347cf91e5b1d4df4a01ce48490ef1147
+INVOCATION_ID = 37bcf16f1cbd44f282fbdfe96cf2ce58
 # environment
 USERNAME = dimas
-# environment
-TERM_PROGRAM = vscode
 # environment
 GNOME_SETUP_DISPLAY = :1
 # environment
@@ -180,12 +144,8 @@ LC_TELEPHONE = en_US.UTF-8
 ?F = $(notdir $?)
 # environment
 XDG_CURRENT_DESKTOP = GNOME
-# environment
-LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.swp=00;90:*.tmp=00;90:*.dpkg-dist=00;90:*.dpkg-old=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:
 # automatic
 +F = $(notdir $+)
-# environment
-LESS = -R
 # environment
 DESKTOP_SESSION = gnome
 # environment
@@ -199,7 +159,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/visual-studio-code.desktop
 # makefile
 .DEFAULT_GOAL := build
 # environment
-SYSTEMD_EXEC_PID = 1769
+SYSTEMD_EXEC_PID = 1330
 # environment
 EDITOR = /usr/bin/nano
 # environment
@@ -209,11 +169,11 @@ USER = dimas
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1687
+MANAGERPID = 1250
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 19466
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3036
 # environment
 _ = /usr/bin/make
 # environment
@@ -221,9 +181,7 @@ LC_PAPER = en_US.UTF-8
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-COLORTERM = truecolor
-# environment
-JOURNAL_STREAM = 8:30145
+JOURNAL_STREAM = 8:30172
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -236,8 +194,6 @@ QT_IM_MODULE = ibus
 ELECTRON_RUN_AS_NODE = 1
 # environment
 VSCODE_IPC_HOOK = /run/user/1000/vscode-28c1ac3f-1.70.0-main.sock
-# environment
-TERM = xterm-256color
 # default
 .RECIPEPREFIX := 
 # automatic
@@ -247,34 +203,25 @@ SUFFIXES :=
 # environment
 QT_AUTO_SCREEN_SCALE_FACTOR = 1
 # environment
-_P9K_TTY = /dev/pts/0
-# environment
 VSCODE_CLI = 1
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
-# environment
-LS_OPTIONS = --color=auto
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
-TERM_PROGRAM_VERSION = 1.70.0
-# environment
 DOTNET_ROOT = /usr/share/dotnet
 # environment
 GDMSESSION = gnome
 # environment
-PKGFILE_PROMPT_INSTALL_MISSING = 1
-# environment
 LC_IDENTIFICATION = en_US.UTF-8
 # variable set hash-table stats:
-# Load=128/1024=12%, Rehash=0, Collisions=14/158=9%
+# Load=103/1024=10%, Rehash=0, Collisions=4/133=3%
 
 # Pattern-specific Variable Values
 
 # No pattern-specific variable values.
- 
 
 # Directories
 
@@ -337,6 +284,9 @@ restore:
 	dotnet restore
 
 # files hash-table stats:
+ 
+make: *** No rule to make target 'all'.  Stop.
+
 # Load=8/1024=1%, Rehash=0, Collisions=0/18=0%
 # VPATH Search Paths
 
@@ -350,6 +300,6 @@ restore:
 # strcache performance: lookups = 24 / hit rate = 33%
 # hash-table stats:
 # Load=16/8192=0%, Rehash=0, Collisions=0/24=0%
-# Finished Make data base on Thu Aug 18 20:22:34 2022
+# Finished Make data base on Sat Aug 20 11:45:51 2022
 
  

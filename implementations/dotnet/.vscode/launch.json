@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/Algorithms.Executer/bin/Debug/net5.0/Algorithms.Executer.dll",
+            "program": "${workspaceFolder}/Algorithms.Executer/bin/Debug/net6.0/Algorithms.Executer.dll",
             "args": [],
             "cwd": "${workspaceFolder}/Algorithms.Executer",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
