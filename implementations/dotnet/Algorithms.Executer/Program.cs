@@ -64,6 +64,12 @@ namespace Algorithms.Executer
             names.AddFirst("Shivam");
             PrintVector(names, message: "LinkedList, addfirst function");
 
+
+            TRIETree trie = new TRIETree();
+
+            trie.AddWord("dimas");
+            trie.AddWord("diana");
+
             
 
             #endregion
