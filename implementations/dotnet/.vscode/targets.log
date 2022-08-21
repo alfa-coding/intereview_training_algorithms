@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Aug 20 11:45:51 2022
+# Make data base, printed on Sun Aug 21 20:26:54 2022
 
 # Variables
 
@@ -55,7 +55,7 @@ VSCODE_CODE_CACHE_PATH = /home/dimas/.config/Code/CachedData/da76f93349a72022ca4
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.5UXJR1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.GEP9Q1
 # default
 .LOADED := 
 # default
@@ -85,13 +85,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 3054
+VSCODE_PID = 6204
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/boosting:@/tmp/.ICE-unix/1314,unix/boosting:/tmp/.ICE-unix/1314
+SESSION_MANAGER = local/boosting:@/tmp/.ICE-unix/1289,unix/boosting:/tmp/.ICE-unix/1289
 # automatic
 *F = $(notdir $*)
 # environment
@@ -133,7 +133,7 @@ MOTD_SHOWN = pam
 # environment
 LC_TIME = en_US.UTF-8
 # environment
-INVOCATION_ID = 37bcf16f1cbd44f282fbdfe96cf2ce58
+INVOCATION_ID = d659b628da1a48758136c4f41522840f
 # environment
 USERNAME = dimas
 # environment
@@ -159,7 +159,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/visual-studio-code.desktop
 # makefile
 .DEFAULT_GOAL := build
 # environment
-SYSTEMD_EXEC_PID = 1330
+SYSTEMD_EXEC_PID = 1303
 # environment
 EDITOR = /usr/bin/nano
 # environment
@@ -169,11 +169,11 @@ USER = dimas
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1250
+MANAGERPID = 1235
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3036
+GIO_LAUNCHED_DESKTOP_FILE_PID = 6187
 # environment
 _ = /usr/bin/make
 # environment
@@ -181,7 +181,7 @@ LC_PAPER = en_US.UTF-8
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-JOURNAL_STREAM = 8:30172
+JOURNAL_STREAM = 8:30205
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -300,6 +300,6 @@ make: *** No rule to make target 'all'.  Stop.
 # strcache performance: lookups = 24 / hit rate = 33%
 # hash-table stats:
 # Load=16/8192=0%, Rehash=0, Collisions=0/24=0%
-# Finished Make data base on Sat Aug 20 11:45:51 2022
+# Finished Make data base on Sun Aug 21 20:26:54 2022
 
  

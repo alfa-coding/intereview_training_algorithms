@@ -97,10 +97,32 @@ namespace Algorithms.Library
                 {
                     if (children is not null)
                     {
-                        ListAlphabeticallyHelper(children,response,forming+children.Character);
+                        ListAlphabeticallyHelper(children, response, forming + children.Character);
                     }
                 }
             }
         }
+
+        public List<string> SufixesOf(string prefix)
+        {
+            return null;
+        }
+
+        public bool ContainsWord(string wordToCheck)
+        {
+            TRIENode tmp = root;
+            int index = 0;
+            while (index < wordToCheck.Length)
+            {
+                if (tmp.Children[wordToCheck[index] - 97] is null)
+                    return false;
+                tmp = tmp.Children[wordToCheck[index] - 97];
+                index++;
+            }
+
+            return true;
+        }
+
+
     }
 }

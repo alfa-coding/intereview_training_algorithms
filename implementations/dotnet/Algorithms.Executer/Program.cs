@@ -74,6 +74,11 @@ namespace Algorithms.Executer
             trie.AddWord("dimas");
             trie.AddWord("diana");
 
+            bool result = trie.ContainsWord("dimas");
+            System.Console.WriteLine(result);
+            
+            trie.SufixesOf("di");
+
             var wordsAlphabetically = trie.ListAlphabetically();
 
             foreach (var item in wordsAlphabetically)
