@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Algorithms.Library
 {
@@ -103,24 +104,34 @@ namespace Algorithms.Library
             }
         }
 
-        public List<string> SufixesOf(string prefix)
+        public IEnumerable<string> SufixesOf(string prefix)
         {
-            return null;
+            List<string> response = new List<string>();
+            TRIENode lastNode = LastNodeContains(prefix);
+            if (lastNode is null)
+            {
+                return Enumerable.Empty<string>();
+            }
+            ListAlphabeticallyHelper(lastNode, response, "");
+            return response;
         }
 
-        public bool ContainsWord(string wordToCheck)
+        private TRIENode LastNodeContains(string wordToCheck)
         {
             TRIENode tmp = root;
             int index = 0;
             while (index < wordToCheck.Length)
             {
                 if (tmp.Children[wordToCheck[index] - 97] is null)
-                    return false;
+                    return null;
                 tmp = tmp.Children[wordToCheck[index] - 97];
                 index++;
             }
-
-            return true;
+            return tmp;
+        }
+        public bool ContainsWord(string wordToCheck)
+        {
+            return LastNodeContains(wordToCheck) is not null;
         }
 
 

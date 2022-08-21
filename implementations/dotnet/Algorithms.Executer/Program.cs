@@ -77,14 +77,15 @@ namespace Algorithms.Executer
             bool result = trie.ContainsWord("dimas");
             System.Console.WriteLine(result);
             
-            trie.SufixesOf("di");
 
             var wordsAlphabetically = trie.ListAlphabetically();
 
-            foreach (var item in wordsAlphabetically)
-            {
-                System.Console.WriteLine(item);
-            }
+            PrintVector(wordsAlphabetically,"words contained inside the TRIE");
+            
+            
+            var sufixes = trie.SufixesOf("a");
+
+            PrintVector(sufixes,"sufixes of 'a' ");
 
             #endregion
             System.Console.WriteLine("Bye World");
