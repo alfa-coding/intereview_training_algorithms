@@ -65,6 +65,11 @@ namespace Algorithms.Executer
             PrintVector(names, message: "LinkedList, addfirst function");
 
 
+            
+
+            #endregion
+
+            #region TRIE TREE
             TRIETree trie = new TRIETree();
 
             trie.AddWord("andy");
@@ -86,6 +91,25 @@ namespace Algorithms.Executer
             var sufixes = trie.SufixesOf("a");
 
             PrintVector(sufixes,"sufixes of 'a' ");
+            #endregion
+            
+            #region  BST
+
+            BST<int> binarySearchTree = new BST<int>();
+            binarySearchTree.Insert(5);
+
+            binarySearchTree.Insert(3);
+            binarySearchTree.Insert(7);
+
+            binarySearchTree.Insert(4);
+            binarySearchTree.Insert(6);
+            binarySearchTree.Insert(15);
+
+
+
+            System.Console.WriteLine($"BST heigh is: {binarySearchTree.Height}");
+
+            PrintVector(binarySearchTree,"Elements in order from BST");
 
             #endregion
             System.Console.WriteLine("Bye World");

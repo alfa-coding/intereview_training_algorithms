@@ -14,7 +14,7 @@ namespace Algorithms.Library
             Left = left;
             Right = right;
             Data = data;
-            this.CounterData=1;
+            this.CounterData = 1;
         }
 
         public bool IsLeaf { get => (Right is null && Left is null); }
@@ -23,48 +23,70 @@ namespace Algorithms.Library
         {
             get
             {
-                if ((this is not null) && this.IsLeaf)
+                if (this is null)
+                {
+                    return 0;
+                }
+                if (this.IsLeaf)
                 {
                     return 1;
                 }
-                return Math.Max(this.Right.Height,this.Left.Height)+1;
+                int leftH = this.Left is not null ? this.Left.Height : 0;
+                int rightH = this.Right is not null ? this.Right.Height : 0;
+
+                return Math.Max(leftH, rightH) + 1;
             }
         }
 
         public int CounterData { get; internal set; }
     }
-    public class BST<T> : IEnumerable<T>, IEnumerable where T: IComparable<T>
+    public class BST<T> : IEnumerable<T>, IEnumerable where T : IComparable<T>
     {
         BSTNode<T> root;
 
-        public int Height { get=>root.Height; }
+        public int Height { get => root.Height; }
 
         public void Insert(T data)
         {
             if (root is null)
             {
-                root = new BSTNode<T>(null,null,data);
+                root = new BSTNode<T>(null, null, data);
             }
             else
             {
                 BSTNode<T> tmp = root;
-                int insertionIndicator = 0;
-                while (tmp!=null)
+                while (tmp != null)
                 {
-                    if (tmp.Left is not null && tmp.Left.Data.CompareTo(data)>0)
+                    if (tmp.Data.CompareTo(data) > 0)
                     {
-                        tmp=tmp.Left;
-                        insertionIndicator = -1;
+                        //directly inserting on the left, or recursively 
+                        //going left.
+                        if (tmp.Left is null)
+                        {
+                            tmp.Left = new BSTNode<T>(null, null, data);
+                            break;
+                        }
+                        else
+                        {
+                            tmp = tmp.Left;
+                        }
                     }
-                    else if (tmp.Right is not null && tmp.Right.Data.CompareTo(data)>0)
+                    else if (tmp.Data.CompareTo(data) < 0)
                     {
-                        tmp=tmp.Right;
-                        insertionIndicator = 1;
+                        if (tmp.Right is null)
+                        {
+                            tmp.Right = new BSTNode<T>(null, null, data);
+                            break;
+                        }
+                        else
+                        {
+                            tmp = tmp.Right;
+                        }
 
                     }
                     else
                     {
-                        if (tmp.Data.CompareTo(data)==0)
+                        if (tmp.Data.CompareTo(data) == 0)
                         {
                             tmp.CounterData++;
                             break;
@@ -72,29 +94,52 @@ namespace Algorithms.Library
                     }
                 }
 
-                if (insertionIndicator<0)
-                {
-                    tmp.Left = new BSTNode<T>(null,null,data);
-                }
-                else if (insertionIndicator>0)
-                {
-                    tmp.Right = new BSTNode<T>(null,null,data);
-                }
-                else
-                {
-                    //
-                }
+
             }
         }
 
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            List<BSTNode<T>> elements = InOrder();
+            foreach (var item in elements)
+            {
+                yield return item.Data;
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return this.GetEnumerator();
+        }
+
+
+         private List<BSTNode<T>> InOrder()
+        {
+            List<BSTNode<T>> response = new List<BSTNode<T>>();
+            InOrderHelper(this.root, response);
+            return response;
+        }
+        private void InOrderHelper(BSTNode<T> node, List<BSTNode<T>> all)
+        {
+            if (node is null)
+            {
+                return;
+            }
+            if (node.Left is not null)
+            {
+                InOrderHelper(node.Left, all);
+            }
+            if (node is not null)
+            {
+                all.Add(node);
+            }
+            if (node.Right is not null)
+            {
+                InOrderHelper(node.Right, all);
+            }
         }
     }
+
+     
+    
 }
