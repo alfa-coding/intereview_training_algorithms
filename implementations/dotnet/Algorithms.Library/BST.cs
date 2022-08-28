@@ -7,6 +7,8 @@ namespace Algorithms.Library
 {
     public class BSTNode<T>
     {
+        private T data;
+
         public T Data { get; set; }
         public BSTNode<T> Left { get; set; }
         public BSTNode<T> Right { get; set; }
@@ -16,6 +18,11 @@ namespace Algorithms.Library
             Right = right;
             Data = data;
             this.CounterData = 1;
+        }
+
+        public BSTNode(T data)
+        {
+            this.data = data;
         }
 
         public bool IsLeaf { get => (Right is null && Left is null); }
@@ -59,7 +66,7 @@ namespace Algorithms.Library
     }
     public class BST<T> : IEnumerable<T>, IEnumerable where T : IComparable<T>
     {
-        BSTNode<T> root;
+        public BSTNode<T> root {get;set;}
 
         public int BalanceFactor { get => root is not null?root.BalanceFactor:0; }
         public int Height { get => root is not null?root.Height:0; }
