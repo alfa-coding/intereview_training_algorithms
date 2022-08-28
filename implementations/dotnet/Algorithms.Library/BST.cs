@@ -41,6 +41,21 @@ namespace Algorithms.Library
 
         public int CounterData { get; internal set; }
 
+        public int BalanceFactor
+        {
+            get
+            {
+                if (this is null)
+                {
+                    return 0;
+                }
+                int leftH = this.Left is not null ? this.Left.Height : 0;
+                int rightH = this.Right is not null ? this.Right.Height : 0;
+
+                return leftH - rightH;
+            }
+        }
+
     }
     public class BST<T> : IEnumerable<T>, IEnumerable where T : IComparable<T>
     {
@@ -48,7 +63,7 @@ namespace Algorithms.Library
 
         public int Height { get => root.Height; }
 
-        public void Insert(T data)
+        public virtual void Insert(T data)
         {
             if (root is null)
             {
@@ -105,7 +120,7 @@ namespace Algorithms.Library
             List<BSTNode<T>> elements = InOrder();
             foreach (var item in elements)
             {
-                foreach (var times in Enumerable.Range(0,item.CounterData))
+                foreach (var times in Enumerable.Range(0, item.CounterData))
                 {
                     yield return item.Data;
                 }
