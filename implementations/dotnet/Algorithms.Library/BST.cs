@@ -52,7 +52,7 @@ namespace Algorithms.Library
                 int leftH = this.Left is not null ? this.Left.Height : 0;
                 int rightH = this.Right is not null ? this.Right.Height : 0;
 
-                return leftH - rightH;
+                return rightH - leftH;
             }
         }
 
@@ -61,8 +61,8 @@ namespace Algorithms.Library
     {
         BSTNode<T> root;
 
-        public int BalanceFactor { get => root.BalanceFactor; }
-        public int Height { get => root.Height; }
+        public int BalanceFactor { get => root is not null?root.BalanceFactor:0; }
+        public int Height { get => root is not null?root.Height:0; }
 
         public virtual void Insert(T data)
         {

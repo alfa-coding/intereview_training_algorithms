@@ -4,16 +4,63 @@ using System.Collections.Generic;
 
 namespace Algorithms.Library
 {
-    public class AVLTree<T> : IEnumerable<T>, IEnumerable
+    public class AVLTree<T> : BST<T>, IEnumerable<T>, IEnumerable where T : IComparable<T>
     {
-        public IEnumerator<T> GetEnumerator()
+        private BSTNode<T> root;
+
+        public override void Insert(T data)
         {
-            throw new NotImplementedException();
+            if (root is null)
+            {
+                this.root = new BSTNode<T>(null, null, data);
+            }
+            else
+            {
+
+            }
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
+        public static BSTNode<T> Balance(BSTNode<T> node)
         {
-            throw new NotImplementedException();
+            if (node.BalanceFactor < 0)
+            {
+                if (node.Left.BalanceFactor > 0)
+                {
+                    node.Left = RotateLeft(node.Left);
+                }
+
+                //left side is heavier than righ side
+                return RotateRight(node);
+            }
+            else if (node.BalanceFactor > 0)
+            {
+                if (node.Right.BalanceFactor < 0)
+                {
+                    node.Right = RotateRight(node.Right);
+                }
+
+                //right side is heavier than left side
+                return RotateLeft(node);
+            }
+            else
+                //is already balanced
+                return node;
+        }
+
+        private static BSTNode<T> RotateRight(BSTNode<T> node)
+        {
+            BSTNode<T> rightTmp = new BSTNode<T>(null, null, node.Data);
+            node.Left.Right = rightTmp;
+            return node.Left;
+        }
+
+        private static BSTNode<T> RotateLeft(BSTNode<T> node)
+        {
+            BSTNode<T> leftTmp = new BSTNode<T>(null, null, node.Data);
+            node.Right.Left = leftTmp;
+            return node.Right;
         }
     }
+
+
 }

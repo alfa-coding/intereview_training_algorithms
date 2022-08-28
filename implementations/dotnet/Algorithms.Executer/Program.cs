@@ -107,10 +107,45 @@ namespace Algorithms.Executer
 
             binarySearchTree.Insert(3);
 
+            #region TestingBasicRotation
+            BSTNode<int> i1a = new BSTNode<int>(null,null,1);
+            BSTNode<int> i1 = new BSTNode<int>(i1a,null,3);
+            BSTNode<int> parentA = new BSTNode<int>(i1,null,5);
+
+            BSTNode<int> rotatedToRight = AVLTree<int>.Balance(parentA);
+            System.Console.WriteLine(rotatedToRight.Data);
+
+            BSTNode<int> r1a = new BSTNode<int>(null,null,9);
+            BSTNode<int> r1 = new BSTNode<int>(null,r1a,7);
+            BSTNode<int> parentB = new BSTNode<int>(null,r1,5);
+
+            BSTNode<int> rotatedToLeft = AVLTree<int>.Balance(parentB);
+            System.Console.WriteLine(parentB.Data);
+            #endregion
+
+            #region TestingDoubleRotation
+            BSTNode<int> iib = new BSTNode<int>(null,null,3);
+            BSTNode<int> ii = new BSTNode<int>(null,iib,1);
+            BSTNode<int> parentC = new BSTNode<int>(ii,null,5);
+
+            BSTNode<int> doubleBalancedLeft = AVLTree<int>.Balance(parentC);
+            System.Console.WriteLine(doubleBalancedLeft.Data);
+
+            BSTNode<int> rrb = new BSTNode<int>(null,null,7);
+            BSTNode<int> rr = new BSTNode<int>(rrb,null,9);
+            BSTNode<int> parentD = new BSTNode<int>(null,rr,5);
+
+            BSTNode<int> doubleBalancedRight = AVLTree<int>.Balance(parentD);
+            System.Console.WriteLine(doubleBalancedRight.Data);
+            #endregion
+
 
 
 
             System.Console.WriteLine($"BST heigh is: {binarySearchTree.Height}");
+
+            System.Console.WriteLine($"BST Balace Factor is: {binarySearchTree.BalanceFactor}");
+
 
             PrintVector(binarySearchTree,"Elements in order from BST");
 
