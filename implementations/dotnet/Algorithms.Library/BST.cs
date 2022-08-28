@@ -61,6 +61,7 @@ namespace Algorithms.Library
     {
         BSTNode<T> root;
 
+        public int BalanceFactor { get => root.BalanceFactor; }
         public int Height { get => root.Height; }
 
         public virtual void Insert(T data)
