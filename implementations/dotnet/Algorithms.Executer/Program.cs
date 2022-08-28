@@ -105,6 +105,9 @@ namespace Algorithms.Executer
             binarySearchTree.Insert(6);
             binarySearchTree.Insert(15);
 
+            binarySearchTree.Insert(3);
+
+
 
 
             System.Console.WriteLine($"BST heigh is: {binarySearchTree.Height}");

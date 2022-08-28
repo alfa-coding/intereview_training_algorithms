@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Algorithms.Library
 {
@@ -39,6 +40,7 @@ namespace Algorithms.Library
         }
 
         public int CounterData { get; internal set; }
+
     }
     public class BST<T> : IEnumerable<T>, IEnumerable where T : IComparable<T>
     {
@@ -103,7 +105,10 @@ namespace Algorithms.Library
             List<BSTNode<T>> elements = InOrder();
             foreach (var item in elements)
             {
-                yield return item.Data;
+                foreach (var times in Enumerable.Range(0,item.CounterData))
+                {
+                    yield return item.Data;
+                }
             }
         }
 
@@ -113,7 +118,7 @@ namespace Algorithms.Library
         }
 
 
-         private List<BSTNode<T>> InOrder()
+        private List<BSTNode<T>> InOrder()
         {
             List<BSTNode<T>> response = new List<BSTNode<T>>();
             InOrderHelper(this.root, response);
@@ -125,21 +130,18 @@ namespace Algorithms.Library
             {
                 return;
             }
-            if (node.Left is not null)
-            {
-                InOrderHelper(node.Left, all);
-            }
-            if (node is not null)
-            {
-                all.Add(node);
-            }
-            if (node.Right is not null)
-            {
-                InOrderHelper(node.Right, all);
-            }
+
+            InOrderHelper(node.Left, all);
+
+
+            all.Add(node);
+
+
+            InOrderHelper(node.Right, all);
+
         }
     }
 
-     
-    
+
+
 }
