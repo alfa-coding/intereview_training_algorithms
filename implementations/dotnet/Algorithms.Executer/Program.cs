@@ -158,6 +158,25 @@ namespace Algorithms.Executer
             PrintVector(myAVL,"Printing elements in AVL");
             #endregion
 
+            #region ConcatenationExcersise
+
+            string [] words1 = {"d","c","b"};
+            int longestConctatResult1 = Training.LongestConctatString(words1);
+            System.Console.WriteLine($"The longest cancat is: {longestConctatResult1}, expected:3");
+
+            string [] words2 = {"ab","b","cd","ef"};
+            int longestConctatResult2 = Training.LongestConctatString(words2);
+            System.Console.WriteLine($"The longest cancat is: {longestConctatResult2}, expected:6");
+
+            string [] words3 = {"ab","bruto","cd","ef"};
+            int longestConctatResult3 = Training.LongestConctatString(words3);
+            System.Console.WriteLine($"The longest cancat is: {longestConctatResult3}, expected:9");
+
+            string [] words4 = {"ab","ab","ab","ab"};
+            int longestConctatResult4 = Training.LongestConctatString(words4);
+            System.Console.WriteLine($"The longest cancat is: {longestConctatResult4}, expected:0");
+
+            #endregion
 
 
 

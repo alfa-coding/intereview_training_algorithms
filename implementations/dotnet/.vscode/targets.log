@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Aug 28 18:15:59 2022
+# Make data base, printed on Mon Aug 29 21:30:03 2022
 
 # Variables
 
@@ -87,7 +87,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 2002
+VSCODE_PID = 21276
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -175,7 +175,7 @@ MANAGERPID = 1223
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 1984
+GIO_LAUNCHED_DESKTOP_FILE_PID = 21259
 # environment
 _ = /usr/bin/make
 # environment
@@ -281,6 +281,7 @@ build:
 restore:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 6):
 	dotnet restore
@@ -298,8 +299,7 @@ restore:
 
 # strcache performance: lookups = 24 / hit rate = 33%
 # hash-table stats:
- 
 # Load=16/8192=0%, Rehash=0, Collisions=0/24=0%
-# Finished Make data base on Sun Aug 28 18:15:59 2022
+# Finished Make data base on Mon Aug 29 21:30:03 2022
 
  
