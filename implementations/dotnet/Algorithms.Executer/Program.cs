@@ -176,6 +176,10 @@ namespace Algorithms.Executer
             int longestConctatResult4 = Training.LongestConctatString(words4);
             System.Console.WriteLine($"The longest cancat is: {longestConctatResult4}, expected:0");
 
+            string [] words5 = {"ban","ryan","andy","dian"};
+            int longestConctatResult5 = Training.LongestConctatString(words5);
+            System.Console.WriteLine($"The longest cancat is: {longestConctatResult5}, expected:0");
+
             #endregion
 
 

@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Aug 29 21:30:03 2022
+# Make data base, printed on Tue Aug 30 10:54:58 2022
 
 # Variables
 
@@ -57,7 +55,7 @@ VSCODE_CODE_CACHE_PATH = /home/dimas/.config/Code/CachedData/e4503b30fc78200f846
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.4J2OR1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.8XI7Q1
 # default
 .LOADED := 
 # default
@@ -87,13 +85,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 21276
+VSCODE_PID = 1887
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/boosting:@/tmp/.ICE-unix/1289,unix/boosting:/tmp/.ICE-unix/1289
+SESSION_MANAGER = local/boosting:@/tmp/.ICE-unix/1268,unix/boosting:/tmp/.ICE-unix/1268
 # automatic
 *F = $(notdir $*)
 # environment
@@ -135,7 +133,7 @@ MOTD_SHOWN = pam
 # environment
 LC_TIME = en_US.UTF-8
 # environment
-INVOCATION_ID = c956f3773a0d442b8b5cdd75b9117bcf
+INVOCATION_ID = e3bd55752efc47649cb523259bd83aad
 # environment
 USERNAME = dimas
 # environment
@@ -161,7 +159,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/visual-studio-code.desktop
 # makefile
 .DEFAULT_GOAL := build
 # environment
-SYSTEMD_EXEC_PID = 1310
+SYSTEMD_EXEC_PID = 1286
 # environment
 EDITOR = /usr/bin/nano
 # environment
@@ -171,11 +169,11 @@ USER = dimas
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1223
+MANAGERPID = 1205
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 21259
+GIO_LAUNCHED_DESKTOP_FILE_PID = 1870
 # environment
 _ = /usr/bin/make
 # environment
@@ -183,7 +181,7 @@ LC_PAPER = en_US.UTF-8
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-JOURNAL_STREAM = 8:30364
+JOURNAL_STREAM = 8:13944
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -280,8 +278,10 @@ build:
 
 restore:
 #  Implicit rule search has not been done.
-#  Modification time never checked.
  
+make: *** No rule to make target 'all'.  Stop.
+
+#  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 6):
 	dotnet restore
@@ -300,6 +300,6 @@ restore:
 # strcache performance: lookups = 24 / hit rate = 33%
 # hash-table stats:
 # Load=16/8192=0%, Rehash=0, Collisions=0/24=0%
-# Finished Make data base on Mon Aug 29 21:30:03 2022
+# Finished Make data base on Tue Aug 30 10:54:58 2022
 
  
