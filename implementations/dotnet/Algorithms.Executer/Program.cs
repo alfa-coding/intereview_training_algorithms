@@ -182,6 +182,21 @@ namespace Algorithms.Executer
 
             #endregion
 
+            #region TargetSum
+
+            int [] numbers = {9,1,7,3,2};
+            var resultingPositions = Training.TargetSum(numbers,11);
+            System.Console.WriteLine($"The resulting positions are: {resultingPositions.Item1} & {resultingPositions.Item2}");
+
+            int [] numbers2 = {3,2,4};
+            var resultingPositions2 = Training.TargetSum(numbers2,6);
+            System.Console.WriteLine($"The resulting positions are: {resultingPositions2.Item1} & {resultingPositions2.Item2}");
+
+             int [] numbers3 = {3,3};
+            var resultingPositions3 = Training.TargetSum(numbers3,6);
+            System.Console.WriteLine($"The resulting positions are: {resultingPositions3.Item1} & {resultingPositions3.Item2}");
+
+            #endregion
 
 
 
