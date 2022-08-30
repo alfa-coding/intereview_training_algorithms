@@ -8,21 +8,21 @@ namespace Algorithms.Library
     {
 
         //O(n)
-        public static Tuple<int,int> TargetSum(int[]numbers, int target)
+        public static Tuple<int, int> TargetSum(int[] numbers, int target)
         {
-            int [] diferences = new int[numbers.Length];
-            Dictionary<int,int> valuesAndPos = new Dictionary<int, int>();
+            int[] diferences = new int[numbers.Length];
+            Dictionary<int, int> valuesAndPos = new Dictionary<int, int>();
             for (int i = 0; i < numbers.Length; i++)
             {
-                valuesAndPos.TryAdd(numbers[i],i);
+                valuesAndPos.TryAdd(numbers[i], i);
                 diferences[i] = target - numbers[i];
-            }   
-            
+            }
+
             for (int i = 0; i < diferences.Length; i++)
             {
-                if (valuesAndPos.ContainsKey(diferences[i])&&i!=valuesAndPos[diferences[i]])
+                if (valuesAndPos.ContainsKey(diferences[i]) && i != valuesAndPos[diferences[i]])
                 {
-                    return new Tuple<int, int>(i,valuesAndPos[diferences[i]]);
+                    return new Tuple<int, int>(i, valuesAndPos[diferences[i]]);
                 }
             }
 
@@ -51,20 +51,11 @@ namespace Algorithms.Library
                 int currentLenght = 0;
                 for (int i = 0; i < words.Length; i++)
                 {
-                    string concatenationCandidate = formed + words[i];
+                    string concatenationCandidate = NotRepeatedCharacters(formed + words[i]) ? formed + words[i] : formed;
                     if (!marks[i])
                     {
                         marks[i] = true;
-
-                        if (NotRepeatedCharacters(concatenationCandidate))
-                        {
-                            currentLenght = LongestConctatStringHelper(words, marks, concatenationCandidate, itemsSkippedOrTaken + 1);
-
-                        }
-                        else
-                        {
-                            currentLenght = LongestConctatStringHelper(words, marks, formed, itemsSkippedOrTaken + 1);
-                        }
+                        currentLenght = LongestConctatStringHelper(words, marks, concatenationCandidate, itemsSkippedOrTaken + 1);
                         maxLengh = Math.Max(maxLengh, currentLenght);
                         marks[i] = false;
                     }
