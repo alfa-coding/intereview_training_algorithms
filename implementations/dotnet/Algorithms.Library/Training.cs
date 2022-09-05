@@ -7,32 +7,80 @@ namespace Algorithms.Library
     public class Training
     {
 
-        //trapping rain water all across O(n*long(n))
         public static int CalculateRain(int[] numbers)
         {
-            return CalculateRainHelper(start: 0, end: numbers.Length-1, numbers);
+            //return CalculateRainHelper(start: 0, end: numbers.Length-1, numbers);
+            return CalculateRainHelperLinear(start: 0, end: numbers.Length - 1, numbers);
+
         }
 
+        private static int CalculateRainHelperLinear(int start, int end, int[] numbers)
+        {
+            int totalAmount = 0;
+            int maxLeftSeen = 0;
+            int maxRightSeen = 0;
+
+
+            while (start < end)
+            {
+                if (numbers[start] <= numbers[end])
+                {
+                    //do calculate the water to the left, or do we
+                    if (maxLeftSeen > numbers[start])
+                    {
+                        totalAmount += maxLeftSeen - numbers[start];
+                    }
+                    //update the max
+                    else
+                    {
+                        maxLeftSeen = numbers[start];
+                    }
+                    start++;
+                }
+                else
+                {
+                    //we are moving backwards
+
+                    //do we calculate the water to the right, or do we
+                    if (maxRightSeen > numbers[end])
+                    {
+                        totalAmount += maxRightSeen - numbers[end];
+                    }
+                    //update the max
+                    else
+                    {
+                        maxRightSeen = numbers[end];
+                    }
+                    end--;
+                }
+
+
+            }
+
+            return totalAmount;
+        }
+
+        //trapping rain water all across O(n*long(n))
         private static int CalculateRainHelper(int start, int end, int[] numbers)
         {
-            if (start>end)
+            if (start > end)
             {
                 return 0;
             }
 
-            if (end -start ==1)
+            if (end - start == 1)
             {
                 return 0;
             }
 
             int heigh = Math.Min(numbers[start], numbers[end]);
 
-            int largestCtrlWallPos = LargestNumberPosition(numbers, start, end, lowerTower:heigh);
+            int largestCtrlWallPos = LargestNumberPosition(numbers, start, end, lowerTower: heigh);
             if (largestCtrlWallPos != -1)
             {
-                int leftArea = CalculateRainHelper(start,largestCtrlWallPos,numbers);
-                int rightArea = CalculateRainHelper(largestCtrlWallPos,end,numbers);
-                return leftArea +rightArea ;
+                int leftArea = CalculateRainHelper(start, largestCtrlWallPos, numbers);
+                int rightArea = CalculateRainHelper(largestCtrlWallPos, end, numbers);
+                return leftArea + rightArea;
             }
             else
             {
@@ -60,7 +108,7 @@ namespace Algorithms.Library
             int largestTMP = -1;
             for (int i = start + 1; i < end; i++)
             {
-                if (numbers[i] > lowerTower && numbers[i]> largestTMP)
+                if (numbers[i] > lowerTower && numbers[i] > largestTMP)
                 {
                     largestTMP = numbers[i];
                     response = i;

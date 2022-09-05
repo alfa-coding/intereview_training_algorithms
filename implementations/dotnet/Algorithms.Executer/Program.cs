@@ -260,8 +260,10 @@ namespace Algorithms.Executer
             int amount12 = Training.CalculateRain(walls12);
             System.Console.WriteLine($"For walls 12 expected: 8, got {amount12}");
 
-
-
+            //from leetcode
+            int []walls13 = {0,1,0,2,1,0,1,3,2,1,2,1};
+            int amount13 = Training.CalculateRain(walls13);
+            System.Console.WriteLine($"For walls 13 expected: 6, got {amount13}");
             #endregion
 
             #endregion
