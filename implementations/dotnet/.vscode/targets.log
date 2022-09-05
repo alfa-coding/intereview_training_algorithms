@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Aug 30 11:35:43 2022
+# Make data base, printed on Mon Sep  5 11:53:48 2022
 
 # Variables
 
@@ -57,7 +57,7 @@ VSCODE_CODE_CACHE_PATH = /home/dimas/.config/Code/CachedData/e4503b30fc78200f846
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.8XI7Q1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.REJ6R1
 # default
 .LOADED := 
 # default
@@ -87,13 +87,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 7032
+VSCODE_PID = 3087
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/boosting:@/tmp/.ICE-unix/1268,unix/boosting:/tmp/.ICE-unix/1268
+SESSION_MANAGER = local/boosting:@/tmp/.ICE-unix/1714,unix/boosting:/tmp/.ICE-unix/1714
 # automatic
 *F = $(notdir $*)
 # environment
@@ -135,7 +135,7 @@ MOTD_SHOWN = pam
 # environment
 LC_TIME = en_US.UTF-8
 # environment
-INVOCATION_ID = e3bd55752efc47649cb523259bd83aad
+INVOCATION_ID = e95695080e4e4868aa6dfb817429f0bd
 # environment
 USERNAME = dimas
 # environment
@@ -161,7 +161,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/visual-studio-code.desktop
 # makefile
 .DEFAULT_GOAL := build
 # environment
-SYSTEMD_EXEC_PID = 1286
+SYSTEMD_EXEC_PID = 1738
 # environment
 EDITOR = /usr/bin/nano
 # environment
@@ -171,11 +171,11 @@ USER = dimas
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1205
+MANAGERPID = 1661
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 7015
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3069
 # environment
 _ = /usr/bin/make
 # environment
@@ -183,7 +183,7 @@ LC_PAPER = en_US.UTF-8
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-JOURNAL_STREAM = 8:13944
+JOURNAL_STREAM = 8:25552
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -300,6 +300,6 @@ restore:
 # hash-table stats:
  
 # Load=16/8192=0%, Rehash=0, Collisions=0/24=0%
-# Finished Make data base on Tue Aug 30 11:35:43 2022
+# Finished Make data base on Mon Sep  5 11:53:48 2022
 
  

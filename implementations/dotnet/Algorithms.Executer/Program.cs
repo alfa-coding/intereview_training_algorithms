@@ -198,7 +198,71 @@ namespace Algorithms.Executer
 
             #endregion
 
+            #region CalculateRain 
 
+            System.Console.WriteLine("----------Calculating Rain---------------");
+           
+            int []walls1 = {0};
+            int amount1 = Training.CalculateRain(walls1);
+            System.Console.WriteLine($"For walls 1 expected: 0, got {amount1}");
+
+            int []walls2 = {0,1};
+            int amount2 = Training.CalculateRain(walls2);
+            System.Console.WriteLine($"For walls 2 expected: 0, got {amount2}");
+
+            int []walls3 = {1,0};
+            int amount3 = Training.CalculateRain(walls3);
+            System.Console.WriteLine($"For walls 3 expected: 0, got {amount3}");
+
+            //valley
+            int []walls4 = {1,0,1};
+            int amount4 = Training.CalculateRain(walls4);
+            System.Console.WriteLine($"For walls 4 expected: 1, got {amount4}");
+
+
+            //peek
+            int []walls5 = {1,2,1};
+            int amount5 = Training.CalculateRain(walls5);
+            System.Console.WriteLine($"For walls 5 expected: 0, got {amount5}");
+
+            //basic hypotesis
+            int []walls6 = {2,1,0,3};
+            int amount6 = Training.CalculateRain(walls6);
+            System.Console.WriteLine($"For walls 6 expected: 3, got {amount6}");
+
+            //basic hypotesis
+            int []walls7 = {3,1,0,2,0,4};
+            int amount7 = Training.CalculateRain(walls7);
+            System.Console.WriteLine($"For walls 7 expected: 9, got {amount7}");
+
+            //basic hypotesis with center
+            int []walls8 = {3,1,0,9,0,4};
+            int amount8 = Training.CalculateRain(walls8);
+            System.Console.WriteLine($"For walls 8 expected: 9, got {amount8}");
+
+            //real testCase left
+            int []walls9 = {0,1,0,1,2,2,1,1,4};
+            int amount9 = Training.CalculateRain(walls9);
+            System.Console.WriteLine($"For walls 9 expected: 3, got {amount9}");
+
+            //real testCase right
+            int []walls10 = {4,3,1,0,2,1,5};
+            int amount10 = Training.CalculateRain(walls10);
+            System.Console.WriteLine($"For walls 10 expected: 13, got {amount10}");
+
+            //real testCase full
+            int []walls11 = {0,1,0,1,2,2,1,1,4,3,1,0,2,1,5};
+            int amount11 = Training.CalculateRain(walls11);
+            System.Console.WriteLine($"For walls 11 expected: 16, got {amount11}");
+
+            //real testCase video
+            int []walls12 = {0,1,0,2,1,0,3,1,0,1,2};
+            int amount12 = Training.CalculateRain(walls12);
+            System.Console.WriteLine($"For walls 12 expected: 8, got {amount12}");
+
+
+
+            #endregion
 
             #endregion
             System.Console.WriteLine("Bye World");
