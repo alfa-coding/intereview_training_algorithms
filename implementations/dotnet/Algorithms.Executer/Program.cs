@@ -155,28 +155,28 @@ namespace Algorithms.Executer
                 myAVL.Insert(i);
             }
 
-            PrintVector(myAVL,"Printing elements in AVL");
+            PrintVector(myAVL, "Printing elements in AVL");
             #endregion
 
             #region ConcatenationExcersise
 
-            string [] words1 = {"d","c","b"};
+            string[] words1 = { "d", "c", "b" };
             int longestConctatResult1 = Training.LongestConctatString(words1);
             System.Console.WriteLine($"The longest cancat is: {longestConctatResult1}, expected:3");
 
-            string [] words2 = {"ab","b","cd","ef"};
+            string[] words2 = { "ab", "b", "cd", "ef" };
             int longestConctatResult2 = Training.LongestConctatString(words2);
             System.Console.WriteLine($"The longest cancat is: {longestConctatResult2}, expected:6");
 
-            string [] words3 = {"ab","bruto","cd","ef"};
+            string[] words3 = { "ab", "bruto", "cd", "ef" };
             int longestConctatResult3 = Training.LongestConctatString(words3);
             System.Console.WriteLine($"The longest cancat is: {longestConctatResult3}, expected:9");
 
-            string [] words4 = {"ab","ab","ab","ab"};
+            string[] words4 = { "ab", "ab", "ab", "ab" };
             int longestConctatResult4 = Training.LongestConctatString(words4);
             System.Console.WriteLine($"The longest cancat is: {longestConctatResult4}, expected:0");
 
-            string [] words5 = {"ban","ryan","andy","dian"};
+            string[] words5 = { "ban", "ryan", "andy", "dian" };
             int longestConctatResult5 = Training.LongestConctatString(words5);
             System.Console.WriteLine($"The longest cancat is: {longestConctatResult5}, expected:0");
 
@@ -184,16 +184,16 @@ namespace Algorithms.Executer
 
             #region TargetSum
 
-            int [] numbers = {9,1,7,3,2};
-            var resultingPositions = Training.TargetSum(numbers,11);
+            int[] numbers = { 9, 1, 7, 3, 2 };
+            var resultingPositions = Training.TargetSum(numbers, 11);
             System.Console.WriteLine($"The resulting positions are: {resultingPositions.Item1} & {resultingPositions.Item2}");
 
-            int [] numbers2 = {3,2,4};
-            var resultingPositions2 = Training.TargetSum(numbers2,6);
+            int[] numbers2 = { 3, 2, 4 };
+            var resultingPositions2 = Training.TargetSum(numbers2, 6);
             System.Console.WriteLine($"The resulting positions are: {resultingPositions2.Item1} & {resultingPositions2.Item2}");
 
-             int [] numbers3 = {3,3};
-            var resultingPositions3 = Training.TargetSum(numbers3,6);
+            int[] numbers3 = { 3, 3 };
+            var resultingPositions3 = Training.TargetSum(numbers3, 6);
             System.Console.WriteLine($"The resulting positions are: {resultingPositions3.Item1} & {resultingPositions3.Item2}");
 
             #endregion
@@ -201,70 +201,93 @@ namespace Algorithms.Executer
             #region CalculateRain 
 
             System.Console.WriteLine("----------Calculating Rain---------------");
-           
-            int []walls1 = {0};
+
+            int[] walls1 = { 0 };
             int amount1 = Training.CalculateRain(walls1);
             System.Console.WriteLine($"For walls 1 expected: 0, got {amount1}");
 
-            int []walls2 = {0,1};
+            int[] walls2 = { 0, 1 };
             int amount2 = Training.CalculateRain(walls2);
             System.Console.WriteLine($"For walls 2 expected: 0, got {amount2}");
 
-            int []walls3 = {1,0};
+            int[] walls3 = { 1, 0 };
             int amount3 = Training.CalculateRain(walls3);
             System.Console.WriteLine($"For walls 3 expected: 0, got {amount3}");
 
             //valley
-            int []walls4 = {1,0,1};
+            int[] walls4 = { 1, 0, 1 };
             int amount4 = Training.CalculateRain(walls4);
             System.Console.WriteLine($"For walls 4 expected: 1, got {amount4}");
 
 
             //peek
-            int []walls5 = {1,2,1};
+            int[] walls5 = { 1, 2, 1 };
             int amount5 = Training.CalculateRain(walls5);
             System.Console.WriteLine($"For walls 5 expected: 0, got {amount5}");
 
             //basic hypotesis
-            int []walls6 = {2,1,0,3};
+            int[] walls6 = { 2, 1, 0, 3 };
             int amount6 = Training.CalculateRain(walls6);
             System.Console.WriteLine($"For walls 6 expected: 3, got {amount6}");
 
             //basic hypotesis
-            int []walls7 = {3,1,0,2,0,4};
+            int[] walls7 = { 3, 1, 0, 2, 0, 4 };
             int amount7 = Training.CalculateRain(walls7);
             System.Console.WriteLine($"For walls 7 expected: 9, got {amount7}");
 
             //basic hypotesis with center
-            int []walls8 = {3,1,0,9,0,4};
+            int[] walls8 = { 3, 1, 0, 9, 0, 4 };
             int amount8 = Training.CalculateRain(walls8);
             System.Console.WriteLine($"For walls 8 expected: 9, got {amount8}");
 
             //real testCase left
-            int []walls9 = {0,1,0,1,2,2,1,1,4};
+            int[] walls9 = { 0, 1, 0, 1, 2, 2, 1, 1, 4 };
             int amount9 = Training.CalculateRain(walls9);
             System.Console.WriteLine($"For walls 9 expected: 3, got {amount9}");
 
             //real testCase right
-            int []walls10 = {4,3,1,0,2,1,5};
+            int[] walls10 = { 4, 3, 1, 0, 2, 1, 5 };
             int amount10 = Training.CalculateRain(walls10);
             System.Console.WriteLine($"For walls 10 expected: 13, got {amount10}");
 
             //real testCase full
-            int []walls11 = {0,1,0,1,2,2,1,1,4,3,1,0,2,1,5};
+            int[] walls11 = { 0, 1, 0, 1, 2, 2, 1, 1, 4, 3, 1, 0, 2, 1, 5 };
             int amount11 = Training.CalculateRain(walls11);
             System.Console.WriteLine($"For walls 11 expected: 16, got {amount11}");
 
             //real testCase video
-            int []walls12 = {0,1,0,2,1,0,3,1,0,1,2};
+            int[] walls12 = { 0, 1, 0, 2, 1, 0, 3, 1, 0, 1, 2 };
             int amount12 = Training.CalculateRain(walls12);
             System.Console.WriteLine($"For walls 12 expected: 8, got {amount12}");
 
             //from leetcode
-            int []walls13 = {0,1,0,2,1,0,1,3,2,1,2,1};
+            int[] walls13 = { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 };
             int amount13 = Training.CalculateRain(walls13);
             System.Console.WriteLine($"For walls 13 expected: 6, got {amount13}");
             #endregion
+
+            #region Typed Out Strings
+
+            System.Console.WriteLine("-----------Typed Out Strings-----------");
+            List<Tuple<string, string, bool>> pairs = new List<Tuple<string, string, bool>>()
+            {
+                //new Tuple<string, string,bool>("ab#z","az#z",true),
+                //new Tuple<string, string,bool>("abc#d","acc#c",false),
+                //new Tuple<string, string,bool>("x#y#z#","a#",true),
+                //new Tuple<string, string,bool>("a###b","b",true),
+                //new Tuple<string, string,bool>("Ab#z","ab#z",false),
+                new Tuple<string, string,bool>("isfcow#","isfco#w#",false)
+            };
+
+            foreach (var item in pairs)
+            {
+                Console.WriteLine($"For pair {item.Item1}&{item.Item2}" +
+                                  $" expected: {item.Item3}," +
+                                  $" got {Training.TypedOutStrings(item.Item1, item.Item2)}");
+            }
+
+            #endregion
+
 
             #endregion
             System.Console.WriteLine("Bye World");

@@ -4,8 +4,106 @@ using System.Linq;
 
 namespace Algorithms.Library
 {
+
     public class Training
     {
+        public class Node
+        {
+            public int val;
+            public IList<Node> children;
+
+            public Node() { }
+
+            public Node(int _val)
+            {
+                val = _val;
+            }
+
+            public Node(int _val, IList<Node> _children)
+            {
+                val = _val;
+                children = _children;
+            }
+        }
+
+        public static IList<IList<int>> LevelOrder(Node root)
+        {
+
+            Queue<Node> queue = new Queue<Node>();
+            queue.Enqueue(root);
+            List<IList<int>> response = new List<IList<int>>();
+            response.Add(new List<int>() { root.val });
+            while (queue.Count != 0)
+            {
+
+                int size = queue.Count;
+
+                List<int> level = new List<int>();
+
+                for (int i = 0; i < size; i++)
+                {
+                    Node tmp = queue.Dequeue();
+                    level.Add(tmp.val);
+                    foreach (var child in tmp.children)
+                    {
+                        queue.Enqueue(child);
+
+                    }
+                }
+                response.Add(level);
+
+
+
+
+            }
+
+            return response;
+        }
+
+        public static bool TypedOutStrings(string a, string b)
+        {
+            char[] aCleaned = new char[a.Length];
+            char[] bCleaned = new char[b.Length];
+
+            int indexA = 0;
+            int indexB = 0;
+
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (a[i] == '#' && indexA > 0)
+                {
+                    indexA--;
+                }
+                if (a[i] != '#')
+                {
+                    aCleaned[indexA++] = a[i];
+                }
+            }
+
+            for (int i = 0; i < b.Length; i++)
+            {
+                if (b[i] == '#' && indexB > 0)
+                {
+                    indexB--;
+                }
+                if (b[i] != '#')
+                {
+                    bCleaned[indexB++] = b[i];
+                }
+            }
+            if (indexA != indexB)
+            {
+                return false;
+            }
+            for (int i = 0; i < Math.Min(indexA, indexB); i++)
+            {
+                if (aCleaned[i] != bCleaned[i])
+                    return false;
+            }
+            return true;
+
+
+        }
 
         public static int CalculateRain(int[] numbers)
         {
@@ -14,6 +112,8 @@ namespace Algorithms.Library
 
         }
 
+
+        //O(n)
         private static int CalculateRainHelperLinear(int start, int end, int[] numbers)
         {
             int totalAmount = 0;
