@@ -5,25 +5,65 @@ using System.Linq;
 namespace Algorithms.Library
 {
 
+    public class Node
+    {
+        public int val;
+        public IList<Node> children;
+
+        public Node() { }
+
+        public Node(int _val)
+        {
+            val = _val;
+        }
+
+        public Node(int _val, IList<Node> _children)
+        {
+            val = _val;
+            children = _children;
+        }
+    }
+
+    public class TreeNode
+    {
+        public int val;
+        public TreeNode left;
+        public TreeNode right;
+        public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
+        {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
     public class Training
     {
-        public class Node
+        public TreeNode PruneTree(TreeNode root)
         {
-            public int val;
-            public IList<Node> children;
+            return HasOnes(root)?root:null;
+        }
 
-            public Node() { }
-
-            public Node(int _val)
+        private bool HasOnes(TreeNode root)
+        {
+            if (root is null)
             {
-                val = _val;
+                return false;
             }
 
-            public Node(int _val, IList<Node> _children)
+            bool leftHasOnes = HasOnes(root.left);
+            if (!leftHasOnes)
             {
-                val = _val;
-                children = _children;
+                root.left = null;
             }
+            bool rightHasOnes = HasOnes(root.right);
+            if (!rightHasOnes)
+            {
+                root.right = null;
+            }
+
+
+
+            return root.val==1 || leftHasOnes || rightHasOnes;
         }
 
         public static IList<IList<int>> LevelOrder(Node root)
@@ -32,7 +72,6 @@ namespace Algorithms.Library
             Queue<Node> queue = new Queue<Node>();
             queue.Enqueue(root);
             List<IList<int>> response = new List<IList<int>>();
-            response.Add(new List<int>() { root.val });
             while (queue.Count != 0)
             {
 
