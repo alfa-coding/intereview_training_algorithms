@@ -38,9 +38,55 @@ namespace Algorithms.Library
     }
     public class Training
     {
+
+        //Construct String from Binary Tree, pruning extra parenthesis
+        public string Tree2str(TreeNode root)
+        {
+            string response = Tree2strHelper(root);
+            response = response.Substring(1, response.Length - 2);
+
+            string final = PostProcessResponse(response, lastStable: response);
+            return final;
+
+        }
+        public static string PostProcesser(string response)
+        {
+            string final = PostProcessResponse(response, lastStable: response);
+            return final;
+        }
+        private static string PostProcessResponse(string response, string lastStable)
+        {
+            string candidate = response.Replace("()()", "");
+            candidate = candidate.Replace(")())", "))");
+            candidate = candidate.EndsWith("()") ? candidate.Substring(0, candidate.Length - 2) : candidate;
+            if (candidate.GetHashCode().CompareTo(lastStable.GetHashCode()) == 0)
+            {
+                return lastStable;
+            }
+            return PostProcessResponse(candidate, response);
+        }
+
+        public string Tree2strHelper(TreeNode current)
+        {
+            if (current is null) return ")";
+
+
+            else
+            {
+                string formed = $"({current.val}";
+                if (current.left is null) formed += "(";
+                formed += Tree2strHelper(current.left);
+                if (current.right is null) formed += "(";
+                formed += Tree2strHelper(current.right);
+
+                return formed + ")";
+
+
+            }
+        }
         public TreeNode PruneTree(TreeNode root)
         {
-            return HasOnes(root)?root:null;
+            return HasOnes(root) ? root : null;
         }
 
         private bool HasOnes(TreeNode root)
@@ -63,7 +109,7 @@ namespace Algorithms.Library
 
 
 
-            return root.val==1 || leftHasOnes || rightHasOnes;
+            return root.val == 1 || leftHasOnes || rightHasOnes;
         }
 
         public static IList<IList<int>> LevelOrder(Node root)

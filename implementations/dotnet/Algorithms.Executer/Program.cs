@@ -112,7 +112,8 @@ namespace Algorithms.Executer
             System.Console.WriteLine($"BST Balace Factor is: {binarySearchTree.BalanceFactor}");
 
             PrintVector(binarySearchTree, "Elements in order from BST");
-
+            
+            #endregion
 
             #region TestingBasicRotation
             BSTNode<int> i1a = new BSTNode<int>(null, null, 1);
@@ -285,11 +286,34 @@ namespace Algorithms.Executer
                                   $" expected: {item.Item3}," +
                                   $" got {Training.TypedOutStrings(item.Item1, item.Item2)}");
             }
+            #endregion
+
+
+            #region TreePreOrderParenthesis
+            //"1(2(3(4(5(6()())())())())())()" -> "1(2(3(4(5(6)))))"
+            //"1(2(4()())())(3()())" ->"1(2(4))(3)"
+            //"1(2()(4()()))(3()())" -> "1(2()(4))(3)"
+            System.Console.WriteLine("-----------Simplified Parenthesis Strings-----------");
+            List<Tuple<string, string>> parenthesis = new List<Tuple<string, string>>()
+            {
+             new Tuple<string, string>("1(2(3(4(5(6()())())())())())()","1(2(3(4(5(6)))))"),
+             new Tuple<string, string>("1(2(4()())())(3()())","1(2(4))(3)"),
+             new Tuple<string, string>("1(2()(4()()))(3()())" ,"1(2()(4))(3)"),
+
+            };
+
+            foreach (var item in parenthesis)
+            {
+                string resulted = Training.PostProcesser(item.Item1);
+                System.Console.WriteLine($"For 1st {item.Item1}" +
+                                  $" expected: {item.Item2}," +
+                                  $" got {resulted}, which is correct:{resulted==item.Item2}");
+            }
 
             #endregion
 
 
-            #endregion
+            
             System.Console.WriteLine("Bye World");
 
         }
