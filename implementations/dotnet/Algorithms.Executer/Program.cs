@@ -290,9 +290,7 @@ namespace Algorithms.Executer
 
 
             #region TreePreOrderParenthesis
-            //"1(2(3(4(5(6()())())())())())()" -> "1(2(3(4(5(6)))))"
-            //"1(2(4()())())(3()())" ->"1(2(4))(3)"
-            //"1(2()(4()()))(3()())" -> "1(2()(4))(3)"
+            
             System.Console.WriteLine("-----------Simplified Parenthesis Strings-----------");
             List<Tuple<string, string>> parenthesis = new List<Tuple<string, string>>()
             {
