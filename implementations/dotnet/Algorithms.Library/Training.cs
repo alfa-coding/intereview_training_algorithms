@@ -38,6 +38,35 @@ namespace Algorithms.Library
     }
     public class Training
     {
+        public IList<int> InorderTraversal(TreeNode root)
+        {
+            if (root is null) return new List<int>();
+            Stack<TreeNode> stack = new Stack<TreeNode>();
+            List<int> response = new List<int>();
+
+            TreeNode node = root;
+            while (node != null || stack.Count != 0)
+            {
+                while (node is not null)
+                {
+                    stack.Push(node);
+                    node = node.left;
+                }
+                if (stack.Count > 0)
+                {
+                    node = stack.Pop();
+                }
+
+                response.Add(node.val);
+
+
+                node = node.right;
+
+
+            }
+
+            return response;
+        }
 
         //Construct String from Binary Tree, pruning extra parenthesis
         public string Tree2str(TreeNode root)
