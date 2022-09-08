@@ -310,7 +310,26 @@ namespace Algorithms.Executer
 
             #endregion
 
+            #region Reversing Numbers
+            System.Console.WriteLine("-----------Reversing numbers-----------");
+            List<Tuple<int, int>> pairOfNumbers = new List<Tuple<int, int>>()
+            {
+             new Tuple<int, int>(1534236469,0),
+             new Tuple<int, int>(-2147483412,-2143847412),
+             new Tuple<int, int>(1463847412,2147483641)
 
+
+            };
+
+            foreach (var item in pairOfNumbers)
+            {
+                int resulted = Training.Reverse(item.Item1);
+                System.Console.WriteLine($"For 1st {item.Item1}" +
+                                  $" expected: {item.Item2}," +
+                                  $" got {resulted}, which is correct:{resulted==item.Item2}");
+            }
+
+            #endregion
             
             System.Console.WriteLine("Bye World");
 

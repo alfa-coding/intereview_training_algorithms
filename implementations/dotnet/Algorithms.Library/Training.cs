@@ -38,6 +38,59 @@ namespace Algorithms.Library
     }
     public class Training
     {
+        public static int Reverse(int x)
+        {
+
+            long total = 0;
+            int sign = x < 0 ? -1 : 1;
+            int maxPositive = Int32.MaxValue;
+            long maxNegative = (long)Int32.MaxValue + 1;
+            long prefix =0;
+
+            if (sign > 0 && x >= maxPositive)
+                return 0;
+            if (sign < 0 && (long)Math.Abs((long)x)>= maxNegative)
+                return 0;
+            int exponent = (int)Math.Log((long)Math.Abs(x), 10);
+            int lastDigit = 0;
+            if (x > 0)
+            {
+                while (x > 0)
+                {
+                    lastDigit = x % 10;
+                    prefix = lastDigit * (long)Math.Pow(10, exponent--);
+                    if (prefix >= maxPositive || prefix < 0)
+                        return 0;
+                    total = prefix + total ;
+                    x = x / 10;
+                    if (total >= maxPositive || total < 0)
+                        return 0;
+
+                }
+                return (int)total;
+            }
+            else
+            {
+                while (x < 0)
+                {
+                    lastDigit = -1 * (x % 10);
+                    prefix = lastDigit * (long)Math.Pow(10, exponent--);
+                    if (prefix >= maxNegative || prefix < 0)
+                        return 0;
+                    total = -1*prefix + total ;
+
+                    x = x / 10;
+                    if (total <= Int32.MinValue )
+                        return 0;
+
+                }
+            }
+
+
+
+            return (int)total;
+
+        }
         public IList<int> InorderTraversal(TreeNode root)
         {
             if (root is null) return new List<int>();
