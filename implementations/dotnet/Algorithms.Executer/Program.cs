@@ -371,6 +371,14 @@ namespace Algorithms.Executer
             bool isPath = Training.HasPathUndirectedGraph(undirectedGraph,'j','m');
             System.Console.WriteLine($"Has path, returned {isPath}, expected {true}");
             #endregion
+
+            #region LengthLongestSubStr
+            System.Console.WriteLine("------------LengthLongestSubStr---------------");
+
+            int gottenLength = Training.LengthOfLongestSubstring("dvdf");
+            System.Console.WriteLine($"for {"dvdf"} got: {gottenLength},expected {3}");
+
+            #endregion
             System.Console.WriteLine("Bye World");
 
         }

@@ -39,6 +39,50 @@ namespace Algorithms.Library
     public class Training
     {
 
+        //longest substring with no repeating chars
+        public static int LengthOfLongestSubstring(string s)
+        {
+            if (s.Length == 0 || s.Length == 1)
+            {
+                return s.Length;
+            }
+            int p1 = 0;
+            int p2 = 1;
+            Dictionary<char, bool> formed = new Dictionary<char, bool>();
+            formed.Add(s[p1], true);
+            int maxLength = 0;
+            char lookUp;
+            while (p1 < p2 && p2<s.Length)
+            {
+                lookUp = s[p2];
+                if (!formed.ContainsKey(lookUp))
+                {
+                    formed.Add(lookUp, true);
+                    p2++;
+
+                }
+                else
+                {
+                    int diff = formed.Keys.Count;
+                    if (diff > maxLength)
+                    {
+                        maxLength = diff;
+
+                    }
+                    formed.Clear();
+                    p1 = p1+1;
+                    formed.Add(s[p1], true);
+                    p2 = p1 + 1;
+
+                }
+
+
+            }
+            return Math.Max(maxLength, formed.Keys.Count);
+        }
+
+
+
         //weak characters
         public int NumberOfWeakCharacters(int[][] properties)
         {
