@@ -38,6 +38,19 @@ namespace Algorithms.Library
     }
     public class Training
     {
+        public static void DFSRecursive<T>(T source, DirectedAsyclicGraph<T> graph)
+        {
+            System.Console.WriteLine(source);
+
+            foreach (var neighbor in graph.AdjacencyList[source])
+            {
+                DFSRecursive(neighbor,graph);
+            }
+        }
+        public static void DFSStackBased<T>(T source, DirectedAsyclicGraph<T> graph)
+        {
+
+        }
         public static int Reverse(int x)
         {
 

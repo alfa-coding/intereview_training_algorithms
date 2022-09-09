@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Algorithms.Library;
 
 namespace Algorithms.Executer
@@ -112,7 +113,7 @@ namespace Algorithms.Executer
             System.Console.WriteLine($"BST Balace Factor is: {binarySearchTree.BalanceFactor}");
 
             PrintVector(binarySearchTree, "Elements in order from BST");
-            
+
             #endregion
 
             #region TestingBasicRotation
@@ -290,7 +291,7 @@ namespace Algorithms.Executer
 
 
             #region TreePreOrderParenthesis
-            
+
             System.Console.WriteLine("-----------Simplified Parenthesis Strings-----------");
             List<Tuple<string, string>> parenthesis = new List<Tuple<string, string>>()
             {
@@ -305,7 +306,7 @@ namespace Algorithms.Executer
                 string resulted = Training.PostProcesser(item.Item1);
                 System.Console.WriteLine($"For 1st {item.Item1}" +
                                   $" expected: {item.Item2}," +
-                                  $" got {resulted}, which is correct:{resulted==item.Item2}");
+                                  $" got {resulted}, which is correct:{resulted == item.Item2}");
             }
 
             #endregion
@@ -326,11 +327,30 @@ namespace Algorithms.Executer
                 int resulted = Training.Reverse(item.Item1);
                 System.Console.WriteLine($"For 1st {item.Item1}" +
                                   $" expected: {item.Item2}," +
-                                  $" got {resulted}, which is correct:{resulted==item.Item2}");
+                                  $" got {resulted}, which is correct:{resulted == item.Item2}");
             }
 
             #endregion
-            
+
+            #region DirectedAsyclicGraph
+
+            DirectedAsyclicGraph<char> graph = new DirectedAsyclicGraph<char>()
+            {
+                AdjacencyList = new Dictionary<char, List<char>>()
+                {
+                    {'a',new List<char>{'c','b'}},
+                    {'b',new List<char>{'d'}},
+                    {'c',new List<char>{'e'}},
+                    {'d',new List<char>{'f'}},
+                    {'e',new List<char>()},
+                    {'f',new List<char>()},
+                }
+            };
+
+            Training.DFSRecursive('a',graph);
+
+            #endregion
+
             System.Console.WriteLine("Bye World");
 
         }
