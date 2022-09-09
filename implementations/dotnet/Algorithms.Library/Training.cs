@@ -38,6 +38,25 @@ namespace Algorithms.Library
     }
     public class Training
     {
+
+        //weak characters
+        public int NumberOfWeakCharacters(int[][] properties)
+        {
+            int total = 0;
+            //si ataques iguales, ordena por defensa
+            Array.Sort(properties, (par1, par2) => par2[0] == par1[0] ? par1[1] - par2[1] : par2[0] - par1[0]);
+
+            //Como eran menores, que el mayor que habia encontrado, no he de recontarlos
+            //actualizar el mayor
+            int md = 0;
+            foreach (int[] prop in properties)
+            {
+                if (prop[1] < md) total++;
+                md = Math.Max(md, prop[1]);
+            }
+            return total;
+        }
+
         public static void DFSRecursive<T>(T source, DirectedAsyclicGraph<T> graph)
         {
             System.Console.WriteLine(source);
@@ -530,7 +549,7 @@ namespace Algorithms.Library
             {
                 if (!visited.ContainsKey(neighborg))
                 {
-                    visited.Add(neighborg,true);
+                    visited.Add(neighborg, true);
                     bool hasPath = HasPathUndirectedGraphHelper(undirectedGraph, neighborg, destination, visited);
                     if (hasPath)
                     {
