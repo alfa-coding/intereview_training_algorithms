@@ -347,10 +347,12 @@ namespace Algorithms.Executer
                 }
             };
 
-            System.Console.WriteLine("--------Recursively-------");
+            System.Console.WriteLine("--------DFS Recursively-------");
             Training.DFSRecursive('a',graph);
-            System.Console.WriteLine("--------Iteratively-------");
+            System.Console.WriteLine("--------DFS Iteratively-------");
             Training.DFSStackBased('a',graph);
+            System.Console.WriteLine("--------BFS Iteratively-------");
+            Training.BFSQueueBased('a',graph);
 
 
             #endregion

@@ -63,6 +63,23 @@ namespace Algorithms.Library
             }
 
         }
+
+        public static void BFSQueueBased<T>(T source, DirectedAsyclicGraph<T> graph)
+        {
+            Queue<T> stack = new Queue<T>();
+            stack.Enqueue(source);
+            while (stack.Count!=0)
+            {
+                T current = stack.Dequeue();
+                System.Console.WriteLine(current);
+
+                foreach (var neighbor in graph.AdjacencyList[current])
+                {
+                    stack.Enqueue(neighbor);
+                }
+            }
+
+        }
         public static int Reverse(int x)
         {
 
