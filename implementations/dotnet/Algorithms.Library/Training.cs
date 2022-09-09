@@ -44,14 +44,14 @@ namespace Algorithms.Library
 
             foreach (var neighbor in graph.AdjacencyList[source])
             {
-                DFSRecursive(neighbor,graph);
+                DFSRecursive(neighbor, graph);
             }
         }
         public static void DFSStackBased<T>(T source, DirectedAsyclicGraph<T> graph)
         {
             Stack<T> stack = new Stack<T>();
             stack.Push(source);
-            while (stack.Count!=0)
+            while (stack.Count != 0)
             {
                 T current = stack.Pop();
                 System.Console.WriteLine(current);
@@ -68,7 +68,7 @@ namespace Algorithms.Library
         {
             Queue<T> stack = new Queue<T>();
             stack.Enqueue(source);
-            while (stack.Count!=0)
+            while (stack.Count != 0)
             {
                 T current = stack.Dequeue();
                 System.Console.WriteLine(current);
@@ -87,11 +87,11 @@ namespace Algorithms.Library
             int sign = x < 0 ? -1 : 1;
             int maxPositive = Int32.MaxValue;
             long maxNegative = (long)Int32.MaxValue + 1;
-            long prefix =0;
+            long prefix = 0;
 
             if (sign > 0 && x >= maxPositive)
                 return 0;
-            if (sign < 0 && (long)Math.Abs((long)x)>= maxNegative)
+            if (sign < 0 && (long)Math.Abs((long)x) >= maxNegative)
                 return 0;
             int exponent = (int)Math.Log((long)Math.Abs(x), 10);
             int lastDigit = 0;
@@ -103,7 +103,7 @@ namespace Algorithms.Library
                     prefix = lastDigit * (long)Math.Pow(10, exponent--);
                     if (prefix >= maxPositive || prefix < 0)
                         return 0;
-                    total = prefix + total ;
+                    total = prefix + total;
                     x = x / 10;
                     if (total >= maxPositive || total < 0)
                         return 0;
@@ -119,10 +119,10 @@ namespace Algorithms.Library
                     prefix = lastDigit * (long)Math.Pow(10, exponent--);
                     if (prefix >= maxNegative || prefix < 0)
                         return 0;
-                    total = -1*prefix + total ;
+                    total = -1 * prefix + total;
 
                     x = x / 10;
-                    if (total <= Int32.MinValue )
+                    if (total <= Int32.MinValue)
                         return 0;
 
                 }
@@ -514,6 +514,33 @@ namespace Algorithms.Library
                 return maxLengh;
             }
 
+        }
+
+        public static bool HasPathUndirectedGraph<T>(UndirectedGraph<T> undirectedGraph, T source, T destination)
+        {
+            return HasPathUndirectedGraphHelper(undirectedGraph, source, destination, new Dictionary<T, bool>());
+        }
+        public static bool HasPathUndirectedGraphHelper<T>(UndirectedGraph<T> undirectedGraph, T source, T destination, Dictionary<T, bool> visited)
+        {
+            if (source.GetHashCode().CompareTo(destination.GetHashCode()) == 0)
+            {
+                return true;
+            }
+            foreach (var neighborg in undirectedGraph.AdjacencyList[source])
+            {
+                if (!visited.ContainsKey(neighborg))
+                {
+                    visited.Add(neighborg,true);
+                    bool hasPath = HasPathUndirectedGraphHelper(undirectedGraph, neighborg, destination, visited);
+                    if (hasPath)
+                    {
+                        return true;
+                    }
+                }
+
+            }
+
+            return false;
         }
 
         private static bool NotRepeatedCharacters(string concatenationCandidate)

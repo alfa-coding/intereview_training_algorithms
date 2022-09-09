@@ -357,6 +357,20 @@ namespace Algorithms.Executer
 
             #endregion
 
+            #region UndirectedGraphWithEdges
+            List<Tuple<char,char>> edges = new List<Tuple<char, char>>()
+            {
+                new Tuple<char, char>('i','j'),
+                new Tuple<char, char>('k','i'),
+                new Tuple<char, char>('m','k'),
+                new Tuple<char, char>('k','l'),
+                new Tuple<char, char>('o','n'),
+
+            };
+            UndirectedGraph<char> undirectedGraph = new UndirectedGraph<char>(edges,true);
+            bool isPath = Training.HasPathUndirectedGraph(undirectedGraph,'j','m');
+            System.Console.WriteLine($"Has path, returned {isPath}, expected {true}");
+            #endregion
             System.Console.WriteLine("Bye World");
 
         }

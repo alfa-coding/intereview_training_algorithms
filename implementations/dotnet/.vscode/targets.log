@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Sep  9 10:36:03 2022
+# Make data base, printed on Fri Sep  9 20:35:27 2022
 
 # Variables
 
@@ -87,7 +87,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 2516
+VSCODE_PID = 15494
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -175,7 +175,7 @@ MANAGERPID = 1272
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2498
+GIO_LAUNCHED_DESKTOP_FILE_PID = 15477
 # environment
 _ = /usr/bin/make
 # environment
@@ -296,9 +296,10 @@ restore:
 # strcache buffers: 1 (0) / strings = 16 / storage = 157 B / avg = 9 B
 # current buf: size = 8162 B / used = 157 B / count = 16 / avg = 9 B
 
+ 
 # strcache performance: lookups = 24 / hit rate = 33%
 # hash-table stats:
 # Load=16/8192=0%, Rehash=0, Collisions=0/24=0%
-# Finished Make data base on Fri Sep  9 10:36:03 2022
+# Finished Make data base on Fri Sep  9 20:35:27 2022
 
  
