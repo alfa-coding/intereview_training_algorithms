@@ -347,7 +347,11 @@ namespace Algorithms.Executer
                 }
             };
 
+            System.Console.WriteLine("--------Recursively-------");
             Training.DFSRecursive('a',graph);
+            System.Console.WriteLine("--------Iteratively-------");
+            Training.DFSStackBased('a',graph);
+
 
             #endregion
 

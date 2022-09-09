@@ -49,6 +49,18 @@ namespace Algorithms.Library
         }
         public static void DFSStackBased<T>(T source, DirectedAsyclicGraph<T> graph)
         {
+            Stack<T> stack = new Stack<T>();
+            stack.Push(source);
+            while (stack.Count!=0)
+            {
+                T current = stack.Pop();
+                System.Console.WriteLine(current);
+
+                foreach (var neighbor in graph.AdjacencyList[current])
+                {
+                    stack.Push(neighbor);
+                }
+            }
 
         }
         public static int Reverse(int x)
