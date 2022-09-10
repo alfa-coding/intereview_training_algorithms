@@ -38,6 +38,41 @@ namespace Algorithms.Library
     }
     public class Training
     {
+        //find if path in graph exist
+        public static bool ValidPath(int n, int[][] edges, int source, int destination)
+        {
+            Dictionary<int, List<int>> adjancencyList = new Dictionary<int, List<int>>();
+            for (int i = 0; i < n; i++)
+                if (!adjancencyList.ContainsKey(i)) adjancencyList.Add(i, new List<int>());
+            foreach (var conn in edges)
+            {
+                if (!adjancencyList.ContainsKey(conn[0])) adjancencyList.Add(conn[0], new List<int>());
+                if (!adjancencyList.ContainsKey(conn[1])) adjancencyList.Add(conn[1], new List<int>());
+
+                adjancencyList[conn[0]].Add(conn[1]);
+                adjancencyList[conn[1]].Add(conn[0]);
+            }
+
+            HashSet<int> visited = new HashSet<int>();
+            return ValidPathHelper(adjancencyList, source, destination, visited);
+        }
+        public static bool ValidPathHelper(Dictionary<int, List<int>> adjancencyList, int source, int destination, HashSet<int> visited)
+        {
+            if (source == destination)
+                return true;
+            foreach (var neighborg in adjancencyList[source])
+            {
+                if (!visited.Contains(neighborg))
+                {
+                    visited.Add(neighborg);
+                    bool hasPath = ValidPathHelper(adjancencyList, neighborg, destination, visited);
+                    if (hasPath)
+                        return true;
+
+                }
+            }
+            return false;
+        }
         //center of star graph-> easy
         public static int FindCenter(int[][] edges)
         {
