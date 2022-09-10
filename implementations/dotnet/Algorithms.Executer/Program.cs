@@ -391,6 +391,12 @@ namespace Algorithms.Executer
             System.Console.WriteLine($"for {"3,2,6,5,0,3"} got: {case2Exp},expected {7}");
 
             #endregion
+
+            #region TownJudge
+            int gottenJudge = Training.FindJudge(2,new int[][]{new int[]{1,2}});
+            System.Console.WriteLine($"for {"{{1,2}}"} got: {gottenJudge},expected {2}");
+
+            #endregion
             System.Console.WriteLine("Bye World");
 
         }

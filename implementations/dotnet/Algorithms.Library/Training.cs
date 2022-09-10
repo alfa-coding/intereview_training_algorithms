@@ -38,6 +38,34 @@ namespace Algorithms.Library
     }
     public class Training
     {
+        //find the town judge
+        public static int FindJudge(int n, int[][] trust)
+        {
+            Dictionary<int, List<int>> AdjacencyList = new Dictionary<int, List<int>>();
+            Dictionary<int, List<int>> inverseAdjList = new Dictionary<int, List<int>>();
+            if (trust.Length == 0 && n > 1) return -1;
+            if (trust.Length == 0) return 1;
+
+
+            foreach (var connection in trust)
+            {
+                if (!AdjacencyList.ContainsKey(connection[0])) { AdjacencyList.Add(connection[0], new List<int>()); }
+                if (!AdjacencyList.ContainsKey(connection[1])) { AdjacencyList.Add(connection[1], new List<int>()); }
+                AdjacencyList[connection[0]].Add(connection[1]);
+
+                if (!inverseAdjList.ContainsKey(connection[0])) { inverseAdjList.Add(connection[0], new List<int>()); }
+                if (!inverseAdjList.ContainsKey(connection[1])) { inverseAdjList.Add(connection[1], new List<int>()); }
+                inverseAdjList[connection[1]].Add(connection[0]);
+            }
+
+            int suspect = AdjacencyList.Keys.FirstOrDefault(k => AdjacencyList[k].Count == 0);
+            int confirm = inverseAdjList.Keys.FirstOrDefault(k => inverseAdjList[k].Count == AdjacencyList.Keys.Count - 1);
+
+            return suspect == confirm && suspect != 0 ? confirm : -1;
+
+
+
+        }
         //find if path in graph exist
         public static bool ValidPath(int n, int[][] edges, int source, int destination)
         {
