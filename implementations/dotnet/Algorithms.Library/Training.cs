@@ -38,6 +38,69 @@ namespace Algorithms.Library
     }
     public class Training
     {
+        //center of star graph-> easy
+        public static int FindCenter(int[][] edges)
+        {
+            Dictionary<int, List<int>> AdjacencyList = new Dictionary<int, List<int>>();
+
+            foreach (var connection in edges)
+            {
+                if (!AdjacencyList.ContainsKey(connection[0])) { AdjacencyList.Add(connection[0], new List<int>()); }
+                if (!AdjacencyList.ContainsKey(connection[1])) { AdjacencyList.Add(connection[1], new List<int>()); }
+                AdjacencyList[connection[0]].Add(connection[1]);
+                AdjacencyList[connection[1]].Add(connection[0]);
+            }
+
+            int max = 0;
+            int who = -1;
+            foreach (var item in AdjacencyList.Keys)
+                if (AdjacencyList[item].Count > max)
+                {
+                    max = AdjacencyList[item].Count;
+                    who = item;
+                }
+
+            return who;
+        }
+
+        //best time to buy and sell stock
+        public static int MaxProfit(int k, int[] prices)
+        {
+            return MaxProfitHelper(k, prices, sum: 0, index: 0, formed: "", haveBought: false);
+        }
+
+        private static int MaxProfitHelper(int k, int[] prices, int sum, int index, string formed, bool haveBought)
+        {
+
+            if (k == 0 || index == prices.Length)
+            {
+                System.Console.WriteLine($"{formed}={sum}");
+                return sum;
+            }
+            int bestAlternative = 0;
+            int byBuying = 0;
+            int bySelling = 0;
+            if (!haveBought)
+            {
+                haveBought = true;
+                byBuying = MaxProfitHelper(k - 1, prices, sum - prices[index], index + 1, formed + "-" + prices[index], haveBought);
+                haveBought = false;
+            }
+            else
+            {
+
+                bySelling = MaxProfitHelper(k - 1, prices, sum + prices[index], index + 1, formed + "+" + prices[index], haveBought);
+            }
+            bestAlternative = Math.Max(byBuying, bySelling);
+
+            int byNotBuying = MaxProfitHelper(k, prices, sum, index + 1, formed, haveBought);
+            bestAlternative = Math.Max(byNotBuying, bestAlternative);
+
+
+
+            return bestAlternative;
+
+        }
 
         //longest substring with no repeating chars
         public static int LengthOfLongestSubstring(string s)
@@ -52,7 +115,7 @@ namespace Algorithms.Library
             formed.Add(s[p1], true);
             int maxLength = 0;
             char lookUp;
-            while (p1 < p2 && p2<s.Length)
+            while (p1 < p2 && p2 < s.Length)
             {
                 lookUp = s[p2];
                 if (!formed.ContainsKey(lookUp))
@@ -70,7 +133,7 @@ namespace Algorithms.Library
 
                     }
                     formed.Clear();
-                    p1 = p1+1;
+                    p1 = p1 + 1;
                     formed.Add(s[p1], true);
                     p2 = p1 + 1;
 

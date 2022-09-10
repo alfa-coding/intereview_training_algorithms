@@ -379,6 +379,18 @@ namespace Algorithms.Executer
             System.Console.WriteLine($"for {"dvdf"} got: {gottenLength},expected {3}");
 
             #endregion
+
+            #region MaxProfit
+            System.Console.WriteLine("----------MaxProfit-----------MaxProfit");
+            List<int> case1=new List<int>(){2,4,1};
+            int case1Exp = Training.MaxProfit(2,case1.ToArray());
+            System.Console.WriteLine($"for {"2,4,1"} got: {case1Exp},expected {2}");
+
+            List<int> case2=new List<int>(){3,2,6,5,0,3};
+            int case2Exp = Training.MaxProfit(2,case2.ToArray());
+            System.Console.WriteLine($"for {"3,2,6,5,0,3"} got: {case2Exp},expected {7}");
+
+            #endregion
             System.Console.WriteLine("Bye World");
 
         }
