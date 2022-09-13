@@ -165,8 +165,37 @@ namespace Algorithms.Library
 
         }
 
+        //longest substring with no repeating chars optimal
+        public static int LengthOfLongestSubstring(string s) {
+        
+            if (s.Length == 0 || s.Length == 1)
+            {
+                return s.Length;
+            }
+            int p1 = 0;
+            Dictionary<char, int> visited = new Dictionary<char, int>();
+            int maxLength = 0;
+            for(int p2=0;p2<s.Length;p2++)
+            {
+                char current = s[p2];
+                if(visited.ContainsKey(current))
+                {
+                    int gottenPosSeen = visited[current];
+                    if(gottenPosSeen>=p1)
+                    {
+                        p1=gottenPosSeen+1;
+                    }
+                    
+                    
+                }
+                visited[current]=p2;
+                maxLength = Math.Max(maxLength,p2-p1+1);
+            }
+        return maxLength;
+        }
         //longest substring with no repeating chars
-        public static int LengthOfLongestSubstring(string s)
+
+        public static int LengthOfLongestSubstringMine(string s)
         {
             if (s.Length == 0 || s.Length == 1)
             {

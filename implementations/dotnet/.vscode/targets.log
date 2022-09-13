@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Sep 10 18:42:52 2022
+# Make data base, printed on Tue Sep 13 22:17:10 2022
 
 # Variables
 
@@ -27,11 +27,15 @@ LC_NUMERIC = en_US.UTF-8
 # environment
 VSCODE_CWD = /home/dimas
 # environment
+WINDOWPATH = 2
+# environment
 LC_ADDRESS = en_US.UTF-8
 # environment
 GDM_LANG = en_US.UTF-8
 # default
 MAKE_COMMAND := make
+# environment
+GTK3_MODULES = xapp-gtk3-module
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
@@ -46,8 +50,6 @@ PWD = /home/dimas/Documents/intereview_training_algorithms/implementations/dotne
 MAIL = /var/spool/mail/dimas
 # environment
 XDG_DATA_DIRS = /home/dimas/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
-# environment
-OLDPWD = /home/dimas
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
@@ -57,7 +59,7 @@ VSCODE_CODE_CACHE_PATH = /home/dimas/.config/Code/CachedData/e4503b30fc78200f846
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.UN9TR1
+XAUTHORITY = /run/user/1000/gdm/Xauthority
 # default
 .LOADED := 
 # default
@@ -76,8 +78,6 @@ MFLAGS = -pqrR
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # default
 .SHELLFLAGS := -c
-# environment
-WAYLAND_DISPLAY = wayland-0
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
@@ -87,13 +87,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 1938
+VSCODE_PID = 3526
 # environment
-XDG_SESSION_TYPE = wayland
+XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/boosting:@/tmp/.ICE-unix/1302,unix/boosting:/tmp/.ICE-unix/1302
+SESSION_MANAGER = local/boosting:@/tmp/.ICE-unix/1537,unix/boosting:/tmp/.ICE-unix/1537
 # automatic
 *F = $(notdir $*)
 # environment
@@ -135,11 +135,9 @@ MOTD_SHOWN = pam
 # environment
 LC_TIME = en_US.UTF-8
 # environment
-INVOCATION_ID = 6892dfda349941d583fea4ee391af08f
+INVOCATION_ID = 2a651b8b499345a78da50aee1f285dd7
 # environment
 USERNAME = dimas
-# environment
-GNOME_SETUP_DISPLAY = :1
 # environment
 LC_TELEPHONE = en_US.UTF-8
 # automatic
@@ -161,21 +159,21 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/visual-studio-code.desktop
 # makefile
 .DEFAULT_GOAL := build
 # environment
-SYSTEMD_EXEC_PID = 1320
+SYSTEMD_EXEC_PID = 1552
 # environment
 EDITOR = /usr/bin/nano
 # environment
-DISPLAY = :0
+DISPLAY = :1
 # environment
 USER = dimas
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1241
+MANAGERPID = 1410
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 1920
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3509
 # environment
 _ = /usr/bin/make
 # environment
@@ -183,7 +181,7 @@ LC_PAPER = en_US.UTF-8
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-JOURNAL_STREAM = 8:17723
+JOURNAL_STREAM = 8:15100
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -219,7 +217,7 @@ GDMSESSION = gnome
 # environment
 LC_IDENTIFICATION = en_US.UTF-8
 # variable set hash-table stats:
-# Load=103/1024=10%, Rehash=0, Collisions=4/133=3%
+# Load=102/1024=10%, Rehash=0, Collisions=4/132=3%
 
 # Pattern-specific Variable Values
 
@@ -280,7 +278,6 @@ build:
 
 restore:
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 6):
@@ -300,6 +297,6 @@ restore:
 # strcache performance: lookups = 24 / hit rate = 33%
 # hash-table stats:
 # Load=16/8192=0%, Rehash=0, Collisions=0/24=0%
-# Finished Make data base on Sat Sep 10 18:42:52 2022
+# Finished Make data base on Tue Sep 13 22:17:10 2022
 
  
