@@ -36,8 +36,39 @@ namespace Algorithms.Library
             this.right = right;
         }
     }
+    public class ListNode
+    {
+        public int val;
+        public ListNode next;
+        public ListNode(int val = 0, ListNode next = null)
+        {
+            this.val = val;
+            this.next = next;
+        }
+    }
     public class Training
     {
+
+
+
+        public static ListNode ReverseList(ListNode head)
+        {
+            if (head is null) return null;
+            if (head.next is null) return head;
+            ListNode current = head;
+            ListNode formed = new ListNode(head.val);
+            while (current.next != null)
+            {
+                ListNode tmp = new ListNode(current.next.val, formed);
+                formed = tmp;
+                //looping through the LinkedList
+                current = current.next;
+
+            }
+            return formed;
+
+        }
+
         //find the town judge
         public static int FindJudge(int n, int[][] trust)
         {
@@ -166,8 +197,9 @@ namespace Algorithms.Library
         }
 
         //longest substring with no repeating chars optimal
-        public static int LengthOfLongestSubstring(string s) {
-        
+        public static int LengthOfLongestSubstring(string s)
+        {
+
             if (s.Length == 0 || s.Length == 1)
             {
                 return s.Length;
@@ -175,23 +207,23 @@ namespace Algorithms.Library
             int p1 = 0;
             Dictionary<char, int> visited = new Dictionary<char, int>();
             int maxLength = 0;
-            for(int p2=0;p2<s.Length;p2++)
+            for (int p2 = 0; p2 < s.Length; p2++)
             {
                 char current = s[p2];
-                if(visited.ContainsKey(current))
+                if (visited.ContainsKey(current))
                 {
                     int gottenPosSeen = visited[current];
-                    if(gottenPosSeen>=p1)
+                    if (gottenPosSeen >= p1)
                     {
-                        p1=gottenPosSeen+1;
+                        p1 = gottenPosSeen + 1;
                     }
-                    
-                    
+
+
                 }
-                visited[current]=p2;
-                maxLength = Math.Max(maxLength,p2-p1+1);
+                visited[current] = p2;
+                maxLength = Math.Max(maxLength, p2 - p1 + 1);
             }
-        return maxLength;
+            return maxLength;
         }
         //longest substring with no repeating chars
 

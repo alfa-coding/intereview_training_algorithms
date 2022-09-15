@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Sep 13 22:17:10 2022
+# Make data base, printed on Thu Sep 15 23:14:09 2022
 
 # Variables
 
@@ -87,13 +85,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 3526
+VSCODE_PID = 5396
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/boosting:@/tmp/.ICE-unix/1537,unix/boosting:/tmp/.ICE-unix/1537
+SESSION_MANAGER = local/boosting:@/tmp/.ICE-unix/1534,unix/boosting:/tmp/.ICE-unix/1534
 # automatic
 *F = $(notdir $*)
 # environment
@@ -135,7 +133,7 @@ MOTD_SHOWN = pam
 # environment
 LC_TIME = en_US.UTF-8
 # environment
-INVOCATION_ID = 2a651b8b499345a78da50aee1f285dd7
+INVOCATION_ID = ee9f59776e634600afd501a5b3bee2a7
 # environment
 USERNAME = dimas
 # environment
@@ -159,7 +157,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/visual-studio-code.desktop
 # makefile
 .DEFAULT_GOAL := build
 # environment
-SYSTEMD_EXEC_PID = 1552
+SYSTEMD_EXEC_PID = 1549
 # environment
 EDITOR = /usr/bin/nano
 # environment
@@ -169,11 +167,11 @@ USER = dimas
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1410
+MANAGERPID = 1407
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3509
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5379
 # environment
 _ = /usr/bin/make
 # environment
@@ -181,7 +179,7 @@ LC_PAPER = en_US.UTF-8
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-JOURNAL_STREAM = 8:15100
+JOURNAL_STREAM = 8:30315
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -280,6 +278,9 @@ restore:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
+make: *** No rule to make target 'all'.  Stop.
+
 #  recipe to execute (from 'Makefile', line 6):
 	dotnet restore
 
@@ -297,6 +298,6 @@ restore:
 # strcache performance: lookups = 24 / hit rate = 33%
 # hash-table stats:
 # Load=16/8192=0%, Rehash=0, Collisions=0/24=0%
-# Finished Make data base on Tue Sep 13 22:17:10 2022
+# Finished Make data base on Thu Sep 15 23:14:09 2022
 
  
