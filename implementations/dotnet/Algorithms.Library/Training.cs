@@ -57,7 +57,7 @@ namespace Algorithms.Library
     public class Training
     {
 
-        //flattening doubly linked list with children
+        //flattening doubly linked list with children recursive children O(n) solved
         public static DoublyNode Flatten(DoublyNode head)
         {
             Stack<DoublyNode> stack = new Stack<DoublyNode>();
