@@ -46,10 +46,55 @@ namespace Algorithms.Library
             this.next = next;
         }
     }
+    public class DoublyNode
+    {
+        public int val;
+        public DoublyNode prev;
+        public DoublyNode next;
+        public DoublyNode child;
+    }
+
     public class Training
     {
 
+        //flattening doubly linked list with children
+        public static DoublyNode Flatten(DoublyNode head)
+        {
+            Stack<DoublyNode> stack = new Stack<DoublyNode>();
 
+            DoublyNode tmp = head;
+            while (tmp != null || stack.Count != 0)
+            {
+                //if I have a child I face 2 options. 
+                //one is that I dont have next, which case, I can
+                //simply set my child as NExt, or, I indeed do have next.
+                if (tmp.child is not null)
+                {
+                    //if I have next, I will save it for later
+                    if (tmp.next is not null)
+                    {
+                        stack.Push(tmp.next);
+                    }
+                    //dealing with child
+                    tmp.next = tmp.child;
+                    tmp.child.prev = tmp;
+                    tmp.child = null;
+
+                }
+
+                if (tmp.next is null && stack.Count > 0)
+                {
+                    DoublyNode poped = stack.Pop();
+                    tmp.next = poped;
+                    poped.prev = tmp;
+                }
+                //in both cases of taking from stack or, having direct next, I have to update
+                tmp = tmp.next;
+
+            }
+            return head;
+
+        }
 
         public static ListNode ReverseList(ListNode head)
         {
