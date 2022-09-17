@@ -57,6 +57,48 @@ namespace Algorithms.Library
 
     public class Training
     {
+        //kth largest element
+        public static int FindKthLargest(int[] nums, int k)
+        {
+            QuickSortHelper(nums, 0, nums.Length - 1);
+            return nums[nums.Length-1-k];
+        }
+        //quicksort
+        public static void QuickSort(int[] elements)
+        {
+            QuickSortHelper(elements, 0, elements.Length - 1);
+        }
+
+        private static void QuickSortHelper(int[] elements, int start, int end)
+        {
+            if (end - start < 1) return;
+            //pivot will be the last element in the interval
+            int p1 = start, p2 = start, tmp;
+            while (p2 < end)
+            {
+                if (elements[p2] < elements[end])
+                {
+                    //swap p2 with p1
+                    tmp = elements[p1];
+                    elements[p1] = elements[p2];
+                    elements[p2] = tmp;
+                    p1++;
+                }
+                p2++;
+            }
+            //swap p1 with pivot to set it
+            //in its right place
+            tmp = elements[p1];
+            elements[p1] = elements[end];
+            elements[end] = tmp;
+
+            //recursively calling now
+            QuickSortHelper(elements, start, end: p1 - 1);
+            QuickSortHelper(elements, start: p1 + 1, end);
+
+
+        }
+
         // Minimum Remove to Make Valid Parentheses
         public static string MinRemoveToMakeValid(string s)
         {
@@ -90,10 +132,10 @@ namespace Algorithms.Library
             //there were open parentesis that never matched
             for (int i = 0; i < s.Length; i++)
             {
-                if(response[i] == '_') continue;
-                if (!pos.Contains(i) )
+                if (response[i] == '_') continue;
+                if (!pos.Contains(i))
                     builder.Append(s[i]);
-            }   
+            }
 
             return builder.ToString();
         }

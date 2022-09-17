@@ -404,6 +404,13 @@ namespace Algorithms.Executer
             string gottenRemove= Training.MinRemoveToMakeValid(message);
             System.Console.WriteLine($"Min () remove, for {message} returned {gottenRemove}");
             #endregion
+
+            #region QuickSort
+            System.Console.WriteLine("------------QuickSort----------");
+            int [] numeros = {4,57,8,92,1,23,6,5,45,98,15};
+            Training.QuickSort(numeros);
+            PrintVector(numeros,"This is the ordered array using quicksort");
+            #endregion
             System.Console.WriteLine("Bye World");
 
         }
