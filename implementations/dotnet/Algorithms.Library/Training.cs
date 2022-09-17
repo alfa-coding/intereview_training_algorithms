@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace Algorithms.Library
 {
@@ -56,6 +57,46 @@ namespace Algorithms.Library
 
     public class Training
     {
+        // Minimum Remove to Make Valid Parentheses
+        public static string MinRemoveToMakeValid(string s)
+        {
+            Stack<int> pos = new Stack<int>();
+            char[] response = new char[s.Length];
+            int index = 0;
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] == '(')
+                {
+                    pos.Push(i);
+                }
+                if (s[i] == ')')
+                {
+                    if (pos.Count > 0)
+                    {
+                        pos.Pop();
+                    }
+                    else
+                    {
+                        response[index++] = '_';
+                        continue;
+                    }
+                }
+                response[index++] = s[i];
+
+
+            }
+
+            //there were open parentesis that never matched
+            for (int i = 0; i < s.Length; i++)
+            {
+                if(response[i] == '_') continue;
+                if (!pos.Contains(i) )
+                    builder.Append(s[i]);
+            }   
+
+            return builder.ToString();
+        }
         //balanced parentesis O(n)->easy
         public static bool IsValid(string s)
         {

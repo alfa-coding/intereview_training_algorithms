@@ -397,6 +397,13 @@ namespace Algorithms.Executer
             System.Console.WriteLine($"for {"{{1,2}}"} got: {gottenJudge},expected {2}");
 
             #endregion
+
+            #region MinRemoveToMakeValid
+            System.Console.WriteLine("------------MinRemoveToMakeValid----------");
+            string message = "lee(t(c)o)de)";
+            string gottenRemove= Training.MinRemoveToMakeValid(message);
+            System.Console.WriteLine($"Min () remove, for {message} returned {gottenRemove}");
+            #endregion
             System.Console.WriteLine("Bye World");
 
         }
