@@ -56,7 +56,38 @@ namespace Algorithms.Library
 
     public class Training
     {
+        //balanced parentesis O(n)->easy
+        public static bool IsValid(string s)
+        {
+            if (s == "") return true;
+            Stack<char> stack = new Stack<char>();
+            Dictionary<char, char> maps = new Dictionary<char, char>();
+            maps.Add('(', ')');
+            maps.Add('[', ']');
+            maps.Add('{', '}');
 
+            for (int i = 0; i < s.Length; i++)
+            {
+                //it is an opening symbol
+                if (maps.ContainsKey(s[i]))
+                    stack.Push(s[i]);
+                //it is a closing symbol
+                //that should match its corresponding
+                //last opened one
+                else
+                {
+                    if (stack.Count == 0) return false;
+
+                    if (maps[stack.Peek()] == s[i])
+                        stack.Pop();
+                    else
+                        return false;
+                }
+            }
+
+            return stack.Count == 0;
+
+        }
         //flattening doubly linked list with children recursive children O(n) solved
         public static DoublyNode Flatten(DoublyNode head)
         {
