@@ -57,6 +57,54 @@ namespace Algorithms.Library
 
     public class Training
     {
+        //right side view from Binary Tree
+        public static IList<int> RightSideView(TreeNode root)
+        {
+            IList<int> response = new List<int>();
+            if (root is null) return response;
+
+            Queue<TreeNode> queue = new();
+            queue.Enqueue(root);
+            response.Add(root.val);
+            while (queue.Count != 0)
+            {
+
+                int size = queue.Count;
+
+                bool foundShade = false;
+
+                for (int i = 0; i < size; i++)
+                {
+                    TreeNode tmp = queue.Dequeue();
+                    if (!foundShade)
+                    {
+                        if (tmp.right != null)
+                        {
+                            response.Add(tmp.right.val);
+                            foundShade = true;
+                        }
+                        else if (tmp.right == null && tmp.left != null)
+                        {
+                            response.Add(tmp.left.val);
+                            foundShade = true;
+                        }
+                        else
+                        { }
+                    }
+
+
+                    //adding always from the right;
+                    if (tmp.right is not null)
+                        queue.Enqueue(tmp.right);
+                    if (tmp.left is not null)
+                        queue.Enqueue(tmp.left);
+
+                }
+
+            }
+
+            return response;
+        }
         //order traversal binary tree
         public static IList<IList<int>> LevelOrder(TreeNode root)
         {
