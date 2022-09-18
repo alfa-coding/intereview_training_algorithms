@@ -57,11 +57,46 @@ namespace Algorithms.Library
 
     public class Training
     {
+        //order traversal binary tree
+        public static IList<IList<int>> LevelOrder(TreeNode root)
+        {
+
+            List<IList<int>> response = new List<IList<int>>();
+            if (root is null) return response;
+
+            Queue<TreeNode> queue = new();
+            queue.Enqueue(root);
+            while (queue.Count != 0)
+            {
+
+                int size = queue.Count;
+
+                List<int> level = new List<int>();
+
+                for (int i = 0; i < size; i++)
+                {
+                    TreeNode tmp = queue.Dequeue();
+                    level.Add(tmp.val);
+                    if (tmp.left is not null)
+                        queue.Enqueue(tmp.left);
+                    if (tmp.right is not null)
+                        queue.Enqueue(tmp.right);
+                }
+                response.Add(level);
+
+
+
+
+            }
+
+            return response;
+
+        }
         //kth largest element
         public static int FindKthLargest(int[] nums, int k)
         {
             QuickSortHelper(nums, 0, nums.Length - 1);
-            return nums[nums.Length-1-k];
+            return nums[nums.Length - 1 - k];
         }
         //quicksort
         public static void QuickSort(int[] elements)
