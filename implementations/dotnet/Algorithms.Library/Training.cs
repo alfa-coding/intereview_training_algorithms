@@ -57,6 +57,33 @@ namespace Algorithms.Library
 
     public class Training
     {
+        //find duplicates in file system, medium leetcode->easy-but read well please
+        public static IList<IList<string>> FindDuplicate(string[] paths)
+        {
+
+            //keys->file content, value->filePath
+            Dictionary<string, HashSet<string>> map = new();
+            foreach (var p in paths)
+            {
+                var splitted = p.Split(' ');
+                for (int i = 1; i < splitted.Length; i++)
+                {
+                    int fParethesis = splitted[i].IndexOf('(');
+                    string key = splitted[i].Substring(fParethesis, splitted[i].Length - fParethesis);
+                    if (!map.ContainsKey(key))
+                        map.Add(key, new HashSet<string>());
+                    map[key].Add(splitted[0] + "/" + splitted[i].Substring(0, fParethesis));
+                }
+
+
+            }
+            List<IList<string>> response = new List<IList<string>>();
+            foreach (var g in map.Values)
+                if (g.Count > 1)
+                    response.Add(g.ToList());
+            return response;
+        }
+
         //count nodes binary tree, BFS
         public static int CountNodes(TreeNode root)
         {

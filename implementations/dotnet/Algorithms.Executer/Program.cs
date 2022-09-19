@@ -348,17 +348,17 @@ namespace Algorithms.Executer
             };
 
             System.Console.WriteLine("--------DFS Recursively-------");
-            Training.DFSRecursive('a',graph);
+            Training.DFSRecursive('a', graph);
             System.Console.WriteLine("--------DFS Iteratively-------");
-            Training.DFSStackBased('a',graph);
+            Training.DFSStackBased('a', graph);
             System.Console.WriteLine("--------BFS Iteratively-------");
-            Training.BFSQueueBased('a',graph);
+            Training.BFSQueueBased('a', graph);
 
 
             #endregion
 
             #region UndirectedGraphWithEdges
-            List<Tuple<char,char>> edges = new List<Tuple<char, char>>()
+            List<Tuple<char, char>> edges = new List<Tuple<char, char>>()
             {
                 new Tuple<char, char>('i','j'),
                 new Tuple<char, char>('k','i'),
@@ -367,8 +367,8 @@ namespace Algorithms.Executer
                 new Tuple<char, char>('o','n'),
 
             };
-            UndirectedGraph<char> undirectedGraph = new UndirectedGraph<char>(edges,true);
-            bool isPath = Training.HasPathUndirectedGraph(undirectedGraph,'j','m');
+            UndirectedGraph<char> undirectedGraph = new UndirectedGraph<char>(edges, true);
+            bool isPath = Training.HasPathUndirectedGraph(undirectedGraph, 'j', 'm');
             System.Console.WriteLine($"Has path, returned {isPath}, expected {true}");
             #endregion
 
@@ -382,18 +382,18 @@ namespace Algorithms.Executer
 
             #region MaxProfit
             System.Console.WriteLine("----------MaxProfit-----------MaxProfit");
-            List<int> case1=new List<int>(){2,4,1};
-            int case1Exp = Training.MaxProfit(2,case1.ToArray());
+            List<int> case1 = new List<int>() { 2, 4, 1 };
+            int case1Exp = Training.MaxProfit(2, case1.ToArray());
             System.Console.WriteLine($"for {"2,4,1"} got: {case1Exp},expected {2}");
 
-            List<int> case2=new List<int>(){3,2,6,5,0,3};
-            int case2Exp = Training.MaxProfit(2,case2.ToArray());
+            List<int> case2 = new List<int>() { 3, 2, 6, 5, 0, 3 };
+            int case2Exp = Training.MaxProfit(2, case2.ToArray());
             System.Console.WriteLine($"for {"3,2,6,5,0,3"} got: {case2Exp},expected {7}");
 
             #endregion
 
             #region TownJudge
-            int gottenJudge = Training.FindJudge(2,new int[][]{new int[]{1,2}});
+            int gottenJudge = Training.FindJudge(2, new int[][] { new int[] { 1, 2 } });
             System.Console.WriteLine($"for {"{{1,2}}"} got: {gottenJudge},expected {2}");
 
             #endregion
@@ -401,15 +401,26 @@ namespace Algorithms.Executer
             #region MinRemoveToMakeValid
             System.Console.WriteLine("------------MinRemoveToMakeValid----------");
             string message = "lee(t(c)o)de)";
-            string gottenRemove= Training.MinRemoveToMakeValid(message);
+            string gottenRemove = Training.MinRemoveToMakeValid(message);
             System.Console.WriteLine($"Min () remove, for {message} returned {gottenRemove}");
             #endregion
 
             #region QuickSort
             System.Console.WriteLine("------------QuickSort----------");
-            int [] numeros = {4,57,8,92,1,23,6,5,45,98,15};
+            int[] numeros = { 4, 57, 8, 92, 1, 23, 6, 5, 45, 98, 15 };
             Training.QuickSort(numeros);
-            PrintVector(numeros,"This is the ordered array using quicksort");
+            PrintVector(numeros, "This is the ordered array using quicksort");
+            #endregion
+
+            #region Duplicate
+            string [] paths= new string[]
+            {
+                "root/a 1.txt(abcd) 2.txt(efgh)",
+                "root/c 3.txt(abcd)",
+                "root/c/d 4.txt(efgh)",
+                "root 4.txt(efgh)"
+            };
+            var response = Training.FindDuplicate(paths);
             #endregion
             System.Console.WriteLine("Bye World");
 
