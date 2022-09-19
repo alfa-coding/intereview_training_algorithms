@@ -57,6 +57,25 @@ namespace Algorithms.Library
 
     public class Training
     {
+        //count nodes binary tree, BFS
+        public static int CountNodes(TreeNode root)
+        {
+            int response = 0;
+            if (root is null) return response;
+            Queue<TreeNode> queue = new();
+            queue.Enqueue(root);
+            while (queue.Count != 0)
+            {
+                TreeNode tmp = queue.Dequeue();
+                response++;
+                if (tmp.left is not null)
+                    queue.Enqueue(tmp.left);
+                if (tmp.right is not null)
+                    queue.Enqueue(tmp.right);
+            }
+            return response;
+        }
+
         //right side view from Binary Tree
         public static IList<int> RightSideView(TreeNode root)
         {
