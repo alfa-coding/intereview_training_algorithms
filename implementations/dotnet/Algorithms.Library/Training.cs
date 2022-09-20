@@ -57,6 +57,72 @@ namespace Algorithms.Library
 
     public class Training
     {
+        // Number of nodes in Complete binary tree ->not full, but complete-> log(n) time, hard
+        public static bool CanGetTo(int indexToFind, int h, TreeNode node)
+        {
+            int left = 0;
+            int right = (int)Math.Pow(2, h) - 1;
+            int counterStepsDown = 0;
+            TreeNode current = node;
+            while (counterStepsDown < h && current != null)
+            {
+                int midOfNode = (int)Math.Ceiling((double)(left + right) / 2);
+
+                if (indexToFind >= midOfNode)
+                {
+                    current = current.right;
+                    left = midOfNode;
+                }
+                else
+                {
+                    current = current.left;
+                    right = midOfNode - 1;
+                }
+
+                counterStepsDown++;
+            }
+
+            return current != null;
+        }
+        public static int Height(TreeNode root)
+        {
+            int height = 0;
+            while (root.left != null)
+            {
+                height++;
+                root = root.left;
+            }
+
+            return height;
+        }
+        public int CountNodesLogN(TreeNode root)
+        {
+            if (root is null) return 0;
+
+            int height = Height(root);
+
+            if (height == 0) return 1;
+
+            int upperCount = (int)Math.Pow(2, height) - 1;
+
+            int left = 0, right = upperCount;
+
+            while (left < right)
+            {
+                int idxToFind = (int)Math.Ceiling((double)(left + right) / 2);
+
+                if (CanGetTo(idxToFind, height, root))
+                {
+                    left = idxToFind;
+                }
+                else
+                {
+                    right = idxToFind - 1;
+                }
+            }
+
+            return upperCount + left + 1;
+        }
         //find duplicates in file system, medium leetcode->easy-but read well please
         public static IList<IList<string>> FindDuplicate(string[] paths)
         {
