@@ -57,6 +57,23 @@ namespace Algorithms.Library
 
     public class Training
     {
+        //SumEvenAfterQueries
+        public static int[] SumEvenAfterQueries(int[] nums, int[][] queries)
+        {
+            List<int> evenSums = new List<int>();
+            foreach (var query in queries)
+            {
+                nums[query[1]] += query[0];
+                int total = 0;
+                for (int i = 0; i < nums.Length; i++)
+                    if (nums[i] % 2 == 0)
+                        total += nums[i];
+                evenSums.Add(total);
+
+            }
+            return evenSums.ToArray();
+        }
+
         // Number of nodes in Complete binary tree ->not full, but complete-> log(n) time, hard
         public static bool CanGetTo(int indexToFind, int h, TreeNode node)
         {
