@@ -57,6 +57,17 @@ namespace Algorithms.Library
 
     public class Training
     {
+        //same tree, easy for me
+        public static bool IsSameTree(TreeNode p, TreeNode q)
+        {
+            if (p is null && q is null) return true;
+            if (p is null || q is null) return false;
+            if (p.val != q.val)
+                return false;
+            bool hipotesis = true;
+
+            return IsSameTree(p.left, q.left) && IsSameTree(p.right, q.right) && hipotesis;
+        }
         //number of consecutives ones - easy
         public static int FindMaxConsecutiveOnes(int[] nums)
         {
