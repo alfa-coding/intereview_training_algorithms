@@ -57,6 +57,41 @@ namespace Algorithms.Library
 
     public class Training
     {
+        //Count Nodes Equal to Average of Subtree
+        public static int AverageOfSubtree(TreeNode root)
+        {
+            int response = 0;
+            if (root is null) return 0;
+
+            Queue<TreeNode> queue = new();
+            queue.Enqueue(root);
+
+            while (queue.Count != 0)
+            {
+                var tmp = queue.Dequeue();
+                int numNodes = 0;
+                int subSum = SumAndCount(tmp, ref numNodes);
+                if (subSum / numNodes == tmp.val)
+                    response++;
+                if (tmp.left != null)
+                    queue.Enqueue(tmp.left);
+                if (tmp.right != null)
+                    queue.Enqueue(tmp.right);
+            }
+
+            return response;
+
+        }
+        //returns the sum, ref param is # of nodes
+        private static int SumAndCount(TreeNode current, ref int totalNodes)
+        {
+            if (current is null) return 0;
+            int total = current.val;
+            totalNodes++;
+            return total + SumAndCount(current.left, ref totalNodes) + SumAndCount(current.right, ref totalNodes);
+        }
+
+
         //SumEvenAfterQueries
         public static int[] SumEvenAfterQueries(int[] nums, int[][] queries)
         {
