@@ -57,6 +57,47 @@ namespace Algorithms.Library
 
     public class Training
     {
+        //number of consecutives ones - easy
+        public static int FindMaxConsecutiveOnes(int[] nums)
+        {
+            if (nums.Length <= 1)
+                return nums[0] == 1 ? 1 : 0;
+
+            int maxLengthFound = 1;
+            int p1 = 0;
+
+            while (p1 < nums.Length && nums[p1] == 0)
+                p1++;
+            if (p1 == nums.Length) return 0;
+            int p2 = p1 + 1;
+
+            while (p2 < nums.Length)
+            {
+                int current = nums[p1];
+                if (nums[p2] == 0)
+                {
+                    p1 = p2 + 1;
+                    p2 = p1 + 1;
+                    continue;
+
+                }
+                //if I can look ahead
+                if (nums[p2] == current)
+                {
+                    p2++;
+                    maxLengthFound = Math.Max(maxLengthFound, p2 - p1);
+                }
+                else
+                {
+                    maxLengthFound = Math.Max(maxLengthFound, p2 - p1);
+                    p1 = p2;
+                    p2 = p1 + 1;
+                }
+
+
+            }
+            return maxLengthFound;
+        }
 
         //Consecutive Characters powerfull string
         public int MaxPower(string s)
