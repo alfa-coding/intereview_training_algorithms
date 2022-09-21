@@ -57,6 +57,36 @@ namespace Algorithms.Library
 
     public class Training
     {
+
+        //Consecutive Characters powerfull string
+        public int MaxPower(string s)
+        {
+            if (s.Length <= 1) return s.Length;
+            int maxLengthFound = 1;
+            int p1 = 0, p2 = 1;
+            while (p2 < s.Length)
+            {
+                char current = s[p1];
+                //if I can look ahead
+                if (s[p2] == current)
+                {
+                    p2++;
+                    maxLengthFound = Math.Max(maxLengthFound, p2 - p1);
+                }
+                else
+                {
+                    maxLengthFound = Math.Max(maxLengthFound, p2 - p1);
+                    p1 = p2;
+                    p2 = p1 + 1;
+                }
+
+
+            }
+            return maxLengthFound;
+
+        }
+
+
         //Count Nodes Equal to Average of Subtree
         public static int AverageOfSubtree(TreeNode root)
         {
