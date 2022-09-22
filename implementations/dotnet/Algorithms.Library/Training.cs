@@ -57,6 +57,25 @@ namespace Algorithms.Library
 
     public class Training
     {
+        //Find a Corresponding Node of a Binary Tree in a Clone of That Tree
+        public static TreeNode GetTargetCopy(TreeNode original, TreeNode cloned, TreeNode target)
+        {
+            if (cloned == null) return null;
+            Queue<TreeNode> queue = new();
+            queue.Enqueue(cloned);
+            while (queue.Count != 0)
+            {
+                TreeNode tmp = queue.Dequeue();
+                if (tmp.val == target.val)
+                    return tmp;
+                if (tmp.left != null)
+                    queue.Enqueue(tmp.left);
+                if (tmp.right != null)
+                    queue.Enqueue(tmp.right);
+            }
+            return null;
+
+        }
         //same tree, easy for me
         public static bool IsSameTree(TreeNode p, TreeNode q)
         {
