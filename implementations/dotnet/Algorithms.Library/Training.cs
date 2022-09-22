@@ -57,6 +57,21 @@ namespace Algorithms.Library
 
     public class Training
     {
+        //reverse all words in string
+        public static string ReverseWords(string s)
+        {
+            string[] all = s.Split(' ').Select(sb => new String(sb.Reverse().ToArray())).ToArray();
+            StringBuilder response = new();
+            for (int i = 0; i < all.Length - 1; i++)
+            {
+                response.Append(all[i]);
+                response.Append(" ");
+
+            }
+            response.Append(all[all.Length - 1]);
+            return response.ToString();
+        }
+
         //Find a Corresponding Node of a Binary Tree in a Clone of That Tree
         public static TreeNode GetTargetCopy(TreeNode original, TreeNode cloned, TreeNode target)
         {
