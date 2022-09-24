@@ -413,7 +413,7 @@ namespace Algorithms.Executer
             #endregion
 
             #region Duplicate
-            string [] paths= new string[]
+            string[] paths = new string[]
             {
                 "root/a 1.txt(abcd) 2.txt(efgh)",
                 "root/c 3.txt(abcd)",
@@ -421,6 +421,60 @@ namespace Algorithms.Executer
                 "root 4.txt(efgh)"
             };
             var response = Training.FindDuplicate(paths);
+            #endregion
+
+            #region SmartTRIE
+            SmartTRIETree smartTRIE = new SmartTRIETree();
+
+            smartTRIE.AddWord("andy");
+            smartTRIE.AddWord("adriana");
+            smartTRIE.AddWord("are");
+
+            smartTRIE.AddWord("dimas");
+            smartTRIE.AddWord("diana");
+            smartTRIE.AddWord("dinerito");
+            smartTRIE.AddWord("dimasito");
+            smartTRIE.AddWord("dimasino");
+
+            smartTRIE.AddWord("bad");
+            smartTRIE.AddWord("mad");
+            smartTRIE.AddWord("pad");
+
+            smartTRIE.AddWord("bla");
+
+
+
+
+            bool resultSmartBase = smartTRIE.ContainsWord("d");
+            System.Console.WriteLine($"got:{resultSmartBase},expects:false");//matches nothing
+
+
+            bool resultSmart = smartTRIE.ContainsWord("dimas");
+            System.Console.WriteLine($"got:{resultSmart},expects:true");//matches fully
+
+            bool resultSmart2 = smartTRIE.ContainsWord("dimk");
+            System.Console.WriteLine($"got:{resultSmart2},expects:false");//matches until dim,then k fails
+
+            bool resultSmart3 = smartTRIE.ContainsWord("di...");
+            System.Console.WriteLine($"got:{resultSmart3},expects:true"); //matches dimas/diana
+
+            bool resultSmart4 = smartTRIE.ContainsWord("di....to");
+            System.Console.WriteLine($"got:{resultSmart4},expects:true"); //matches dimasito/dinerito
+
+            bool resultSmart5 = smartTRIE.ContainsWord(".ad");
+            System.Console.WriteLine($"got:{resultSmart5},expects:true"); //matches bad/mad/pad
+
+            bool resultSmart6 = smartTRIE.ContainsWord("..a");
+            System.Console.WriteLine($"got:{resultSmart6},expects:true"); //matches bla
+
+            bool resultSmart7 = smartTRIE.ContainsWord(".a.");
+            System.Console.WriteLine($"got:{resultSmart7},expects:true"); //matches bad/mad/pad
+
+            bool resultSmart8 = smartTRIE.ContainsWord(".ag");
+            System.Console.WriteLine($"got:{resultSmart8},expects:false"); //matches bad/mad/pad
+
+
+
             #endregion
             System.Console.WriteLine("Bye World");
 
