@@ -57,6 +57,12 @@ namespace Algorithms.Library
 
     public class Training
     {
+        
+
+        
+
+
+
         //reverse all words in string
         public static string ReverseWords(string s)
         {

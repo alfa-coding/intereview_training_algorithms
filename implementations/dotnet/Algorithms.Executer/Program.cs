@@ -476,6 +476,32 @@ namespace Algorithms.Executer
 
 
             #endregion
+
+            #region CircularQueue
+
+            MyCircularQueue mcq = new MyCircularQueue(8);
+            Console.WriteLine(mcq.EnQueue(3));
+            Console.WriteLine(mcq.EnQueue(9));
+            Console.WriteLine(mcq.EnQueue(5));
+            Console.WriteLine(mcq.EnQueue(0));
+
+           
+
+            Console.WriteLine(mcq.DeQueue());
+            Console.WriteLine(mcq.DeQueue());
+
+            Console.WriteLine(mcq.IsEmpty());
+            Console.WriteLine(mcq.IsEmpty());
+
+
+            System.Console.WriteLine(mcq.Rear());
+            System.Console.WriteLine(mcq.Rear());
+            Console.WriteLine(mcq.DeQueue());
+
+
+
+
+            #endregion
             System.Console.WriteLine("Bye World");
 
         }
