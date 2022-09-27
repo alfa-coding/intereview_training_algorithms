@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Sep 25 13:11:40 2022
+# Make data base, printed on Tue Sep 27 11:43:38 2022
 
 # Variables
 
@@ -87,13 +87,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 31172
+VSCODE_PID = 2944
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/boosting:@/tmp/.ICE-unix/1550,unix/boosting:/tmp/.ICE-unix/1550
+SESSION_MANAGER = local/boosting:@/tmp/.ICE-unix/1596,unix/boosting:/tmp/.ICE-unix/1596
 # automatic
 *F = $(notdir $*)
 # environment
@@ -135,7 +135,7 @@ MOTD_SHOWN = pam
 # environment
 LC_TIME = en_US.UTF-8
 # environment
-INVOCATION_ID = 7997a0ad71c742d1bb6a653b8e37a1ed
+INVOCATION_ID = e9d437843ec242a8880724e25a3c3ad6
 # environment
 USERNAME = dimas
 # environment
@@ -159,7 +159,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/visual-studio-code.desktop
 # makefile
 .DEFAULT_GOAL := build
 # environment
-SYSTEMD_EXEC_PID = 1565
+SYSTEMD_EXEC_PID = 1611
 # environment
 EDITOR = /usr/bin/nano
 # environment
@@ -169,11 +169,11 @@ USER = dimas
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1421
+MANAGERPID = 1468
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 31155
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2927
 # environment
 _ = /usr/bin/make
 # environment
@@ -181,7 +181,7 @@ LC_PAPER = en_US.UTF-8
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-JOURNAL_STREAM = 8:20611
+JOURNAL_STREAM = 8:18177
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -215,6 +215,7 @@ DOTNET_ROOT = /usr/share/dotnet
 # environment
 GDMSESSION = gnome
 # environment
+ 
 LC_IDENTIFICATION = en_US.UTF-8
 # variable set hash-table stats:
 # Load=102/1024=10%, Rehash=0, Collisions=4/132=3%
@@ -297,6 +298,6 @@ restore:
 # strcache performance: lookups = 24 / hit rate = 33%
 # hash-table stats:
 # Load=16/8192=0%, Rehash=0, Collisions=0/24=0%
-# Finished Make data base on Sun Sep 25 13:11:40 2022
+# Finished Make data base on Tue Sep 27 11:43:38 2022
 
  

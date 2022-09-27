@@ -499,8 +499,13 @@ namespace Algorithms.Executer
             Console.WriteLine(mcq.DeQueue());
 
 
+            #endregion
 
-
+            #region Chalk problem
+            int whereToStop = Training.ChalkReplacer(new int[]{5,1,5},22);
+            System.Console.WriteLine(whereToStop);
+            int whereToStop2 = Training.ChalkReplacer(new int[]{3,4,1,2},25);
+            System.Console.WriteLine(whereToStop2);
             #endregion
             System.Console.WriteLine("Bye World");
 

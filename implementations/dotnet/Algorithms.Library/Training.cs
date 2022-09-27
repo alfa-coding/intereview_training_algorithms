@@ -57,11 +57,45 @@ namespace Algorithms.Library
 
     public class Training
     {
-        
 
-        
+        // validate BST, in order approach with poda
+        public static bool IsValidBST(TreeNode root)
+        {
+            List<int> vals = new();
+            return ValidateInOrder(root, vals);
+
+        }
+        public static bool ValidateInOrder(TreeNode current, List<int> values)
+        {
+            if (current is null) return true;
+
+            bool left = ValidateInOrder(current.left, values);
+            if (values.Count != 0 && current.val <= values[values.Count - 1])
+                return false;
+            else
+                values.Add(current.val);
+
+            bool right = ValidateInOrder(current.right, values);
+
+            return left && right;
+        }
 
 
+
+        //chalk problem
+        public static int ChalkReplacer(int[] chalk, int k)
+        {
+            int index = 0;
+            while (k != 0)
+            {
+                index = index % chalk.Length;
+                if (chalk[index] > k)
+                    break;
+                k -= chalk[index++];
+
+            }
+            return index % chalk.Length;
+        }
 
         //reverse all words in string
         public static string ReverseWords(string s)
