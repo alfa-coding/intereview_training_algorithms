@@ -485,7 +485,7 @@ namespace Algorithms.Executer
             Console.WriteLine(mcq.EnQueue(5));
             Console.WriteLine(mcq.EnQueue(0));
 
-           
+
 
             Console.WriteLine(mcq.DeQueue());
             Console.WriteLine(mcq.DeQueue());
@@ -502,10 +502,17 @@ namespace Algorithms.Executer
             #endregion
 
             #region Chalk problem
-            int whereToStop = Training.ChalkReplacer(new int[]{5,1,5},22);
+            int whereToStop = Training.ChalkReplacer(new int[] { 5, 1, 5 }, 22);
             System.Console.WriteLine(whereToStop);
-            int whereToStop2 = Training.ChalkReplacer(new int[]{3,4,1,2},25);
+            int whereToStop2 = Training.ChalkReplacer(new int[] { 3, 4, 1, 2 }, 25);
             System.Console.WriteLine(whereToStop2);
+            #endregion
+
+            #region ReBuild
+            int[] preorder = { 1, 2 };
+            int[] inorder = { 1, 2 };
+
+            TreeNode root = Training.ReBuild(preorder, inorder);
             #endregion
             System.Console.WriteLine("Bye World");
 

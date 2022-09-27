@@ -24,6 +24,18 @@ namespace Algorithms.Library
             children = _children;
         }
     }
+    public class TreeNode<T> where T : IComparable
+    {
+        public T val;
+        public TreeNode<T> left;
+        public TreeNode<T> right;
+        public TreeNode(T val, TreeNode<T> left = null, TreeNode<T> right = null)
+        {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
 
     public class TreeNode
     {
@@ -57,6 +69,45 @@ namespace Algorithms.Library
 
     public class Training
     {
+        //reconstruct from PreOrder an InOrder
+        public static TreeNode ReBuild(int[] preOrder, int[] inOrder)
+        {
+            int fromPreorder = -1;
+            Dictionary<int, int> mapInOrderPos = new();
+            for (int i = 0; i < inOrder.Length; i++)
+            {
+                mapInOrderPos.Add(inOrder[i], i);
+            }
+            TreeNode root = null;
+            return ReBuildHelper(root, preOrder, ref fromPreorder, start: 0, end: inOrder.Length, mapInOrderPos);
+
+        }
+
+        private static TreeNode ReBuildHelper(TreeNode current, int[] preOrder, ref int fromPreorder, int start, int end, Dictionary<int, int> mapInOrderPos)
+        {
+            if (end<=start)
+            {
+                return null;
+            }
+            if (fromPreorder + 1 == preOrder.Length) return current;
+            int currentRoot = preOrder[++fromPreorder];
+            int posCurrentRoot = mapInOrderPos[currentRoot]; //gives me the index of nextRoot to split
+
+            if (current is null)
+                current = new TreeNode(currentRoot);
+            if (end==start)
+            {
+                return current;
+            }
+
+            current.left = ReBuildHelper(current.left, preOrder, ref fromPreorder, start, posCurrentRoot - 1, mapInOrderPos);
+
+
+            current.right = ReBuildHelper(current.right, preOrder, ref fromPreorder, posCurrentRoot + 1, end, mapInOrderPos);
+
+            return current;
+        }
+
         //max level sum, using bfs level order
         public static int MaxLevelSum(TreeNode root)
         {
