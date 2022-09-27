@@ -57,6 +57,47 @@ namespace Algorithms.Library
 
     public class Training
     {
+        //max level sum, using bfs level order
+        public static int MaxLevelSum(TreeNode root)
+        {
+            if (root is null) return 0;
+            if (root.left is null && root.right is null) return 1;
+
+            Queue<TreeNode> queue = new();
+            queue.Enqueue(root);
+            int level = 1;
+            int levelMaxSum = root.val;
+            int currentLevel = 1;
+
+
+            while (queue.Count != 0)
+            {
+                int currentlevelSum = 0;
+                int size = queue.Count;
+
+                for (int i = 0; i < size; i++)
+                {
+                    TreeNode tmp = queue.Dequeue();
+                    currentlevelSum += tmp.val;
+                    if (tmp.left != null)
+                        queue.Enqueue(tmp.left);
+                    if (tmp.right != null)
+                        queue.Enqueue(tmp.right);
+
+
+                }
+
+                if (levelMaxSum < currentlevelSum)
+                {
+                    levelMaxSum = currentlevelSum;
+                    level = currentLevel;
+                }
+                currentLevel++;
+
+            }
+            return level;
+
+        }
 
         // validate BST, in order approach with poda
         public static bool IsValidBST(TreeNode root)
