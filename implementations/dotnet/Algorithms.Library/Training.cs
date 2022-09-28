@@ -69,7 +69,7 @@ namespace Algorithms.Library
 
     public class Training
     {
-        //reconstruct from PreOrder an InOrder
+        //reconstruct from postOrder an InOrder
         public static TreeNode ReBuildPO(int[] postorder, int[] inOrder)
         {
             Dictionary<int, int> mapInOrderPos = new();
