@@ -79,28 +79,20 @@ namespace Algorithms.Library
                 mapInOrderPos.Add(inOrder[i], i);
             }
             TreeNode root = null;
-            return ReBuildHelperPO(root, postorder, start: 0, end: inOrder.Length, inOrder, mapInOrderPos);
+            int postIndex = postorder.Length - 1;
+            return ReBuildHelperPO(root, postorder, start: 0, end: inOrder.Length, inOrder, mapInOrderPos, ref postIndex);
 
         }
 
-        private static TreeNode ReBuildHelperPO(TreeNode current, int[] postOrder, int start, int end, int[] inOrder, Dictionary<int, int> mapInOrderPos)
+        private static TreeNode ReBuildHelperPO(TreeNode current, int[] postOrder, int start, int end, int[] inOrder, Dictionary<int, int> mapInOrderPos, ref int postIndex)
         {
             if (end <= start)
             {
                 return null;
             }
 
-            int currentRoot = -1;
-            HashSet<int> set = new();
+            int currentRoot = postOrder[postIndex--];
 
-            for (int i = start; i < end; i++)
-                set.Add(inOrder[i]);
-
-
-
-            for (int i = postOrder.Length - 1; i >= 0; i--)
-                if (set.Contains(postOrder[i]))
-                { currentRoot = postOrder[i]; break; }
 
             int posCurrentRoot = mapInOrderPos[currentRoot]; //gives me the index of nextRoot to split
 
@@ -110,10 +102,10 @@ namespace Algorithms.Library
                 return current;
             }
 
-            current.left = ReBuildHelperPO(current.left, postOrder, start, posCurrentRoot, inOrder, mapInOrderPos);
+            current.left = ReBuildHelperPO(current.left, postOrder, start, posCurrentRoot, inOrder, mapInOrderPos, ref postIndex);
 
 
-            current.right = ReBuildHelperPO(current.right, postOrder, posCurrentRoot + 1, end, inOrder, mapInOrderPos);
+            current.right = ReBuildHelperPO(current.right, postOrder, posCurrentRoot + 1, end, inOrder, mapInOrderPos, ref postIndex);
 
             return current;
         }
