@@ -70,6 +70,54 @@ namespace Algorithms.Library
     public class Training
     {
         //reconstruct from PreOrder an InOrder
+        public static TreeNode ReBuildPO(int[] postorder, int[] inOrder)
+        {
+            Dictionary<int, int> mapInOrderPos = new();
+
+            for (int i = 0; i < inOrder.Length; i++)
+            {
+                mapInOrderPos.Add(inOrder[i], i);
+            }
+            TreeNode root = null;
+            return ReBuildHelperPO(root, postorder, start: 0, end: inOrder.Length, inOrder, mapInOrderPos);
+
+        }
+
+        private static TreeNode ReBuildHelperPO(TreeNode current, int[] postOrder, int start, int end, int[] inOrder, Dictionary<int, int> mapInOrderPos)
+        {
+            if (end <= start)
+            {
+                return null;
+            }
+
+            int currentRoot = -1;
+            HashSet<int> set = new();
+
+            for (int i = start; i < end; i++)
+                set.Add(inOrder[i]);
+
+
+
+            for (int i = postOrder.Length - 1; i >= 0; i--)
+                if (set.Contains(postOrder[i]))
+                { currentRoot = postOrder[i]; break; }
+
+            int posCurrentRoot = mapInOrderPos[currentRoot]; //gives me the index of nextRoot to split
+
+            current = new TreeNode(currentRoot);
+            if (end == start)
+            {
+                return current;
+            }
+
+            current.left = ReBuildHelperPO(current.left, postOrder, start, posCurrentRoot, inOrder, mapInOrderPos);
+
+
+            current.right = ReBuildHelperPO(current.right, postOrder, posCurrentRoot + 1, end, inOrder, mapInOrderPos);
+
+            return current;
+        }
+        //reconstruct from PreOrder an InOrder
         public static TreeNode ReBuild(int[] preOrder, int[] inOrder)
         {
             int fromPreorder = -1;
@@ -85,7 +133,7 @@ namespace Algorithms.Library
 
         private static TreeNode ReBuildHelper(TreeNode current, int[] preOrder, ref int fromPreorder, int start, int end, Dictionary<int, int> mapInOrderPos)
         {
-            if (end<=start)
+            if (end <= start)
             {
                 return null;
             }
@@ -95,7 +143,7 @@ namespace Algorithms.Library
 
             if (current is null)
                 current = new TreeNode(currentRoot);
-            if (end==start)
+            if (end == start)
             {
                 return current;
             }

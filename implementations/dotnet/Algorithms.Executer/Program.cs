@@ -508,11 +508,18 @@ namespace Algorithms.Executer
             System.Console.WriteLine(whereToStop2);
             #endregion
 
-            #region ReBuild
+            #region ReBuild PrePrder InOrder
             int[] preorder = { 1, 2 };
             int[] inorder = { 1, 2 };
 
             TreeNode root = Training.ReBuild(preorder, inorder);
+            #endregion
+
+            #region ReBuild PostOrder InOrder
+            int[] postOrder = { 9,15,7,20,3};
+            inorder = new int[] { 9,3,15,20,7 };
+
+            root = Training.ReBuildPO(postOrder, inorder);
             #endregion
             System.Console.WriteLine("Bye World");
 
