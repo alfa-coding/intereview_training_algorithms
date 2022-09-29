@@ -517,10 +517,10 @@ namespace Algorithms.Executer
             #endregion
 
             #region ReBuild PostOrder InOrder
-            int[] postOrder = { 9, 15, 7, 20, 3 };
-            inorder = new int[] { 9, 3, 15, 20, 7 };
+            int[] postOrder = { 9,15,7,20,3 };
+            inorder = new int[] { 9,3,15,20,7 };
 
-            root = new Training().BuildTreepostOrderAndInOrder(postOrder, inorder);
+            root = new Training().BuildTreepostOrderAndInOrder(inorder,postOrder);
             #endregion
 
             #region Post and Pre
