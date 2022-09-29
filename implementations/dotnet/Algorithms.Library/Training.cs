@@ -69,6 +69,75 @@ namespace Algorithms.Library
 
     public class Training
     {
+        
+        //reconstructing from preorder and postorder
+        public static TreeNode ConstructFromPrePost(int[] preorder, int[] postorder)
+        {
+
+            Dictionary<int, int> preOrderPos = new();
+            Dictionary<int, int> posOrderPos = new();
+
+            if (postorder.Length == 0) return null;
+            for (int i = 0; i < preorder.Length; i++)
+            {
+                preOrderPos.Add(preorder[i], i);
+                posOrderPos.Add(postorder[i], i);
+
+            }
+            int end = postorder.Length - 1;
+            return ConstructFromPrePostHelper(null, 
+                                              preorder, 
+                                              postorder,
+                                              0, 
+                                              end, 
+                                              0, 
+                                              end,
+                                              preOrderPos,
+                                              posOrderPos);
+        }
+        public static TreeNode ConstructFromPrePostHelper(TreeNode current,
+                                                    int[] preorder,
+                                                    int[] postorder,
+                                                    int stPr,
+                                                    int endPr,
+                                                    int stPs,
+                                                    int endPs,
+                                                    Dictionary<int, int> preOrderPos,
+                                                    Dictionary<int, int> posOrderPos)
+        {
+            if (stPr > endPr) return null;
+            if (stPr == endPr)
+            {
+                return new TreeNode(preorder[stPr]);
+            }
+            int currentRoot = preorder[stPr];
+            current = new TreeNode(currentRoot);
+
+            int postRootInPost = posOrderPos[preorder[stPr + 1]];
+            int tmpEndPre = preOrderPos[postorder[endPs - 1]];
+            current.left = ConstructFromPrePostHelper(current, 
+                                                    preorder, 
+                                                    postorder, 
+                                                    stPr + 1, 
+                                                    tmpEndPre - 1, 
+                                                    stPs, 
+                                                    postRootInPost,
+                                                    preOrderPos,
+                                                    posOrderPos);
+
+            current.right = ConstructFromPrePostHelper(current, 
+                                                       preorder, 
+                                                       postorder, 
+                                                       tmpEndPre, 
+                                                       endPr, 
+                                                       postRootInPost + 1, 
+                                                       endPs - 1,
+                                                       preOrderPos,
+                                                       posOrderPos);
+            return current;
+        }
+
+
         //reconstruct from postOrder an InOrder
         public static TreeNode ReBuildPO(int[] postorder, int[] inOrder)
         {
