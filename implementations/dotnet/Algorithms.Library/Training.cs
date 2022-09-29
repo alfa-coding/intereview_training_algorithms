@@ -69,7 +69,7 @@ namespace Algorithms.Library
 
     public class Training
     {
-        
+
         //reconstructing from preorder and postorder
         public static TreeNode ConstructFromPrePost(int[] preorder, int[] postorder)
         {
@@ -85,12 +85,12 @@ namespace Algorithms.Library
 
             }
             int end = postorder.Length - 1;
-            return ConstructFromPrePostHelper(null, 
-                                              preorder, 
+            return ConstructFromPrePostHelper(null,
+                                              preorder,
                                               postorder,
-                                              0, 
-                                              end, 
-                                              0, 
+                                              0,
+                                              end,
+                                              0,
                                               end,
                                               preOrderPos,
                                               posOrderPos);
@@ -115,22 +115,22 @@ namespace Algorithms.Library
 
             int postRootInPost = posOrderPos[preorder[stPr + 1]];
             int tmpEndPre = preOrderPos[postorder[endPs - 1]];
-            current.left = ConstructFromPrePostHelper(current, 
-                                                    preorder, 
-                                                    postorder, 
-                                                    stPr + 1, 
-                                                    tmpEndPre - 1, 
-                                                    stPs, 
+            current.left = ConstructFromPrePostHelper(current,
+                                                    preorder,
+                                                    postorder,
+                                                    stPr + 1,
+                                                    tmpEndPre - 1,
+                                                    stPs,
                                                     postRootInPost,
                                                     preOrderPos,
                                                     posOrderPos);
 
-            current.right = ConstructFromPrePostHelper(current, 
-                                                       preorder, 
-                                                       postorder, 
-                                                       tmpEndPre, 
-                                                       endPr, 
-                                                       postRootInPost + 1, 
+            current.right = ConstructFromPrePostHelper(current,
+                                                       preorder,
+                                                       postorder,
+                                                       tmpEndPre,
+                                                       endPr,
+                                                       postRootInPost + 1,
                                                        endPs - 1,
                                                        preOrderPos,
                                                        posOrderPos);
@@ -138,48 +138,59 @@ namespace Algorithms.Library
         }
 
 
-        //reconstruct from postOrder an InOrder
-        public static TreeNode ReBuildPO(int[] postorder, int[] inOrder)
+        //reconstruct from postOrder and InOrder
+        private Dictionary<int, int> mapInOrderPos = new();
+        private int _postIndex;
+
+        public TreeNode BuildTreepostOrderAndInOrder(int[] inorder, int[] postorder)
         {
-            Dictionary<int, int> mapInOrderPos = new();
+            if (inorder.Length == 0) return null;
+            if (inorder.Length == 1) return new TreeNode(inorder[0]);
+            return ReBuild(postorder, inorder);
+        }
+
+        public TreeNode ReBuild(int[] postorder, int[] inOrder)
+        {
+
 
             for (int i = 0; i < inOrder.Length; i++)
             {
                 mapInOrderPos.Add(inOrder[i], i);
             }
             TreeNode root = null;
-            int postIndex = postorder.Length - 1;
-            return ReBuildHelperPO(root, postorder, start: 0, end: inOrder.Length, inOrder, mapInOrderPos, ref postIndex);
+            this._postIndex = postorder.Length - 1;
+            return ReBuildHelper(root, postorder, start: 0, end: inOrder.Length, inOrder);
 
         }
 
-        private static TreeNode ReBuildHelperPO(TreeNode current, int[] postOrder, int start, int end, int[] inOrder, Dictionary<int, int> mapInOrderPos, ref int postIndex)
+        private TreeNode ReBuildHelper(TreeNode current, int[] postOrder, int start, int end, int[] inOrder)
         {
             if (end <= start)
             {
                 return null;
             }
 
-            int currentRoot = postOrder[postIndex--];
-
+            int currentRoot = postOrder[this._postIndex--];
 
             int posCurrentRoot = mapInOrderPos[currentRoot]; //gives me the index of nextRoot to split
 
             current = new TreeNode(currentRoot);
-            if (end == start)
-            {
-                return current;
-            }
 
-            current.left = ReBuildHelperPO(current.left, postOrder, start, posCurrentRoot, inOrder, mapInOrderPos, ref postIndex);
+            current.right = ReBuildHelper(current.right, postOrder, posCurrentRoot + 1, end, inOrder);
 
 
-            current.right = ReBuildHelperPO(current.right, postOrder, posCurrentRoot + 1, end, inOrder, mapInOrderPos, ref postIndex);
+            current.left = ReBuildHelper(current.left, postOrder, start, posCurrentRoot, inOrder);
+
+
 
             return current;
         }
+
+
+
+
         //reconstruct from PreOrder an InOrder
-        public static TreeNode ReBuild(int[] preOrder, int[] inOrder)
+        public static TreeNode ReBuildPreOrderInOrder(int[] preOrder, int[] inOrder)
         {
             int fromPreorder = -1;
             Dictionary<int, int> mapInOrderPos = new();

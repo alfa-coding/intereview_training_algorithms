@@ -513,14 +513,14 @@ namespace Algorithms.Executer
             int[] preorder = { 1, 2 };
             int[] inorder = { 1, 2 };
 
-            TreeNode root = Training.ReBuild(preorder, inorder);
+            TreeNode root = Training.ReBuildPreOrderInOrder(preorder, inorder);
             #endregion
 
             #region ReBuild PostOrder InOrder
-            //int[] postOrder = { 9, 15, 7, 20, 3 };
-            //inorder = new int[] { 9, 3, 15, 20, 7 };
+            int[] postOrder = { 9, 15, 7, 20, 3 };
+            inorder = new int[] { 9, 3, 15, 20, 7 };
 
-            //root = Training.ReBuildPO(postOrder, inorder);
+            root = new Training().BuildTreepostOrderAndInOrder(postOrder, inorder);
             #endregion
 
             #region Post and Pre
