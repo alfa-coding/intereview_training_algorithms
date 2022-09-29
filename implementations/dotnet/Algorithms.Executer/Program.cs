@@ -36,7 +36,7 @@ namespace Algorithms.Executer
             int tmpEndPre = preOrderPos[postorder[endPs - 1]];
             current.left = ConstructFromPrePostHelper(current, preorder, postorder, stPr + 1, tmpEndPre-1, stPs, postRootInPost);
 
-            current.right = ConstructFromPrePostHelper(current, preorder, postorder, stPr + 1, tmpEndPre, postRootInPost, endPs);
+            current.right = ConstructFromPrePostHelper(current, preorder, postorder, tmpEndPre, endPr, postRootInPost+1, endPs-1);
             return current;
         }
         public static void PrintVector<T>(IEnumerable<T> elements, string message = "")
