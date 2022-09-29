@@ -7,6 +7,38 @@ namespace Algorithms.Executer
 {
     class Program
     {
+        Dictionary<int, int> preOrderPos = new();
+        Dictionary<int, int> posOrderPos = new();
+
+        public TreeNode ConstructFromPrePost(int[] preorder, int[] postorder)
+        {
+            if (postorder.Length == 0) return null;
+            for (int i = 0; i < preorder.Length; i++)
+            {
+                preOrderPos.Add(preorder[i], i);
+                posOrderPos.Add(postorder[i], i);
+
+            }
+            int end = postorder.Length-1;
+            return ConstructFromPrePostHelper(null, preorder, postorder, 0, end, 0, end);
+        }
+        public TreeNode ConstructFromPrePostHelper(TreeNode current, int[] preorder, int[] postorder, int stPr, int endPr, int stPs, int endPs)
+        {
+            if (stPr > endPr) return null;
+            if (stPr == endPr)
+            {
+                return new TreeNode(preorder[stPr]);
+            }
+            int currentRoot = preorder[stPr];
+            current = new TreeNode(currentRoot);
+
+            int postRootInPost = posOrderPos[preorder[stPr+1]];
+            int tmpEndPre = preOrderPos[postorder[endPs - 1]];
+            current.left = ConstructFromPrePostHelper(current, preorder, postorder, stPr + 1, tmpEndPre-1, stPs, postRootInPost);
+
+            current.right = ConstructFromPrePostHelper(current, preorder, postorder, stPr + 1, tmpEndPre, postRootInPost, endPs);
+            return current;
+        }
         public static void PrintVector<T>(IEnumerable<T> elements, string message = "")
         {
             System.Console.WriteLine($"----{message}-----");
@@ -516,10 +548,15 @@ namespace Algorithms.Executer
             #endregion
 
             #region ReBuild PostOrder InOrder
-            int[] postOrder = { 9,15,7,20,3};
-            inorder = new int[] { 9,3,15,20,7 };
+            //int[] postOrder = { 9, 15, 7, 20, 3 };
+            //inorder = new int[] { 9, 3, 15, 20, 7 };
 
-            root = Training.ReBuildPO(postOrder, inorder);
+            //root = Training.ReBuildPO(postOrder, inorder);
+            #endregion
+
+            #region Post and Pre
+
+            root = new Program().ConstructFromPrePost(new int[] { 1, 2, 4, 5, 3, 6, 7 }, new int[] { 4, 5, 2, 6, 7, 3, 1 });
             #endregion
             System.Console.WriteLine("Bye World");
 
