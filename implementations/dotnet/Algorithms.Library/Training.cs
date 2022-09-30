@@ -69,6 +69,40 @@ namespace Algorithms.Library
 
     public class Training
     {
+        //Flatten Binary Tree, to degradated Tree==linkedList, interesting
+        public void Flatten(TreeNode root)
+        {
+            Stack<TreeNode> displacedNodes = new();
+
+            TreeNode tmp = root;
+            while (tmp != null)
+            {
+                if (tmp.left != null)
+                {
+                    if (tmp.right == null)
+                    {
+                        tmp.right = tmp.left;
+                        tmp.left = null;
+                    }
+                    //if there were right node, push it onto the stack
+                    else
+                    {
+                        displacedNodes.Push(tmp.right);
+                        tmp.right = tmp.left;
+                        tmp.left = null;
+
+                    }
+                }
+                if (tmp.right == null && displacedNodes.Count != 0)
+                {
+                    tmp.right = displacedNodes.Pop();
+                }
+                tmp = tmp.right;
+
+
+            }
+
+        }
 
         //reconstructing from preorder and postorder
         public static TreeNode ConstructFromPrePost(int[] preorder, int[] postorder)
