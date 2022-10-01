@@ -69,6 +69,16 @@ namespace Algorithms.Library
 
     public class Training
     {
+
+        //Find Unique Binary String
+
+        public static string FindDifferentBinaryString(string[] nums)
+        {
+            StringBuilder ans = new();
+            for (int i = 0; i < nums.Length; i++)
+                ans.Append(nums[i][i] == '0' ? '1' : '0');              // Using ternary operator
+            return ans.ToString();
+        }
         //Perfect Squares adding up to N
         public static int NumSquares(int n)
         {
