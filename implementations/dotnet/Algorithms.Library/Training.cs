@@ -69,6 +69,35 @@ namespace Algorithms.Library
 
     public class Training
     {
+        //Perfect Squares adding up to N
+        public static int NumSquares(int n)
+        {
+            List<int> candidates = new();
+            for (int i = 1; i * i <= n; i++)
+                candidates.Add(i * i);
+            return CountSquares(candidates, n, index: 0, currentSum: 0, 0);
+
+        }
+        public static int CountSquares(List<int> candidates, int target, int index, int currentSum, int formed)
+        {
+            if (currentSum == target) return formed;
+            //podando el arbol para que no haga mas de 5 llamadas en profundidad
+            //por el teorema de lagrange, que establece que:
+            //todo numero puede ser expresado como la suma de 4 cuadrados perfectos
+            if (formed == 5 || index == candidates.Count)
+                return int.MaxValue;
+            int response = int.MaxValue;
+            for (int i = index; i < candidates.Count; i++)
+            {
+                if (currentSum + candidates[i] > target)
+                    continue;
+                response = Math.Min(response, CountSquares(candidates, target, i, currentSum + candidates[i], formed + 1));
+            }
+            return response;
+        }
+
+
+
         //Flatten Binary Tree, to degradated Tree==linkedList, interesting
         public void Flatten(TreeNode root)
         {
