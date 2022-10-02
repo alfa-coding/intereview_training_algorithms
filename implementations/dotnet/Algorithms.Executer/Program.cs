@@ -7,7 +7,7 @@ namespace Algorithms.Executer
 {
     class Program
     {
-        
+
         public static void PrintVector<T>(IEnumerable<T> elements, string message = "")
         {
             System.Console.WriteLine($"----{message}-----");
@@ -517,10 +517,10 @@ namespace Algorithms.Executer
             #endregion
 
             #region ReBuild PostOrder InOrder
-            int[] postOrder = { 9,15,7,20,3 };
-            inorder = new int[] { 9,3,15,20,7 };
+            int[] postOrder = { 9, 15, 7, 20, 3 };
+            inorder = new int[] { 9, 3, 15, 20, 7 };
 
-            root = new Training().BuildTreepostOrderAndInOrder(inorder,postOrder);
+            root = new Training().BuildTreepostOrderAndInOrder(inorder, postOrder);
             #endregion
 
             #region Post and Pre
@@ -528,6 +528,14 @@ namespace Algorithms.Executer
             root = Training.ConstructFromPrePost(new int[] { 1, 2, 4, 5, 3, 6, 7 }, new int[] { 4, 5, 2, 6, 7, 3, 1 });
             #endregion
             System.Console.WriteLine("Bye World");
+
+            #region RottenOranges
+            int[][] grid = new int[][]{
+                new int[]{2,2,2,1,1}
+            };
+            int amount = new RottenOranges().OrangesRotting(grid);
+            System.Console.WriteLine(amount);
+            #endregion
 
         }
     }

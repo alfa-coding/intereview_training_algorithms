@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Oct  1 12:33:27 2022
+# Make data base, printed on Sun Oct  2 18:49:46 2022
 
 # Variables
 
@@ -87,13 +87,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 2180
+VSCODE_PID = 6866
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/boosting:@/tmp/.ICE-unix/1635,unix/boosting:/tmp/.ICE-unix/1635
+SESSION_MANAGER = local/boosting:@/tmp/.ICE-unix/1620,unix/boosting:/tmp/.ICE-unix/1620
 # automatic
 *F = $(notdir $*)
 # environment
@@ -135,7 +135,7 @@ MOTD_SHOWN = pam
 # environment
 LC_TIME = en_US.UTF-8
 # environment
-INVOCATION_ID = 51862c2b05c643a9aa377168f5b10690
+INVOCATION_ID = 9dead401512349a4b8be2814796fbb02
 # environment
 USERNAME = dimas
 # environment
@@ -159,7 +159,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/visual-studio-code.desktop
 # makefile
 .DEFAULT_GOAL := build
 # environment
-SYSTEMD_EXEC_PID = 1650
+SYSTEMD_EXEC_PID = 1635
 # environment
 EDITOR = /usr/bin/nano
 # environment
@@ -169,11 +169,11 @@ USER = dimas
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1507
+MANAGERPID = 1492
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2163
+GIO_LAUNCHED_DESKTOP_FILE_PID = 6849
 # environment
 _ = /usr/bin/make
 # environment
@@ -181,7 +181,7 @@ LC_PAPER = en_US.UTF-8
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-JOURNAL_STREAM = 8:19246
+JOURNAL_STREAM = 8:24887
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -280,6 +280,7 @@ restore:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 #  recipe to execute (from 'Makefile', line 6):
 	dotnet restore
 
@@ -297,7 +298,6 @@ restore:
 # strcache performance: lookups = 24 / hit rate = 33%
 # hash-table stats:
 # Load=16/8192=0%, Rehash=0, Collisions=0/24=0%
-# Finished Make data base on Sat Oct  1 12:33:27 2022
- 
+# Finished Make data base on Sun Oct  2 18:49:46 2022
 
  
