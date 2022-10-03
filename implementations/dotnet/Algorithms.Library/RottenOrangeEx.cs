@@ -64,7 +64,6 @@ namespace Algorithms.Library
                 return 0;
             }
 
-            bool allFinished = false;
             while (initialRotten.Count != 0)
             {
                 //bfs
