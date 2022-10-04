@@ -527,7 +527,6 @@ namespace Algorithms.Executer
 
             root = Training.ConstructFromPrePost(new int[] { 1, 2, 4, 5, 3, 6, 7 }, new int[] { 4, 5, 2, 6, 7, 3, 1 });
             #endregion
-            System.Console.WriteLine("Bye World");
 
             #region RottenOranges
             int[][] grid = new int[][]{
@@ -536,6 +535,33 @@ namespace Algorithms.Executer
             int amount = new RottenOranges().OrangesRotting(grid);
             System.Console.WriteLine(amount);
             #endregion
+
+            #region Course Schedule, Graph
+            // 6 {
+            var complexCourses = new int[][] {
+            new int[]{1,0},
+            new int[]{2,1},
+            new int[]{2,5},
+            new int[]{0,3},
+            new int[]{4,3},
+            new int[]{3,5},
+            new int[]{4,5}
+            };
+
+            var easy = new int[][] {
+            new int[]{1,0}
+            };
+            bool possible1 = new CourseScheduleSolution().CanFinish(2, easy);
+
+            System.Console.WriteLine(possible1);
+
+            bool possible2 = new CourseScheduleSolution().CanFinish(6, complexCourses);
+            System.Console.WriteLine(possible2);
+
+            #endregion
+
+            System.Console.WriteLine("Bye World");
+
 
         }
     }
