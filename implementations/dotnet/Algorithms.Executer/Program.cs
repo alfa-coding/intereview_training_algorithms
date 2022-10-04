@@ -560,6 +560,15 @@ namespace Algorithms.Executer
 
             #endregion
 
+            #region Dijsktra Network Delay
+            var graphNetwork = new int [][]{
+                new int []{2,1,1},
+                new int []{2,3,1},
+                new int []{3,4,1}};
+            
+            var resultNetwork = new NetworkDelay().NetworkDelayTime(graphNetwork,4,2);
+            #endregion
+
             System.Console.WriteLine("Bye World");
 
 
