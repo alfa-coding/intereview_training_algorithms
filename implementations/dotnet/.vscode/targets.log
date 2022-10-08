@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Oct  7 23:42:52 2022
+# Make data base, printed on Sat Oct  8 23:20:55 2022
 
 # Variables
 
@@ -87,13 +87,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 18922
+VSCODE_PID = 2847
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/boosting:@/tmp/.ICE-unix/1599,unix/boosting:/tmp/.ICE-unix/1599
+SESSION_MANAGER = local/boosting:@/tmp/.ICE-unix/1592,unix/boosting:/tmp/.ICE-unix/1592
 # automatic
 *F = $(notdir $*)
 # environment
@@ -135,7 +135,7 @@ MOTD_SHOWN = pam
 # environment
 LC_TIME = en_US.UTF-8
 # environment
-INVOCATION_ID = 09cd1cb580834ff19e4f65207025a7f4
+INVOCATION_ID = f9bf0d72a8df4ab6b5fd2b6757dbce4e
 # environment
 USERNAME = dimas
 # environment
@@ -159,7 +159,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/visual-studio-code.desktop
 # makefile
 .DEFAULT_GOAL := build
 # environment
-SYSTEMD_EXEC_PID = 1614
+SYSTEMD_EXEC_PID = 1607
 # environment
 EDITOR = /usr/bin/nano
 # environment
@@ -169,11 +169,11 @@ USER = dimas
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1469
+MANAGERPID = 1463
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 18905
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2830
 # environment
 _ = /usr/bin/make
 # environment
@@ -181,7 +181,7 @@ LC_PAPER = en_US.UTF-8
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-JOURNAL_STREAM = 8:28320
+JOURNAL_STREAM = 8:33036
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -298,6 +298,6 @@ restore:
 # strcache performance: lookups = 24 / hit rate = 33%
 # hash-table stats:
 # Load=16/8192=0%, Rehash=0, Collisions=0/24=0%
-# Finished Make data base on Fri Oct  7 23:42:52 2022
+# Finished Make data base on Sat Oct  8 23:20:55 2022
 
  

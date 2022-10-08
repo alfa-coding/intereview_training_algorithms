@@ -69,6 +69,49 @@ namespace Algorithms.Library
 
     public class Training
     {
+        //ThreeSumClosest
+        public static int ThreeSumClosest(int[] nums, int target)
+        {
+            int n = nums.Length;
+            int result=0;
+            int diff = int.MaxValue;
+
+            // Sort the array
+            Array.Sort(nums);
+
+            // Use Two Pointer For Optimization: O(n^2)
+            for (int i = 0; i < n - 2; i++)
+            {
+                int start = i + 1;
+                int end = n - 1;
+
+                // Iterate Two Pointer
+                while (start < end)
+                {
+                    int val = nums[start] + nums[end] + nums[i];
+
+                    if (val == target)
+                        return target;
+                    else
+                    {
+                        if (val < target)
+                            start++;
+                        else
+                            end--;
+                    }
+
+                     if (diff > Math.Abs(val - target))
+                    {
+                        diff = Math.Abs(val - target);
+                        result = val;
+                    }
+                }
+            }
+
+            // Return Result
+            return result;
+
+        }
 
         //Find Unique Binary String
 

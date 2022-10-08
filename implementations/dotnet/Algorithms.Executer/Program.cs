@@ -569,6 +569,11 @@ namespace Algorithms.Executer
             var resultNetwork = new NetworkDelay().NetworkDelayTime(graphNetwork,4,2);
             #endregion
 
+            #region T3Sum
+            var sum = Training.ThreeSumClosest(new int []{4,0,5,-5,3,3,0,-4,-5},-2);
+            System.Console.WriteLine(sum);
+            #endregion
+
             System.Console.WriteLine("Bye World");
 
 
