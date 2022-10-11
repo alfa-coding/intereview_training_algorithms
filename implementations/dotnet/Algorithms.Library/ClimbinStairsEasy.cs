@@ -6,6 +6,20 @@ namespace Algorithms.Library
 
     public class ClimbinStairsEasy
     {
+        public int MinCostClimbingStairsIterative(int[] cost) 
+        {
+           int[]gains= new int[cost.Length+1];
+            gains[0]=cost[0];
+            gains[1]=cost[1];
+
+            for(int i=2;i<cost.Length+1;i++)
+            {
+                int current = i==cost.Length?0:cost[i];
+                gains[i]=current+Math.Min(gains[i-1],gains[i-2]);
+            }
+
+            return gains[gains.Length-1];
+        }
         public int MinCostClimbingStairs(int[] cost)
         {
             Dictionary<int, int> indexSol = new();
