@@ -53,5 +53,55 @@ namespace Algorithms.Library
                 return board[row, column, k];
             }
         }
+
+        public double KnightProbabilityTabulation(int n, int k, int row, int column) {
+        this.n=n;              
+            
+        this.dirCol= new int[]{-2,-1,1,2,2,1,-1,-2};
+        this.dirRow= new int[]{-1,-2,-2,-1,1,2,2,1};
+        this.board  = new double[k+1,n,n];
+        board[0,row,column]=1;
+        return ProbabilityTabulation(k);
+    
+        
+    }
+    
+    public double ProbabilityTabulation(int k)
+    {
+        
+        for(int veces =1;veces<=k;veces++)
+        {
+            
+            double[,,]nextboard = new double[k+1,n,n];
+            
+        
+            for(int i=0;i<n;i++)
+            {
+                for(int j=0;j<n;j++)
+                {
+                    for(int d=0;d<8;d++)
+                    {
+                        int nR= i + dirRow[d];
+                        int nC= j + dirCol[d];
+                        if(InRange(nR,nC)&&board[veces-1,nR,nC]!=0.0)
+                        {
+                            nextboard[veces,i,j]+=board[veces-1,nR,nC]/8;
+                        }
+                    }
+                }
+            }
+            board = nextboard;
+        }
+        
+        double response =0;
+        
+        for(int i=0;i<n;i++)
+            for(int j=0;j<n;j++)
+                response+=board[k,i,j];
+        
+        return response;
+                
+        
+    }
     }
 }
