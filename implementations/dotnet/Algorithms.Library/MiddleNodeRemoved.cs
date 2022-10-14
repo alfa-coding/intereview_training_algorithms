@@ -6,7 +6,7 @@ namespace Algorithms.Library
     {
         public ListNode DeleteMiddle(ListNode head)
         {
-            if (head.next == null)
+            if (head.next is null)
             {
                 return null;
             }
