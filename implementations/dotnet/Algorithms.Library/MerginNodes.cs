@@ -13,8 +13,8 @@ namespace Algorithms.Library
 { 
     public class MerginNodes 
     {
-        public ListNode MergeNodes(ListNode head) {
-            
+        public ListNode MergeNodes(ListNode head)
+        {
             ListNode root = null;
             ListNode front = null;
             
@@ -25,11 +25,8 @@ namespace Algorithms.Library
             while(head!=null)
             {
                 if(head.val !=0)
-                {
-                    
+                {                    
                     front.val+=head.val;   
-                    
-                    
                 }
                 else
                 {
@@ -40,11 +37,8 @@ namespace Algorithms.Library
                 }
                 head = head.next;
                 
-            }
-            
-                
-            return root;
-            
+            }   
+            return root;            
         }
     }
 }
