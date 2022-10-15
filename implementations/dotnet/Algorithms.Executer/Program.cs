@@ -574,9 +574,62 @@ namespace Algorithms.Executer
             System.Console.WriteLine(sum);
             #endregion
 
+            #region Cloning Graph
+
+            NodeG one = new NodeG(1);
+            NodeG two = new NodeG(2);
+            NodeG three = new NodeG(3);
+            NodeG four = new NodeG(4);
+
+            one.neighbors.Add(two);
+            one.neighbors.Add(four);
+
+            two.neighbors.Add(one);
+            two.neighbors.Add(three);
+
+            three.neighbors.Add(two);
+            three.neighbors.Add(four);
+
+            four.neighbors.Add(one);
+            four.neighbors.Add(three);
+
+
+            var myClone = new DeepClone().CloneGraph(one);
+
+            PrintGraph(myClone);
+
+
+
+            #endregion
+
             System.Console.WriteLine("Bye World");
 
 
+        }
+
+        private static void PrintGraph(NodeG myClone)
+        {
+            HashSet<int> visited = new HashSet<int>();
+            visited.Add(myClone.val);
+            DFS(myClone,visited);
+        }
+
+        private static void DFS(NodeG current, HashSet<int> visited)
+        {
+            if(current is null) return;
+
+            System.Console.Write(current.val+":[");
+            foreach (var neig in current.neighbors)
+                System.Console.Write(neig.val+" ");
+            System.Console.Write("]\n");
+
+            foreach (var neig in current.neighbors)
+            {
+                if(visited.Contains(neig.val))
+                    continue;
+                visited.Add(neig.val);
+                DFS(neig,visited);
+            }
         }
     }
 }
