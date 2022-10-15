@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Algorithms.Library
 {
-    public class ReachableNodesWithRestrictions
+    public class MyReachableNodesWithRestrictions
     {
 
         Dictionary<int, HashSet<int>> adjList = new();
