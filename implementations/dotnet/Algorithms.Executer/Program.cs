@@ -561,16 +561,16 @@ namespace Algorithms.Executer
             #endregion
 
             #region Dijsktra Network Delay
-            var graphNetwork = new int [][]{
+            var graphNetwork = new int[][]{
                 new int []{2,1,1},
                 new int []{2,3,1},
                 new int []{3,4,1}};
-            
-            var resultNetwork = new NetworkDelay().NetworkDelayTime(graphNetwork,4,2);
+
+            var resultNetwork = new NetworkDelay().NetworkDelayTime(graphNetwork, 4, 2);
             #endregion
 
             #region T3Sum
-            var sum = Training.ThreeSumClosest(new int []{4,0,5,-5,3,3,0,-4,-5},-2);
+            var sum = Training.ThreeSumClosest(new int[] { 4, 0, 5, -5, 3, 3, 0, -4, -5 }, -2);
             System.Console.WriteLine(sum);
             #endregion
 
@@ -602,6 +602,30 @@ namespace Algorithms.Executer
 
             #endregion
 
+            #region Minimum Heigth Trees
+
+            var edgesTree = new int[3][] {
+                new int[] { 1, 0 },
+                new int[] { 1, 2 },
+                new int[] { 1, 3 }
+                };
+
+             
+            var edgesTree2 = new int[5][] {
+                new int[] { 3,0 },
+                new int[] { 3,1 },
+                new int[] { 3,2 },
+                new int[] { 3,4 },
+                new int[] { 5,4 },
+                };
+
+            var gottenRoots = new CalMinimumHeightTrees().FindMinHeightTrees(4, edgesTree);
+            PrintVector(gottenRoots,"roots with minHeight n=4");
+
+            var gottenRoots2 = new CalMinimumHeightTrees().FindMinHeightTrees(6, edgesTree2);
+            PrintVector(gottenRoots2,"roots with minHeight n=6");
+            #endregion
+
             System.Console.WriteLine("Bye World");
 
 
@@ -611,24 +635,24 @@ namespace Algorithms.Executer
         {
             HashSet<int> visited = new HashSet<int>();
             visited.Add(myClone.val);
-            DFS(myClone,visited);
+            DFS(myClone, visited);
         }
 
         private static void DFS(NodeG current, HashSet<int> visited)
         {
-            if(current is null) return;
+            if (current is null) return;
 
-            System.Console.Write(current.val+":[");
+            System.Console.Write(current.val + ":[");
             foreach (var neig in current.neighbors)
-                System.Console.Write(neig.val+" ");
+                System.Console.Write(neig.val + " ");
             System.Console.Write("]\n");
 
             foreach (var neig in current.neighbors)
             {
-                if(visited.Contains(neig.val))
+                if (visited.Contains(neig.val))
                     continue;
                 visited.Add(neig.val);
-                DFS(neig,visited);
+                DFS(neig, visited);
             }
         }
     }
