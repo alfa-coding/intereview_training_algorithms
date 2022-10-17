@@ -610,7 +610,7 @@ namespace Algorithms.Executer
                 new int[] { 1, 3 }
                 };
 
-             
+
             var edgesTree2 = new int[5][] {
                 new int[] { 3,0 },
                 new int[] { 3,1 },
@@ -620,15 +620,55 @@ namespace Algorithms.Executer
                 };
 
             var gottenRoots = new CalMinimumHeightTrees().FindMinHeightTrees(4, edgesTree);
-            PrintVector(gottenRoots,"roots with minHeight n=4");
+            PrintVector(gottenRoots, "roots with minHeight n=4");
 
             var gottenRoots2 = new CalMinimumHeightTrees().FindMinHeightTrees(6, edgesTree2);
-            PrintVector(gottenRoots2,"roots with minHeight n=6");
+            PrintVector(gottenRoots2, "roots with minHeight n=6");
+            #endregion
+
+            #region Number of provinces
+            var provinces1 = new int[][]{
+                new int[]{1,1,0},
+                new int[]{1,1,0},
+                new int[]{0,0,1}
+            };
+            PrintMatrix(provinces1);
+            int np1 = new NumberOfProvinces().FindCircleNum(provinces1);
+            System.Console.WriteLine(np1);
+
+
+            #endregion
+
+            #region Min Cost Flight ->Dijhstra
+
+
+            var flights = new int[][] {
+                new int[] { 0, 1, 100 },
+                new int[] { 1, 2, 100 },
+                new int[] { 2, 0, 100 },
+                new int[] { 1, 3, 600 },
+                new int[] { 2, 3, 200 }
+                };
+
+            int costFlight = new MinCostFlights().FindCheapestPrice(4, flights, 0, 3, 1);
+            System.Console.WriteLine(costFlight);
             #endregion
 
             System.Console.WriteLine("Bye World");
 
 
+        }
+
+        private static void PrintMatrix<T>(T[][] m)
+        {
+            for (int i = 0; i < m.Length; i++)
+            {
+                for (int j = 0; j < m[i].Length; j++)
+                {
+                    System.Console.Write(m[i][j] + " ");
+                }
+                System.Console.WriteLine();
+            }
         }
 
         private static void PrintGraph(NodeG myClone)
