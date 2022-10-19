@@ -69,6 +69,24 @@ namespace Algorithms.Library
 
     public class Training
     {
+        //fq words
+        public static IList<string> TopKFrequent(string[] words, int k) 
+        {
+            Dictionary<string,int> dict = new  Dictionary<string,int>();
+
+            for(int i = 0; words.Length > i ; i++){
+
+                if(dict.ContainsKey(words[i])){
+                    dict[ words[i] ] = dict[ words[i] ] + 1;
+                }else{
+                    dict.Add( words[i], 1);
+                }
+
+            }
+            return dict.OrderByDescending(i => i.Value).ThenBy(i =>i.Key).Take(k).Select(p=>p.Key).ToList();
+        }
+        
+        
         //ThreeSumClosest
         public static int ThreeSumClosest(int[] nums, int target)
         {
