@@ -709,6 +709,25 @@ namespace Algorithms.Executer
             System.Console.WriteLine(linkedSum.val);
 
             #endregion
+
+
+             #region  Sum Numbers as Linked List Reversed -Stack
+
+            //[2,4,3]
+            //[5,6,4]
+
+            ListNode l5 = new ListNode(7,new ListNode(2,new ListNode(4, new ListNode(3))));
+            ListNode l6 = new ListNode(5,new ListNode(6,new ListNode(4)));
+
+            
+
+
+
+
+            var linkedSumStack = new AddingNumbersLinkedListWithStack().AddTwoNumbers(l5,l6);
+            System.Console.WriteLine(linkedSumStack.val);
+
+            #endregion
             System.Console.WriteLine("Bye World");
 
 
