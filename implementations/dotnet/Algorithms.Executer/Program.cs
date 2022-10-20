@@ -8,6 +8,42 @@ namespace Algorithms.Executer
     class Program
     {
 
+        private static void PrintMatrix<T>(T[][] m)
+        {
+            for (int i = 0; i < m.Length; i++)
+            {
+                for (int j = 0; j < m[i].Length; j++)
+                {
+                    System.Console.Write(m[i][j] + " ");
+                }
+                System.Console.WriteLine();
+            }
+        }
+
+        private static void PrintGraph(NodeG myClone)
+        {
+            HashSet<int> visited = new HashSet<int>();
+            visited.Add(myClone.val);
+            DFS(myClone, visited);
+        }
+
+        private static void DFS(NodeG current, HashSet<int> visited)
+        {
+            if (current is null) return;
+
+            System.Console.Write(current.val + ":[");
+            foreach (var neig in current.neighbors)
+                System.Console.Write(neig.val + " ");
+            System.Console.Write("]\n");
+
+            foreach (var neig in current.neighbors)
+            {
+                if (visited.Contains(neig.val))
+                    continue;
+                visited.Add(neig.val);
+                DFS(neig, visited);
+            }
+        }
         public static void PrintVector<T>(IEnumerable<T> elements, string message = "")
         {
             System.Console.WriteLine($"----{message}-----");
@@ -654,46 +690,30 @@ namespace Algorithms.Executer
             System.Console.WriteLine(costFlight);
             #endregion
 
+            #region  Sum Numbers as Linked List
+
+            //[2,4,3]
+            //[5,6,4]
+
+            ListNode l1 = new ListNode(2,new ListNode(4,new ListNode(3)));
+            ListNode l2 = new ListNode(5,new ListNode(6,new ListNode(4)));
+
+            ListNode l3 = new ListNode(9,new ListNode(9,new ListNode(9)));
+            ListNode l4 = new ListNode(9,new ListNode(9));
+
+
+
+
+
+            var linkedSum = new AddingLinkedListAsNumbers().AddTwoNumbers(l3,l4);
+            System.Console.WriteLine(linkedSum.val);
+
+            #endregion
             System.Console.WriteLine("Bye World");
 
 
         }
 
-        private static void PrintMatrix<T>(T[][] m)
-        {
-            for (int i = 0; i < m.Length; i++)
-            {
-                for (int j = 0; j < m[i].Length; j++)
-                {
-                    System.Console.Write(m[i][j] + " ");
-                }
-                System.Console.WriteLine();
-            }
-        }
 
-        private static void PrintGraph(NodeG myClone)
-        {
-            HashSet<int> visited = new HashSet<int>();
-            visited.Add(myClone.val);
-            DFS(myClone, visited);
-        }
-
-        private static void DFS(NodeG current, HashSet<int> visited)
-        {
-            if (current is null) return;
-
-            System.Console.Write(current.val + ":[");
-            foreach (var neig in current.neighbors)
-                System.Console.Write(neig.val + " ");
-            System.Console.Write("]\n");
-
-            foreach (var neig in current.neighbors)
-            {
-                if (visited.Contains(neig.val))
-                    continue;
-                visited.Add(neig.val);
-                DFS(neig, visited);
-            }
-        }
     }
 }
