@@ -695,36 +695,36 @@ namespace Algorithms.Executer
             //[2,4,3]
             //[5,6,4]
 
-            ListNode l1 = new ListNode(2,new ListNode(4,new ListNode(3)));
-            ListNode l2 = new ListNode(5,new ListNode(6,new ListNode(4)));
+            ListNode l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
+            ListNode l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
 
-            ListNode l3 = new ListNode(9,new ListNode(9,new ListNode(9)));
-            ListNode l4 = new ListNode(9,new ListNode(9));
-
-
+            ListNode l3 = new ListNode(9, new ListNode(9, new ListNode(9)));
+            ListNode l4 = new ListNode(9, new ListNode(9));
 
 
 
-            var linkedSum = new AddingLinkedListAsNumbers().AddTwoNumbers(l3,l4);
+
+
+            var linkedSum = new AddingLinkedListAsNumbers().AddTwoNumbers(l3, l4);
             System.Console.WriteLine(linkedSum.val);
 
             #endregion
 
 
-             #region  Sum Numbers as Linked List Reversed -Stack
+            #region  Sum Numbers as Linked List Reversed -Stack
 
             //[2,4,3]
             //[5,6,4]
 
-            ListNode l5 = new ListNode(7,new ListNode(2,new ListNode(4, new ListNode(3))));
-            ListNode l6 = new ListNode(5,new ListNode(6,new ListNode(4)));
-
-            
+            ListNode l5 = new ListNode(7, new ListNode(2, new ListNode(4, new ListNode(3))));
+            ListNode l6 = new ListNode(5, new ListNode(6, new ListNode(4)));
 
 
 
 
-            var linkedSumStack = new AddingNumbersLinkedListWithStack().AddTwoNumbers(l5,l6);
+
+
+            var linkedSumStack = new AddingNumbersLinkedListWithStack().AddTwoNumbers(l5, l6);
             System.Console.WriteLine(linkedSumStack.val);
 
             #endregion
@@ -732,8 +732,23 @@ namespace Algorithms.Executer
 
             #region Binary Sum
 
-            var sumBinary = new BinarySum().AddBinary("1010","1011");
+            var sumBinary = new BinarySum().AddBinary("1010", "1011");
             System.Console.WriteLine(sumBinary);
+            #endregion
+
+            #region LCA
+            TreeNode rootLCA = new TreeNode(3,
+                                            new TreeNode(5,
+                                                        new TreeNode(6),
+                                                        new TreeNode(2,
+                                                                new TreeNode(7),
+                                                                new TreeNode(4))),
+                                            new TreeNode(1,
+                                                        new TreeNode(0),
+                                                        new TreeNode(8)));
+
+            var lcaAnswer = new LCA().LowestCommonAncestor(rootLCA, new TreeNode(7), new TreeNode(4));
+            System.Console.WriteLine(lcaAnswer.val);
             #endregion
             System.Console.WriteLine("Bye World");
 
