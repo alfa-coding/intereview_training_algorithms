@@ -728,6 +728,13 @@ namespace Algorithms.Executer
             System.Console.WriteLine(linkedSumStack.val);
 
             #endregion
+
+
+            #region Binary Sum
+
+            var sumBinary = new BinarySum().AddBinary("1010","1011");
+            System.Console.WriteLine(sumBinary);
+            #endregion
             System.Console.WriteLine("Bye World");
 
 
