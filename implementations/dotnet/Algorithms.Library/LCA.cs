@@ -18,7 +18,6 @@ namespace Algorithms.Library
                 i++;
             }
             int p1 = 0;
-            int p2 = 1;
             int postP = -1;
             int postQ = -1;
 
@@ -40,7 +39,6 @@ namespace Algorithms.Library
             if (postP == -1 || postQ == -1)
             {
                 p1 = 0;
-                p2 = 1;
                 postP = -1;
                 postQ = -1;
 

@@ -6,19 +6,19 @@ using System.Text;
 namespace Algorithms.Library
 {
 
-    public class Node
+    public class NodeNAry
     {
         public int val;
-        public IList<Node> children;
+        public IList<NodeNAry> children;
 
-        public Node() { }
+        public NodeNAry() { }
 
-        public Node(int _val)
+        public NodeNAry(int _val)
         {
             val = _val;
         }
 
-        public Node(int _val, IList<Node> _children)
+        public NodeNAry(int _val, IList<NodeNAry> _children)
         {
             val = _val;
             children = _children;
@@ -1394,10 +1394,10 @@ namespace Algorithms.Library
             return root.val == 1 || leftHasOnes || rightHasOnes;
         }
 
-        public static IList<IList<int>> LevelOrder(Node root)
+        public static IList<IList<int>> LevelOrder(NodeNAry root)
         {
 
-            Queue<Node> queue = new Queue<Node>();
+            Queue<NodeNAry> queue = new Queue<NodeNAry>();
             queue.Enqueue(root);
             List<IList<int>> response = new List<IList<int>>();
             while (queue.Count != 0)
@@ -1409,7 +1409,7 @@ namespace Algorithms.Library
 
                 for (int i = 0; i < size; i++)
                 {
-                    Node tmp = queue.Dequeue();
+                    NodeNAry tmp = queue.Dequeue();
                     level.Add(tmp.val);
                     foreach (var child in tmp.children)
                     {

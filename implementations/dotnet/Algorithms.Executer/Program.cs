@@ -750,6 +750,21 @@ namespace Algorithms.Executer
             var lcaAnswer = new LCA().LowestCommonAncestor(rootLCA, new TreeNode(7), new TreeNode(4));
             System.Console.WriteLine(lcaAnswer.val);
             #endregion
+
+            Node rootToConnect = new Node(3,
+                                            new Node(5,
+                                                        new Node(6),
+                                                        new Node(2,
+                                                                new Node(7),
+                                                                new Node(4))),
+                                            new Node(1,
+                                                        new Node(0),
+                                                        new Node(8)));
+
+
+            var rootRighted = new NodesToTheRight().Connect(rootToConnect);
+            System.Console.WriteLine(rootRighted.val);
+            
             System.Console.WriteLine("Bye World");
 
 
