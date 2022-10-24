@@ -751,6 +751,7 @@ namespace Algorithms.Executer
             System.Console.WriteLine(lcaAnswer.val);
             #endregion
 
+            #region Connect to next Node on the right
             Node rootToConnect = new Node(3,
                                             new Node(5,
                                                         new Node(6),
@@ -764,7 +765,21 @@ namespace Algorithms.Executer
 
             var rootRighted = new NodesToTheRight().Connect(rootToConnect);
             System.Console.WriteLine(rootRighted.val);
+
+            #endregion
             
+            #region Bipartite Graph
+            //[[1,3],[0,2],[1,3],[0,2]]
+            int [][] graphToCheck = new int[][]{
+                new int[]{1,3},
+                new int[]{0,2},
+                new int[]{1,3},
+                new int[]{0,2}
+            };
+            bool wasBipartite = new BipartiteGraph().IsBipartite(graphToCheck);
+            System.Console.WriteLine(wasBipartite);
+            #endregion
+
             System.Console.WriteLine("Bye World");
 
 
