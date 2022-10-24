@@ -9,17 +9,7 @@ namespace Algorithms.Library
         {
 
             int[] colors = new int[graph.Length];
-            int [,]matrix = new int[graph.Length,graph.Length];
 
-            for (int i = 0; i < graph.Length; i++)
-            {
-                for (int j = 0; j < graph[i].Length; j++)
-                {
-                    matrix[i,graph[i][j]] =1;
-                    matrix[graph[i][j],i] =1;
-
-                }
-            }
             Array.Fill(colors, -1);
             for (int i = 0; i < graph.Length; i++)
             {
@@ -27,7 +17,7 @@ namespace Algorithms.Library
                 if (colors[i] == -1)
                 {
                     colors[i] = 1;
-                    if (!BFS(i, colors, matrix))
+                    if (!BFS(i, colors, graph))
                         return false;
                 }
 
@@ -36,7 +26,7 @@ namespace Algorithms.Library
             return true;
         }
 
-        private bool BFS(int source, int[] colors, int[,] graph)
+        private bool BFS(int source, int[] colors, int[][] graph)
         {
 
             Queue<int> queue = new();
@@ -48,21 +38,19 @@ namespace Algorithms.Library
 
 
 
-                for (int vecino = 0; vecino < graph.GetLength(0); vecino++)
+                foreach (var vecino in graph[uSource])
                 {
-                    if (graph[uSource,vecino] == 1)
+                    if (colors[vecino] == -1)
                     {
-                        if (colors[vecino] == -1)
-                        {
-                            //coloreo con el color opuesto al mio;
-                            colors[vecino] = 1 - colors[uSource];
-                            queue.Enqueue(vecino);
-                        }
-                        else if (colors[vecino] == colors[uSource])
-                            return false; // hay arista, pero el vecino esta coloreado como yo
-                        else
-                            continue;
+                        //coloreo con el color opuesto al mio;
+                        colors[vecino] = 1 - colors[uSource];
+                        queue.Enqueue(vecino);
                     }
+                    else if (colors[vecino] == colors[uSource])
+                        return false; // hay arista, pero el vecino esta coloreado como yo
+                    else
+                        continue;
+
 
 
                 }
