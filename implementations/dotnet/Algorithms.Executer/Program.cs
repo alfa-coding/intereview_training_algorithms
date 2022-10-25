@@ -780,6 +780,20 @@ namespace Algorithms.Executer
             System.Console.WriteLine(wasBipartite);
             #endregion
 
+            #region InsertingOneLevel
+
+            TreeNode rootToAdd = new TreeNode(4,
+                                                new TreeNode(2,
+                                                                new TreeNode(3),
+                                                                new TreeNode(1)),
+                                                new TreeNode(6,
+                                                                new TreeNode(5))
+                                            );
+
+            var nuevaRoot = new InsertNextLevel().AddOneRow(rootToAdd,1,2);
+            System.Console.WriteLine(nuevaRoot.val);
+            #endregion
+
             System.Console.WriteLine("Bye World");
 
 

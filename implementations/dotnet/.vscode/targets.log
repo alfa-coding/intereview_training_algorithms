@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Oct 10 13:23:16 2022
+# Make data base, printed on Tue Oct 25 21:45:45 2022
 
 # Variables
 
@@ -17,25 +17,25 @@ GDK_BACKEND = x11
 # environment
 LC_ALL = C
 # environment
-NO_AT_BRIDGE = 1
+GNOME_SHELL_SESSION_MODE = ubuntu
+# environment
+SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-LC_NAME = en_US.UTF-8
+LC_NAME = es_ES.UTF-8
 # environment
-LC_NUMERIC = en_US.UTF-8
+LC_NUMERIC = es_ES.UTF-8
 # environment
 VSCODE_CWD = /home/dimas
 # environment
 WINDOWPATH = 2
 # environment
-LC_ADDRESS = en_US.UTF-8
-# environment
-GDM_LANG = en_US.UTF-8
+LC_ADDRESS = es_ES.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-GTK3_MODULES = xapp-gtk3-module
+QT_ACCESSIBILITY = 1
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
@@ -47,15 +47,13 @@ PWD = /home/dimas/Documents/intereview_training_algorithms/implementations/dotne
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
-MAIL = /var/spool/mail/dimas
-# environment
-XDG_DATA_DIRS = /home/dimas/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = /home/dimas/.config/Code/CachedData/e4503b30fc78200f846c62cf8091b76ff5547662
+VSCODE_CODE_CACHE_PATH = /home/dimas/.config/Code/CachedData/d045a5eda657f4d7b676dedbfa7aab8207f8a075
 # environment
 LANG = C
 # environment
@@ -63,13 +61,15 @@ XAUTHORITY = /run/user/1000/gdm/Xauthority
 # default
 .LOADED := 
 # default
-.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+.INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
 # makefile
 MAKEFLAGS = pqrR
 # makefile
 CURDIR := /home/dimas/Documents/intereview_training_algorithms/implementations/dotnet
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -78,22 +78,24 @@ MFLAGS = -pqrR
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # default
 .SHELLFLAGS := -c
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
-XDG_SESSION_DESKTOP = gnome
+XDG_SESSION_DESKTOP = ubuntu
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 11364
+VSCODE_PID = 7889
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/boosting:@/tmp/.ICE-unix/1592,unix/boosting:/tmp/.ICE-unix/1592
+SESSION_MANAGER = local/boosting:@/tmp/.ICE-unix/2317,unix/boosting:/tmp/.ICE-unix/2317
 # automatic
 *F = $(notdir $*)
 # environment
@@ -106,6 +108,8 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
 # makefile
 SHELL = /bin/sh
 # default
@@ -117,71 +121,75 @@ DOTNET_BUNDLE_EXTRACT_BASE_DIR = /home/dimas/.cache/dotnet_bundle_extract
 # environment
 GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # environment
-SHLVL = 1
+SHLVL = 0
 # environment
 MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /home/dimas/.local/bin:/usr/local/bin:/usr/bin:/var/lib/snapd/snap/bin:/usr/local/sbin:/home/dimas/.dotnet/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/dimas/.dotnet/tools
 # default
 MAKEFILES := 
 # environment
-LC_MONETARY = en_US.UTF-8
-# environment
-MOTD_SHOWN = pam
+LC_MONETARY = es_ES.UTF-8
 # automatic
 ^F = $(notdir $^)
 # environment
-LC_TIME = en_US.UTF-8
+LC_TIME = es_ES.UTF-8
 # environment
-INVOCATION_ID = f9bf0d72a8df4ab6b5fd2b6757dbce4e
+INVOCATION_ID = 35ec0a8678a046f581562b39626e7327
 # environment
 USERNAME = dimas
 # environment
-LC_TELEPHONE = en_US.UTF-8
+LC_TELEPHONE = es_ES.UTF-8
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
 # automatic
 ?F = $(notdir $?)
 # environment
-XDG_CURRENT_DESKTOP = GNOME
+XDG_CURRENT_DESKTOP = Unity
+# environment
+LS_COLORS = 
 # automatic
 +F = $(notdir $+)
 # environment
-DESKTOP_SESSION = gnome
+DESKTOP_SESSION = ubuntu
 # environment
-ORIGINAL_XDG_CURRENT_DESKTOP = GNOME
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
 LOGNAME = dimas
 # environment
-GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/visual-studio-code.desktop
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := build
 # environment
-SYSTEMD_EXEC_PID = 1607
-# environment
-EDITOR = /usr/bin/nano
+SYSTEMD_EXEC_PID = 2336
 # environment
 DISPLAY = :1
 # environment
 USER = dimas
+# environment
+GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1463
+MANAGERPID = 1861
 # environment
-LC_MEASUREMENT = en_US.UTF-8
+LC_MEASUREMENT = es_ES.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 11347
+GIO_LAUNCHED_DESKTOP_FILE_PID = 7889
 # environment
-_ = /usr/bin/make
+_ = /usr/share/code/code
 # environment
-LC_PAPER = en_US.UTF-8
+LC_PAPER = es_ES.UTF-8
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-JOURNAL_STREAM = 8:33036
+GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
+# environment
+JOURNAL_STREAM = 8:36442
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -193,31 +201,25 @@ QT_IM_MODULE = ibus
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-28c1ac3f-1.70.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-28c1ac3f-1.72.2-main.sock
 # default
 .RECIPEPREFIX := 
 # automatic
 <F = $(notdir $<)
 # default
 SUFFIXES := 
-# environment
-QT_AUTO_SCREEN_SCALE_FACTOR = 1
-# environment
-VSCODE_CLI = 1
-# environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
 # default
-.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
-DOTNET_ROOT = /usr/share/dotnet
+DOTNET_ROOT = /usr/lib/dotnet/dotnet6-6.0.110
 # environment
-GDMSESSION = gnome
+GDMSESSION = ubuntu
 # environment
-LC_IDENTIFICATION = en_US.UTF-8
+LC_IDENTIFICATION = es_ES.UTF-8
 # variable set hash-table stats:
-# Load=102/1024=10%, Rehash=0, Collisions=4/132=3%
+# Load=103/1024=10%, Rehash=0, Collisions=3/133=2%
 
 # Pattern-specific Variable Values
 
@@ -225,7 +227,7 @@ LC_IDENTIFICATION = en_US.UTF-8
 
 # Directories
 
-# . (device 66306, inode 24645016): 7 files, no impossibilities.
+# . (device 66306, inode 918279): 7 files, no impossibilities.
 
 # 7 files, no impossibilities in 1 directories.
 
@@ -245,7 +247,7 @@ start:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-18 13:45:47.712202772
+#  Last modified 2022-10-11 20:14:48.65019463
 #  File has been updated.
 #  Successfully updated.
 
@@ -282,6 +284,7 @@ restore:
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 6):
 	dotnet restore
+ 
 
 # files hash-table stats:
 # Load=8/1024=1%, Rehash=0, Collisions=0/18=0%
@@ -296,8 +299,7 @@ restore:
 
 # strcache performance: lookups = 24 / hit rate = 33%
 # hash-table stats:
- 
 # Load=16/8192=0%, Rehash=0, Collisions=0/24=0%
-# Finished Make data base on Mon Oct 10 13:23:16 2022
+# Finished Make data base on Tue Oct 25 21:45:45 2022
 
  
