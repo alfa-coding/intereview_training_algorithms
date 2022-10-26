@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Oct 25 21:45:45 2022
+# Make data base, printed on Wed Oct 26 12:13:12 2022
 
 # Variables
 
@@ -89,13 +89,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 7889
+VSCODE_PID = 8502
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/boosting:@/tmp/.ICE-unix/2317,unix/boosting:/tmp/.ICE-unix/2317
+SESSION_MANAGER = local/boosting:@/tmp/.ICE-unix/2586,unix/boosting:/tmp/.ICE-unix/2586
 # automatic
 *F = $(notdir $*)
 # environment
@@ -137,7 +137,7 @@ LC_MONETARY = es_ES.UTF-8
 # environment
 LC_TIME = es_ES.UTF-8
 # environment
-INVOCATION_ID = 35ec0a8678a046f581562b39626e7327
+INVOCATION_ID = faed92bc4e1842cdba291f6803aeed48
 # environment
 USERNAME = dimas
 # environment
@@ -165,7 +165,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := build
 # environment
-SYSTEMD_EXEC_PID = 2336
+SYSTEMD_EXEC_PID = 2605
 # environment
 DISPLAY = :1
 # environment
@@ -175,11 +175,11 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1861
+MANAGERPID = 1913
 # environment
 LC_MEASUREMENT = es_ES.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 7889
+GIO_LAUNCHED_DESKTOP_FILE_PID = 8502
 # environment
 _ = /usr/share/code/code
 # environment
@@ -189,7 +189,7 @@ XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-JOURNAL_STREAM = 8:36442
+JOURNAL_STREAM = 8:36526
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -284,9 +284,9 @@ restore:
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 6):
 	dotnet restore
- 
 
 # files hash-table stats:
+ 
 # Load=8/1024=1%, Rehash=0, Collisions=0/18=0%
 # VPATH Search Paths
 
@@ -300,6 +300,6 @@ restore:
 # strcache performance: lookups = 24 / hit rate = 33%
 # hash-table stats:
 # Load=16/8192=0%, Rehash=0, Collisions=0/24=0%
-# Finished Make data base on Tue Oct 25 21:45:45 2022
+# Finished Make data base on Wed Oct 26 12:13:12 2022
 
  
