@@ -815,6 +815,15 @@ namespace Algorithms.Executer
 
             #endregion
 
+            #region PrintingBTree
+
+            TreeNode tToPrint = new TreeNode(1,
+                                                new TreeNode(2));
+
+            var printed = new PrintBTree().PrintTree(tToPrint);
+
+            #endregion
+
             System.Console.WriteLine("Bye World");
 
 
