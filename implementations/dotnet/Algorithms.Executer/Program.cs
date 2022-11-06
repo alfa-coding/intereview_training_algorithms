@@ -767,10 +767,10 @@ namespace Algorithms.Executer
             System.Console.WriteLine(rootRighted.val);
 
             #endregion
-            
+
             #region Bipartite Graph
             //[[1,3],[0,2],[1,3],[0,2]]
-            int [][] graphToCheck = new int[][]{
+            int[][] graphToCheck = new int[][]{
                 new int[]{1,3},
                 new int[]{0,2},
                 new int[]{1,3},
@@ -790,16 +790,29 @@ namespace Algorithms.Executer
                                                                 new TreeNode(5))
                                             );
 
-            var nuevaRoot = new InsertNextLevel().AddOneRow(rootToAdd,1,2);
+            var nuevaRoot = new InsertNextLevel().AddOneRow(rootToAdd, 1, 2);
             System.Console.WriteLine(nuevaRoot.val);
             #endregion
 
             #region ReverseOddLevel
-            TreeNode rootToReverse= new TreeNode(7,
+            TreeNode rootToReverse = new TreeNode(7,
                                                     new TreeNode(13),
                                                     new TreeNode(11));
 
-            var rootReversed = new  ReverseOddLevelsBFS().ReverseOddLevels(rootToReverse);
+            var rootReversed = new ReverseOddLevelsBFS().ReverseOddLevels(rootToReverse);
+            System.Console.WriteLine(rootReversed.val);
+            #endregion
+
+            #region MiniParser
+            var resultParser0 = new MiniParser().Deserialize("123");
+            var resultParser1 = new MiniParser().Deserialize("-123");
+
+            var resultParser2 = new MiniParser().Deserialize("[123, 230]");
+            var resultParser3 = new MiniParser().Deserialize("[123,[456,500]]");
+            var resultParser4 = new MiniParser().Deserialize("[123,[456,[789]]]");
+            var resultParser5 = new MiniParser().Deserialize("[123,456,[788,799,833],[[]],10,[]]");
+
+
             #endregion
 
             System.Console.WriteLine("Bye World");

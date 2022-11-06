@@ -2,31 +2,33 @@ using System.Collections.Generic;
 
 namespace Algorithms.Library
 {
+    
     /**
     * // This is the interface that allows for creating nested lists.
     * // You should not implement it, or speculate about its implementation
     **/
-    public interface NestedInteger
-    {
 
-        // @return true if this NestedInteger holds a single integer, rather than a nested list.
-        bool IsInteger();
 
-        // @return the single integer that this NestedInteger holds, if it holds a single integer
-        // Return null if this NestedInteger holds a nested list
-        int GetInteger();
-
-        // @return the nested list that this NestedInteger holds, if it holds a nested list
-        // Return null if this NestedInteger holds a single integer
-        IList<NestedInteger> GetList();
-    }
+    public interface INestedInteger {
+ 
+      // @return true if this NestedInteger holds a single integer, rather than a nested list.
+      bool IsInteger();
+ 
+      // @return the single integer that this NestedInteger holds, if it holds a single integer
+      // Return null if this NestedInteger holds a nested list
+      int GetInteger();
+ 
+      // @return the nested list that this NestedInteger holds, if it holds a nested list
+      // Return null if this NestedInteger holds a single integer
+      IList<INestedInteger> GetList();
+  }
 
     public class NestedIterator
     {
 
         Queue<int> queue = new();
 
-        public NestedIterator(IList<NestedInteger> nestedList)
+        public NestedIterator(IList<INestedInteger> nestedList)
         {
             FillQueue(nestedList);
         }
@@ -41,7 +43,7 @@ namespace Algorithms.Library
             return queue.Dequeue();
         }
 
-        private void FillQueue(IList<NestedInteger> nestedList)
+        private void FillQueue(IList<INestedInteger> nestedList)
         {
             if (nestedList == null) return;
 
