@@ -824,6 +824,11 @@ namespace Algorithms.Executer
 
             #endregion
 
+            #region RemoveDup
+            var withoutDup = new RemoveDup().RemoveDuplicates("abbaca");
+            System.Console.WriteLine(withoutDup);
+            #endregion
+
             System.Console.WriteLine("Bye World");
 
 
