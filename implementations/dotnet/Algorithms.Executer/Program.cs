@@ -829,6 +829,18 @@ namespace Algorithms.Executer
             System.Console.WriteLine(withoutDup);
             #endregion
 
+            #region PathMinimumEffort
+            int [][] heights = new int[][]
+            {
+                new int[]{1,2,2},
+                new int[]{3,8,2},
+                new int[]{5,3,5},
+
+            };
+            var steps = new PathMininumEfforDij().MinimumEffortPath(heights);
+            System.Console.WriteLine(steps);
+            #endregion
+
             System.Console.WriteLine("Bye World");
 
 
